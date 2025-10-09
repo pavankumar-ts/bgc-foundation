@@ -96,7 +96,7 @@ const AboutGoalSection = () => {
               {/* Main Healthcare Image */}
               <div className="relative overflow-hidden rounded-2xl shadow-2xl mb-6">
                 <Image
-                  src="/assets/about/about.webp"
+                  src="/assets/home/about.webp"
                   alt="BGC Foundation healthcare program - Mobile health camp in rural Karnataka"
                   width={600}
                   height={400}

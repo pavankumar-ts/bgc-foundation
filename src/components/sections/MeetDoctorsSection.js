@@ -7,6 +7,8 @@ import Image from 'next/image';
 
 const MeetDoctorsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [doctors, setDoctors] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   // Featured Doctor - Dr. Yogananda Reddy
   const featuredDoctor = {
@@ -31,18 +33,47 @@ const MeetDoctorsSection = () => {
     { title: 'Pharmacists', count: 3, icon: '/assets/icons/doctor.svg' }
   ];
 
-  // Team members showcasing diverse expertise and commitment
-  const teamMembers = [
-    { name: 'Dr. Rajesh Kumar', specialization: 'Senior Gastroenterologist', experience: '15+ years', story: 'Left Bangalore to serve villages' },
-    { name: 'Dr. Priya Sharma', specialization: 'Hepatology Specialist', experience: '12+ years', story: 'Fluent in 4 local languages' },
-    { name: 'Dr. Suresh Patel', specialization: 'Endoscopy Expert', experience: '18+ years', story: 'Pioneer of mobile endoscopy' },
-    { name: 'Sr. Nurse Anita', specialization: 'Critical Care Nursing', experience: '10+ years', story: 'The caring heart of our team' },
-    { name: 'Dr. Meera Reddy', specialization: 'Pediatric Gastroenterology', experience: '8+ years', story: 'Champions child health in villages' },
-    { name: 'Tech. Ravi Kumar', specialization: 'Endoscopy Technician', experience: '6+ years', story: 'Makes complex procedures simple' }
-  ];
-
   useEffect(() => {
     setIsVisible(true);
+
+    // Fetch doctors from API
+    const fetchDoctors = async () => {
+      try {
+        const response = await fetch('/api/doctors');
+        const data = await response.json();
+
+        if (data.data && Array.isArray(data.data)) {
+          const formattedDoctors = data.data.map(doctor => {
+            const experience = doctor.attributes?.field_experience;
+
+            return {
+              name: doctor.attributes?.title || 'Unknown',
+              specialization: doctor.attributes?.field_department || doctor.attributes?.field_job_title || 'Healthcare Professional',
+              experience: experience ? `${experience}+ years experience` : '',
+              story: '',
+              photo: doctor.imageUrl || '/dummy.webp',
+            };
+          });
+
+          // Sort doctors: Dr. Yogananda Reddy first, Dr Sailaja Reddy second, then others
+          formattedDoctors.sort((a, b) => {
+            if (a.name.includes('Yogananda')) return -1;
+            if (b.name.includes('Yogananda')) return 1;
+            if (a.name.includes('Sailaja')) return -1;
+            if (b.name.includes('Sailaja')) return 1;
+            return 0;
+          });
+
+          setDoctors(formattedDoctors);
+        }
+      } catch (error) {
+        console.error('Error fetching doctors:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchDoctors();
   }, []);
 
   return (
@@ -151,44 +182,59 @@ const MeetDoctorsSection = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {teamMembers.map((member, index) => (
-              <Card
-                key={index}
-                className={`group text-center transform transition-all duration-500 hover:scale-105 cursor-pointer`}
-              >
-                <CardContent className="space-y-4 p-6">
-                  {/* Professional Photo */}
-                  <div className="mb-4">
-                    <div className="w-full h-[240px] mx-auto overflow-hidden rounded-lg group-hover:shadow-md transition-shadow duration-300 border-2 border-primary-100">
-                      <Image
-                        src="/dummy.webp"
-                        alt={member.name}
-                        width={1280}
-                        height={1280}
-                        className="w-full h-full object-cover"
-                      />
+          {loading ? (
+            <div className="text-center py-12">
+              <p className="text-gray-500">Loading team members...</p>
+            </div>
+          ) : doctors.length === 0 ? (
+            <div className="text-center py-12">
+              <p className="text-gray-500">No team members available at the moment.</p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-3 gap-8 max-width mx-auto">
+              {doctors.map((member, index) => (
+                <Card
+                  key={index}
+                  className={`group text-center cursor-pointer ${isVisible ? 'animate-fade-in-up' : 'opacity-0'} transition-transform duration-300 ease-out hover:scale-105`}
+                  style={{ transitionDelay: `${index * 100}ms` }}
+                >
+                  <CardContent className="space-y-4 p-6">
+                    {/* Professional Photo */}
+                    <div className="mb-4">
+                      <div className="w-full h-[240px] mx-auto overflow-hidden rounded-lg group-hover:shadow-md transition-shadow duration-300 border-2 border-primary-100">
+                        <Image
+                          src={member.photo}
+                          alt={member.name}
+                          width={1280}
+                          height={1280}
+                          className="w-full h-full object-cover object-top"
+                        />
+                      </div>
                     </div>
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <h5 className="font-semibold text-gray-900 text-base leading-tight">
-                      {member.name}
-                    </h5>
-                    <p className="text-primary-600 font-medium text-sm leading-tight">
-                      {member.specialization}
-                    </p>
-                    <p className="text-gray-500 text-xs italic mb-2">
-                      {member.story}
-                    </p>
-                    <Badge variant="outline" className="text-xs px-2 py-1">
-                      {member.experience}
-                    </Badge>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+
+                    <div className="space-y-2">
+                      <h5 className="font-semibold text-gray-900 text-base leading-tight">
+                        {member.name}
+                      </h5>
+                      <p className="text-primary-600 font-medium text-sm leading-tight">
+                        {member.specialization}
+                      </p>
+                      {member.story && (
+                        <p className="text-gray-500 text-xs italic mb-2">
+                          {member.story}
+                        </p>
+                      )}
+                      {member.experience && (
+                        <Badge variant="outline" className="text-xs px-2 py-1">
+                          {member.experience}
+                        </Badge>
+                      )}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          )}
 
         </div>
         
