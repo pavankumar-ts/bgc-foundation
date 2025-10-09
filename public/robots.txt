@@ -1,0 +1,28 @@
+# robots.txt for BGC Foundation
+
+User-agent: *
+Allow: /
+
+# Priority pages
+Allow: /
+Allow: /about
+Allow: /impact
+Allow: /donate
+Allow: /contact
+
+# Block admin or sensitive areas (if any exist in future)
+# Disallow: /admin/
+# Disallow: /api/
+
+# Sitemap location
+Sitemap: https://bgcfoundation.org/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Specific bot instructions
+User-agent: Googlebot
+Crawl-delay: 0
+
+User-agent: Bingbot
+Crawl-delay: 1
