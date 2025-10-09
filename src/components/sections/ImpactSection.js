@@ -178,7 +178,7 @@ const ImpactSection = () => {
             >
               <p className="body-large text-gray-600 max-w-3xl mx-auto">
                 Measurable results from our rural healthcare programs demonstrate
-                the positive impact we're making in underserved communities.
+                the positive impact we&apos;re making in underserved communities.
               </p>
             </div>
           </div>

@@ -13,8 +13,8 @@ const MeetDoctorsSection = () => {
     name: 'Dr. Yogananda Reddy',
     title: 'Chief Gastroenterologist & Program Director',
     credentials: ['MBBS, FRCP (London)', 'MRCP (UK)', 'CCT Gastroenterology', 'NHS Excellence Award'],
-    description: 'From London\'s NHS hospitals to Karnataka\'s villages - Dr. Reddy chose to leave his comfortable UK practice to serve those who need it most. With two decades of international expertise, he now leads our "Hospital on Wheels" mission, bringing world-class digestive healthcare directly to rural doorsteps.',
-    quote: '"We don\'t just bring medicine to villages. We bring dignity—the dignity of receiving world-class care in your own backyard."',
+    description: 'From London&apos;s NHS hospitals to Karnataka&apos;s villages - Dr. Reddy chose to leave his comfortable UK practice to serve those who need it most. With two decades of international expertise, he now leads our &quot;Hospital on Wheels&quot; mission, bringing world-class digestive healthcare directly to rural doorsteps.',
+    quote: '&quot;We don&apos;t just bring medicine to villages. We bring dignity—the dignity of receiving world-class care in your own backyard.&quot;',
     photo: '/assets/dr-yogananda.webp',
     experience: '50+ Years Combined Experience',
   };
@@ -108,7 +108,7 @@ const MeetDoctorsSection = () => {
               35 Professionals, One Shared Purpose
             </h3>
             <p className="body-large text-gray-600 max-w-3xl mx-auto">
-              When our mobile units roll into a village, they bring an entire hospital's worth of expertise. Every role matters, every person counts - from our gastroenterologists to our nursing assistants, we're a family united by purpose.
+              When our mobile units roll into a village, they bring an entire hospital&apos;s worth of expertise. Every role matters, every person counts - from our gastroenterologists to our nursing assistants, we&apos;re a family united by purpose.
             </p>
           </div>
 
@@ -198,7 +198,7 @@ const MeetDoctorsSection = () => {
             Every Team Member Has a Story
           </h3>
           <p className="body-large text-gray-700 max-w-2xl mx-auto mb-6">
-            They could work anywhere. They chose here. Because when you see the gratitude in a farmer's eyes after receiving life-saving care in his own village, you understand what true purpose feels like.
+            They could work anywhere. They chose here. Because when you see the gratitude in a farmer&apos;s eyes after receiving life-saving care in his own village, you understand what true purpose feels like.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <div className="bg-white px-6 py-3 rounded-lg shadow-sm">

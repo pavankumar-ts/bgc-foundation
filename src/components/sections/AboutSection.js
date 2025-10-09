@@ -89,7 +89,7 @@ const AboutSection = () => {
             style={{ animationDelay: isVisible ? '0.3s' : '0s' }}
           >
             <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-              BGC Foundation is Karnataka's first dedicated rural digestive healthcare initiative,
+              BGC Foundation is Karnataka&apos;s first dedicated rural digestive healthcare initiative,
               bringing specialized medical care directly to underserved communities through innovative
               mobile healthcare delivery.
             </p>

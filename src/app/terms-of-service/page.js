@@ -94,7 +94,7 @@ export default function TermsOfService() {
                   </p>
                 </div>
                 <p className="text-gray-700">
-                  Our website and services are provided "as is" without warranties of any kind. We do not guarantee uninterrupted access or error-free operation of our website.
+                  Our website and services are provided &quot;as is&quot; without warranties of any kind. We do not guarantee uninterrupted access or error-free operation of our website.
                 </p>
               </section>
 

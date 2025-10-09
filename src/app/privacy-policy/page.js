@@ -15,7 +15,7 @@ export default function PrivacyPolicy() {
               <section className="mb-8">
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">Introduction</h2>
                 <p className="text-gray-700 leading-relaxed">
-                  BGC Foundation ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or engage with our healthcare programs.
+                  BGC Foundation (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or engage with our healthcare programs.
                 </p>
               </section>
 
@@ -106,7 +106,7 @@ export default function PrivacyPolicy() {
               <section>
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">Changes to This Policy</h2>
                 <p className="text-gray-700">
-                  We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date.
+                  We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the &quot;Last updated&quot; date.
                 </p>
               </section>
             </CardContent>
