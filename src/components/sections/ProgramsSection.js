@@ -33,12 +33,12 @@ const ProgramsSection = () => {
     {
       title: 'Viral Hepatitis Screening',
       description: 'Early detection and management of Hepatitis B and C',
-      img: '/dummy.webp',
+      img: '/assets/programs/hepatitis-screening.webp',
     },
     {
       title: 'Cancer Screening',
       description: 'Early identification of gastrointestinal cancers',
-      img: '/dummy.webp',
+      img: '/assets/programs/cancer-screening.webp',
     },
     {
       title: 'Nutritional Counselling',

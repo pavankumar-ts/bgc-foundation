@@ -5,12 +5,12 @@ export default function Team() {
   return (
     <>
       <GenericHeroSection
-        badge="35 Dedicated Healthcare Professionals"
-        title="Meet Our Team of Rural Healthcare Heroes"
+        badge="35 Dedicated Digestive Healthcare Professionals"
+        title="Meet Our Team of Rural Digestive Healthcare Heroes"
         description="They could practice anywhere. They chose here. Meet the extraordinary doctors, nurses, and healthcare professionals who left comfortable urban practices to bring world-class digestive healthcare to Karnataka's most remote villages."
         stats={[
           { value: "50+", label: "Years Combined Experience" },
-          { value: "4+", label: "Villages Served" },
+          { value: "5+", label: "Villages Served" },
           { value: "5K+", label: "Lives Touched Annually" }
         ]}
         imageSrc='/assets/team-hero.webp'

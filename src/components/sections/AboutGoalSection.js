@@ -16,16 +16,16 @@ const AboutGoalSection = () => {
     <section className="section-spacing bg-gradient-to-br from-gray-50 to-primary-50/30" id="about-goal">
       <div className="main-container">
         {/* Section Header */}
-        <div className="narrow-container text-center mb-8">
+        <div className=" text-center mb-8">
           <Badge variant="primary" className="mb-4">
             Our Main Goal
           </Badge>
           <h2 className="section-h2 text-gray-900 mb-6">
-            Bringing Healthcare to Every Village
+            Bringing Digestive Healthcare to Every Village
           </h2>
-          <p className="body-large text-gray-600 leading-relaxed max-w-3xl mx-auto">
-            We aim to bridge the healthcare gap by bringing comprehensive digestive health programs to rural communities. 
-            Our approach focuses on early diagnosis, preventive care, and building lasting healthcare infrastructure in underserved areas.
+          <p className="body-large text-gray-600 leading-relaxed max-w-4xl mx-auto">
+            We aim to bridge the digestive healthcare gap by bringing comprehensive digestive health programs to rural communities. 
+            Our approach focuses on early diagnosis, preventive care, and building lasting digestive healthcare infrastructure in underserved areas.
           </p>
         </div>
 
@@ -47,7 +47,7 @@ const AboutGoalSection = () => {
                       <h4 className="card-h4 text-gray-900 mb-2">Direct Community Access</h4>
                       <p className="body-regular text-gray-600">
                         We eliminate barriers by bringing specialist care directly to rural areas, 
-                        making healthcare accessible and affordable for every family.
+                        making digestive healthcare accessible and affordable for every family.
                       </p>
                     </div>
                   </div>
@@ -63,8 +63,7 @@ const AboutGoalSection = () => {
                     <div className="flex-1">
                       <h4 className="card-h4 text-gray-900 mb-2">Education & Prevention</h4>
                       <p className="body-regular text-gray-600">
-                        Beyond treatment, we focus on health education in Kannada and preventive care 
-                        to improve long-term community health outcomes.
+                        Beyond treatment, we focus exclusively on digestive health education in Kannada and preventive care to improve long-term community health outcomes.
                       </p>
                     </div>
                   </div>

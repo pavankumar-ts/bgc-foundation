@@ -8,10 +8,10 @@ const StatsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const stats = [
-    { number: '4+', label: 'Rural Health Camps' },
-    { number: '1000+', label: 'Patients Consulted' },
-    { number: '35+', label: 'Healthcare Professionals' },
-    { number: '₹25L+', label: 'Healthcare Value Delivered' }
+    { number: '5+', label: 'Rural Health Camps' },
+    { number: '1500+', label: 'Patients Consulted' },
+    { number: '100+', label: 'Healthcare Professionals' },
+    { number: '₹35L+', label: 'Healthcare Value Delivered' }
   ];
 
   useEffect(() => {
@@ -58,10 +58,10 @@ const StatsSection = () => {
           {/* Content Section */}
           <div className={`lg:pl-8 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ transitionDelay: '600ms' }}>
             <h2 className="text-5xl font-semibold text-gray-900 mb-6">
-              Leading Healthcare Programs in Rural Karnataka
+              Leading Digestive Healthcare Programs in Rural Karnataka
             </h2>
             <p className="body-large text-gray-600 mb-6">
-              Through our mobile healthcare initiatives and specialist outreach programs, BGC Foundation brings world-class digestive health care directly to rural communities across Karnataka, bridging the healthcare gap for underserved populations.
+              Through our mobile endoscopy unit and super specialist outreach programs, BGC Foundation brings world-class digestive health care directly to rural communities across Karnataka, bridging the Digestive Healthcare gap for underserved populations.
             </p>
             <Link href="/about">
               <Button size="sm" className="py-6 px-6">

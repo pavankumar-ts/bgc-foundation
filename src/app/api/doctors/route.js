@@ -32,12 +32,20 @@ export async function GET() {
     // Filter doctors by specific departments
     const allowedDepartments = [
       'Medical Gastroenterology',
+      'Surgical Gastroenterology',
       'Radiology',
       'Nutrition & Dietetics'
     ];
 
     const filteredDoctors = data.data.filter(doctor => {
       const department = doctor.attributes?.field_department;
+      const name = doctor.attributes?.title;
+
+      // Exclude Dr. Kajal Prakash
+      if (name && name.toLowerCase().includes('kajal prakash')) {
+        return false;
+      }
+
       return department && allowedDepartments.includes(department);
     });
 

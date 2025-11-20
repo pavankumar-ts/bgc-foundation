@@ -28,13 +28,6 @@ const Footer = () => {
     }
   ];
 
-  const socialLinks = [
-    { name: 'Facebook', href: '#', icon: '📘' },
-    { name: 'Twitter', href: '#', icon: '🐦' },
-    { name: 'LinkedIn', href: '#', icon: '💼' },
-    { name: 'YouTube', href: '#', icon: '📺' }
-  ];
-
   return (
     <footer className="bg-gradient-to-br from-white via-gray-50 to-primary-50 text-gray-900">
       {/* Newsletter Subscription */}

@@ -66,7 +66,7 @@ const RuralOutreachVideoSection = () => {
             style={{ animationDelay: isVisible ? '0.4s' : '0s' }}
           >
             <h2 className="section-h2 text-gray-900 mb-4">
-              Free Healthcare in Rural Karnataka
+              Free Digestive Healthcare in Rural Karnataka
             </h2>
           </div>
 
@@ -76,7 +76,7 @@ const RuralOutreachVideoSection = () => {
             style={{ animationDelay: isVisible ? '0.6s' : '0s' }}
           >
             <p className="body-large text-gray-600 leading-relaxed max-w-3xl mx-auto">
-              Watch our dedicated team of healthcare professionals bringing comprehensive digestive health programs directly to rural communities across Karnataka.
+              Watch our dedicated team of digestive healthcare professionals bringing comprehensive digestive health programs directly to rural communities across Karnataka.
             </p>
           </div>
         </div>

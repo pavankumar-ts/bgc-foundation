@@ -13,13 +13,13 @@ const HeroSection = () => {
     {
       src: '/assets/home/hero1.webp',
       alt: 'Mobile health camp in rural Karnataka village',
-      title: 'Bringing Healthcare to Rural Communities',
+      title: 'Bringing Digestive Healthcare to Rural Communities',
       subtitle: 'We reach the most remote villages in Karnataka to provide essential digestive healthcare services directly to those who need them most.'
     },
     {
       src: '/assets/home/hero2.webp',
       alt: 'Medical screening at village camp',
-      title: 'Advanced Medical Screening & Diagnosis',
+      title: 'Advanced Digestive Screening & Diagnosis',
       subtitle: 'Our state-of-the-art mobile units are equipped with modern diagnostic tools to detect and prevent digestive health issues early.'
     },
     {
@@ -31,7 +31,7 @@ const HeroSection = () => {
     {
       src: '/assets/home/hero4.webp',
       alt: 'Community health education session',
-      title: 'Community Health Education & Awareness',
+      title: 'Community Digestive Health Education and Nutrition Awareness',
       subtitle: 'We believe in empowering communities through education, teaching preventive care and healthy lifestyle practices.'
     }
   ];

@@ -82,7 +82,7 @@ const ExpertEndorsementSection = () => {
             >
               <div className="border-l-4 border-l-primary-500 pl-6 space-y-3 hover:border-l-primary-600 transition-colors duration-300">
                 <h3 className="text-xl font-semibold text-gray-900">
-                  Supporting Rural Healthcare Access
+                  Supporting Rural Digestive Healthcare Access
                 </h3>
                 <p className="body-large text-gray-600 leading-relaxed">
                   Dr. Manjunath shares his perspective on the importance of bringing specialist digestive healthcare directly to rural communities in Karnataka.

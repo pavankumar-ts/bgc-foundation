@@ -15,22 +15,22 @@ const MeetDoctorsSection = () => {
     name: 'Dr. Yogananda Reddy',
     title: 'Chief Gastroenterologist & Program Director',
     credentials: ['MBBS, FRCP (London)', 'MRCP (UK)', 'CCT Gastroenterology', 'NHS Excellence Award'],
-    description: 'From London&apos;s NHS hospitals to Karnataka&apos;s villages - Dr. Reddy chose to leave his comfortable UK practice to serve those who need it most. With two decades of international expertise, he now leads our &quot;Hospital on Wheels&quot; mission, bringing world-class digestive healthcare directly to rural doorsteps.',
-    quote: '&quot;We don&apos;t just bring medicine to villages. We bring dignity—the dignity of receiving world-class care in your own backyard.&quot;',
+    description: 'From London&apos;s NHS hospitals to Karnataka&apos;s villages - Dr. Reddy chose to leave his comfortable UK practice to serve those who need it most. With two decades of international expertise, he now leads our Hospital on Wheels mission, bringing world-class digestive healthcare directly to rural doorsteps.',
+    quote: "We don't just bring medicine to villages. We bring dignity—the dignity of receiving world-class care in your own backyard.",
     photo: '/assets/dr-yogananda.webp',
     experience: '50+ Years Combined Experience',
   };
 
   // Team Structure as per content reference
   const teamCategories = [
-    { title: 'Specialist Gastroenterologists', count: 6, icon: '/assets/icons/doctor.svg' },
-    { title: 'Junior Doctors', count: 4, icon: '/assets/icons/doctor.svg' },
-    { title: 'Qualified Nurses', count: 8, icon: '/assets/icons/doctor.svg' },
-    { title: 'Endoscopy Technicians', count: 2, icon: '/assets/icons/doctor.svg' },
-    { title: 'Lab Technicians', count: 2, icon: '/assets/icons/doctor.svg' },
-    { title: 'Nursing Assistants', count: 4, icon: '/assets/icons/doctor.svg' },
-    { title: 'Admin Staff', count: 6, icon: '/assets/icons/doctor.svg' },
-    { title: 'Pharmacists', count: 3, icon: '/assets/icons/doctor.svg' }
+    { title: 'Specialist Gastroenterologists', count: 10, icon: '/assets/icons/doctor.svg' },
+    { title: 'Junior Doctors', count: 10, icon: '/assets/icons/doctor.svg' },
+    { title: 'Qualified Nurses', count: 15, icon: '/assets/icons/doctor.svg' },
+    { title: 'Endoscopy Technicians', count: 4, icon: '/assets/icons/doctor.svg' },
+    { title: 'Lab Technicians', count: 5, icon: '/assets/icons/doctor.svg' },
+    { title: 'Nursing Assistants', count: 10, icon: '/assets/icons/doctor.svg' },
+    { title: 'Admin Staff', count: 15, icon: '/assets/icons/doctor.svg' },
+    { title: 'Pharmacists', count: 5, icon: '/assets/icons/doctor.svg' }
   ];
 
   useEffect(() => {
@@ -136,7 +136,7 @@ const MeetDoctorsSection = () => {
         <div className="mb-20">
           <div className="text-center mb-12">
             <h3 className="subsection-h3 text-gray-900 mb-4">
-              35 Professionals, One Shared Purpose
+              74 Professionals, One Shared Purpose
             </h3>
             <p className="body-large text-gray-600 max-w-3xl mx-auto">
               When our mobile units roll into a village, they bring an entire hospital&apos;s worth of expertise. Every role matters, every person counts - from our gastroenterologists to our nursing assistants, we&apos;re a family united by purpose.
@@ -175,7 +175,7 @@ const MeetDoctorsSection = () => {
         <div className="mb-0">
           <div className="text-center mb-4">
             <h3 className="subsection-h3 text-gray-900 mb-6">
-              Faces of Compassion
+              Our super Specialists
             </h3>
             <p className="body-large text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Behind every successful rural health camp are real people with real stories. These are just a few of the remarkable individuals who chose rural service over personal comfort.
@@ -252,11 +252,11 @@ const MeetDoctorsSection = () => {
               <div className="text-sm text-gray-600">Lives Touched Annually</div>
             </div>
             <div className="bg-white px-6 py-3 rounded-lg shadow-sm">
-              <div className="text-2xl font-bold text-primary-600">4+</div>
+              <div className="text-2xl font-bold text-primary-600">5+</div>
               <div className="text-sm text-gray-600">Villages Served</div>
             </div>
             <div className="bg-white px-6 py-3 rounded-lg shadow-sm">
-              <div className="text-2xl font-bold text-primary-600">35</div>
+              <div className="text-2xl font-bold text-primary-600">74</div>
               <div className="text-sm text-gray-600">Dedicated Hearts</div>
             </div>
           </div>

@@ -14,42 +14,42 @@ const ImpactSection = () => {
     {
       key: 'consultations',
       title: 'Consultations',
-      value: 1000,
+      value: 1500,
       subtitle: 'Free medical consultations',
       imageSrc: '/assets/home/consultations.webp'
     },
     {
       key: 'bloodTests',
       title: 'Blood Tests',
-      value: 92,
+      value: 300,
       subtitle: 'Diagnostic screenings',
       imageSrc: '/assets/home/blood-test.webp'
     },
     {
       key: 'endoscopies',
       title: 'Endoscopies',
-      value: 26,
+      value: '100+',
       subtitle: 'Advanced procedures',
       imageSrc: '/assets/home/hero2.webp'
     },
     {
       key: 'fibroscans',
       title: 'Fibroscans',
-      value: 52,
+      value: '100+',
       subtitle: 'Liver assessments',
       imageSrc: '/assets/home/fibroscan.webp'
     },
     {
       key: 'totalValue',
       title: 'Healthcare Value',
-      value: 2500000,
+      value: 3500000,
       subtitle: 'Total value delivered',
       imageSrc: '/assets/home/value.webp'
     },
     {
       key: 'specialistHours',
       title: 'Specialist Hours',
-      value: 90,
+      value: '100+',
       subtitle: 'Expert consultation time',
       imageSrc: '/assets/home/specialist-hours.webp'
     }
@@ -57,8 +57,8 @@ const ImpactSection = () => {
 
   const keyOutcomes = [
     { title: 'Early Detection Rate', value: '95%', description: 'Successful diagnoses made' },
-    { title: 'Lives Impacted', value: '1k', description: 'Patients served across camps' },
-    { title: 'Healthcare Access', value: '100%', description: 'Free healthcare delivery' },
+    { title: 'Lives Impacted', value: '1.5k', description: 'Patients served across camps' },
+    { title: 'Digestive Healthcare Access', value: '100%', description: 'Free healthcare delivery' },
     { title: 'Communities Reached', value: '4+', description: 'Rural areas served' }
   ];
 
@@ -133,7 +133,7 @@ const ImpactSection = () => {
             style={{ animationDelay: isInView ? '0.2s' : '0s' }}
           >
             <h2 className="section-h2 gradient-text mb-6">
-              Transforming Rural Healthcare, One Patient at a Time
+              Transforming Rural DigestiveHealthcare, One Patient at a Time
             </h2>
           </div>
           <div
@@ -142,7 +142,7 @@ const ImpactSection = () => {
           >
             <p className="body-large text-gray-600 leading-relaxed">
               Our data-driven approach ensures transparency and accountability in every aspect
-              of our rural healthcare delivery. See the real impact we&apos;re making.
+              of our rural digestive healthcare delivery. See the real impact we&apos;re making.
             </p>
           </div>
         </div>
@@ -177,7 +177,7 @@ const ImpactSection = () => {
               style={{ animationDelay: isInView ? '1.1s' : '0s' }}
             >
               <p className="body-large text-gray-600 max-w-3xl mx-auto">
-                Measurable results from our rural healthcare programs demonstrate
+                Measurable results from our rural digestive healthcare programs demonstrate
                 the positive impact we&apos;re making in underserved communities.
               </p>
             </div>
