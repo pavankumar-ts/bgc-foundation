@@ -4,10 +4,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { Card } from '../../../components/ui/Card';
-import Badge from '../../../components/ui/Badge';
-import Button from '../../../components/ui/Button';
 import { notFound } from 'next/navigation';
 import { getCampById, digestiveDiseases } from '../../../data/campsData';
+import { FaMapMarkerAlt, FaCalendarAlt, FaCheckCircle, FaVideo, FaImage, FaPlay, FaSearchPlus, FaTimes, FaChevronLeft, FaChevronRight, FaChevronUp } from 'react-icons/fa';
+import { MdPeopleAlt } from 'react-icons/md';
 
 export default function CampDetailPage({ params }) {
   const [camp, setCamp] = useState(null);
@@ -66,21 +66,15 @@ export default function CampDetailPage({ params }) {
               </h1>
               <div className="flex flex-wrap justify-center gap-6 text-white/90">
                 <div className="flex items-center">
-                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                  </svg>
+                  <FaMapMarkerAlt className="w-5 h-5 mr-2" />
                   {camp.location}
                 </div>
                 <div className="flex items-center">
-                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
-                  </svg>
+                  <FaCalendarAlt className="w-5 h-5 mr-2" />
                   {camp.date}
                 </div>
                 <div className="flex items-center">
-                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
+                  <MdPeopleAlt className="w-5 h-5 mr-2" />
                   {camp.participants} participants
                 </div>
               </div>
@@ -162,7 +156,7 @@ export default function CampDetailPage({ params }) {
                 <div className="mb-12">
                   <Card className="p-6 bg-primary-50 border-primary-200">
                     <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                      🔬 {camp.fibroscanInsight.title}
+                      {camp.fibroscanInsight.title}
                     </h3>
                     <p className="text-lg text-gray-700 mb-4 italic font-medium">
                       &ldquo;{camp.fibroscanInsight.description}&rdquo;
@@ -223,9 +217,7 @@ export default function CampDetailPage({ params }) {
                   {camp.gallery.videos && camp.gallery.videos.length > 0 && (
                     <div className="mb-8">
                       <h4 className="text-xl font-semibold text-gray-900 mb-6 flex items-center">
-                        <svg className="w-5 h-5 mr-2 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
-                          <path d="M2 6a2 2 0 012-2h6l2 2h6a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z" />
-                        </svg>
+                        <FaVideo className="w-5 h-5 mr-2 text-primary-500" />
                         Camp Videos
                       </h4>
                       <div className="grid gap-2 md:grid-cols-3">
@@ -243,9 +235,7 @@ export default function CampDetailPage({ params }) {
                               {/* Play button overlay */}
                               <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover/video:opacity-100 transition-opacity duration-300 pointer-events-none">
                                 <div className="bg-white/90 rounded-full p-4 transform scale-75 group-hover/video:scale-100 transition-transform duration-300 shadow-lg">
-                                  <svg className="w-8 h-8 text-primary-600 ml-1" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
-                                  </svg>
+                                  <FaPlay className="w-8 h-8 text-primary-600 ml-1" />
                                 </div>
                               </div>
                             </div>
@@ -259,9 +249,7 @@ export default function CampDetailPage({ params }) {
                   {camp.gallery.images && camp.gallery.images.length > 0 && (
                     <div>
                       <h4 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
-                        <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" />
-                        </svg>
+                        <FaImage className="w-5 h-5 mr-2" />
                         Photos
                       </h4>
                       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -279,9 +267,7 @@ export default function CampDetailPage({ params }) {
                             />
                             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
                               <div className="bg-white/90 rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <svg className="w-5 h-5 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                                </svg>
+                                <FaSearchPlus className="w-5 h-5 text-gray-800" />
                               </div>
                             </div>
                           </div>
@@ -295,9 +281,7 @@ export default function CampDetailPage({ params }) {
                             onClick={() => setShowAllImages(true)}
                             className="inline-flex items-center px-4 py-2 bg-primary-100 hover:bg-primary-200 text-primary-700 rounded-lg transition-colors duration-200 cursor-pointer"
                           >
-                            <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" />
-                            </svg>
+                            <FaImage className="w-4 h-4 mr-2" />
                             +{camp.gallery.images.length - 8} more photos
                           </button>
                         </div>
@@ -310,9 +294,7 @@ export default function CampDetailPage({ params }) {
                             onClick={() => setShowAllImages(false)}
                             className="inline-flex items-center px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-colors duration-200"
                           >
-                            <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clipRule="evenodd" />
-                            </svg>
+                            <FaChevronUp className="w-4 h-4 mr-2" />
                             Show less
                           </button>
                         </div>
@@ -384,9 +366,7 @@ export default function CampDetailPage({ params }) {
               onClick={() => setSelectedImage(null)}
               className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors z-10"
             >
-              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
+              <FaTimes className="w-8 h-8" />
             </button>
 
             {/* Navigation arrows */}
@@ -405,9 +385,7 @@ export default function CampDetailPage({ params }) {
                   }}
                   className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 transition-colors z-10"
                 >
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                  </svg>
+                  <FaChevronLeft className="w-8 h-8" />
                 </button>
 
                 <button
@@ -423,9 +401,7 @@ export default function CampDetailPage({ params }) {
                   }}
                   className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 transition-colors z-10"
                 >
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
+                  <FaChevronRight className="w-8 h-8" />
                 </button>
               </>
             )}
