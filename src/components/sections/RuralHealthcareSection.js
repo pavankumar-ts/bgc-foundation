@@ -55,13 +55,13 @@ const RuralHealthcareSection = () => {
                 className={`flex items-start space-x-4 p-6 bg-white/80 backdrop-blur-sm rounded-xl border border-primary-200/50 hover:bg-white hover:shadow-md hover:border-primary-300 transition-all duration-300 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <div className="flex-shrink-0 w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center">
+                <div className="flex-shrink-0 w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center">
                   <Image
                     src={challenge.icon}
                     alt={challenge.title}
-                    width={24}
-                    height={24}
-                    className="opacity-70"
+                    width={100}
+                    height={100}
+                    className="p-2"
                   />
                 </div>
                 <div className="flex-1">
