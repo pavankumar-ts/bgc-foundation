@@ -76,9 +76,8 @@ export default function ContactFormSection() {
                       Contact Information
                     </h4>
                     <div className="space-y-2 text-gray-600">
-                      <p>Phone: +91 96637 15077</p>
+                      <p>Email: info@bgcfoundation.org</p>
                       <p>Hospital: 080 4688 8888</p>
-                      <p>Website: bangaloregastrocentre.com</p>
                     </div>
                   </CardContent>
                 </Card>

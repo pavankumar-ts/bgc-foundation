@@ -16,7 +16,7 @@ const ImpactSection = () => {
       title: 'Consultations',
       value: 1500,
       subtitle: 'Free medical consultations',
-      imageSrc: '/assets/home/consultations.webp'
+      imageSrc: '/assets/programs/consultations.webp'
     },
     {
       key: 'bloodTests',

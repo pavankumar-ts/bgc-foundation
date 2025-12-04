@@ -62,7 +62,7 @@ const ProgramsSection = () => {
     <section className="section-spacing bg-white" id="programs">
       <div className="main-container">
         {/* 8-Card Services Grid as per Design Reference */}
-        <div className="mb-20">
+        <div className="">
           <div className="text-center mb-12">
             <h3 className="subsection-h3 text-gray-900 mb-4">
               Comprehensive Digestive Health Programs
@@ -108,7 +108,7 @@ const ProgramsSection = () => {
 
 
         {/* Call to Action */}
-        <div className="text-center bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-8 border border-primary-200">
+        {/* <div className="text-center bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-8 border border-primary-200">
           <h3 className="text-xl font-bold gradient-text mb-4">
             Bring Healthcare to Your Community
           </h3>
@@ -118,7 +118,7 @@ const ProgramsSection = () => {
           <button className="bg-primary-500 hover:bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold shadow-lg shadow-primary-500/25 micro-transition button-click">
             Schedule a Camp
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

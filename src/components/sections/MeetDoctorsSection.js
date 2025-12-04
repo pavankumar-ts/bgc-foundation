@@ -51,7 +51,7 @@ const MeetDoctorsSection = () => {
               specialization: doctor.attributes?.field_department || doctor.attributes?.field_job_title || 'Healthcare Professional',
               experience: experience ? `${experience}+ years experience` : '',
               story: '',
-              photo: doctor.imageUrl || '/dummy.webp',
+              photo: doctor.imageUrl,
             };
           });
 
@@ -86,7 +86,7 @@ const MeetDoctorsSection = () => {
             <CardContent className="p-8">
               <div className="grid lg:grid-cols-3 gap-8 items-center">
                 <div className="text-center">
-                  <div className="w-[400px] h-72 mx-auto rounded-lg overflow-hidden bg-gray-100 mb-4">
+                  <div className="w-[400px] h-76 mx-auto rounded-lg overflow-hidden bg-gray-100 mb-4">
                     <Image
                       src={featuredDoctor.photo}
                       alt={featuredDoctor.name}

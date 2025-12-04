@@ -34,10 +34,10 @@ const RuralHealthcareSection = () => {
   }, []);
 
   return (
-    <section className="section-spacing bg-gray-50" id="rural-healthcare-crisis">
+    <section className="mb-16" id="rural-healthcare-crisis">
       <div className="main-container">
         {/* Healthcare Crisis Overview */}
-        <div className="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-xl p-8 md:p-12 mb-20 border border-primary-200">
+        <div className="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-xl p-8 md:p-12 border border-primary-200">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <Badge variant="primary" className="mb-4">
               The Healthcare Challenge
