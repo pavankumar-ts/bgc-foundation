@@ -50,7 +50,7 @@ const Header = () => {
           {/* Center Navigation */}
           <div className="hidden md:flex items-center justify-center flex-1 space-x-8">
             {navigation.map((item) => {
-              const isActive = pathname === item.href;
+              const isActive = pathname === item.href || pathname.startsWith(item.href + '/');
               return (
                 <Link
                   key={item.name}
@@ -105,7 +105,7 @@ const Header = () => {
           <div className="md:hidden border-t border-gray-200 bg-white">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navigation.map((item) => {
-                const isActive = pathname === item.href;
+                const isActive = pathname === item.href || pathname.startsWith(item.href + '/');
                 return (
                   <Link
                     key={item.name}

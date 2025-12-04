@@ -77,7 +77,7 @@ const LeadershipSection = () => {
                 style={{ animationDelay: isVisible ? '0.7s' : '0s' }}
               >
                 <Image
-                  src="/assets/home/dr-yoganada.webp"
+                  src="/assets/dr-yogananda.webp"
                   alt="Dr. Yogananda Reddy - Chief Gastroenterologist"
                   width={280}
                   height={350}

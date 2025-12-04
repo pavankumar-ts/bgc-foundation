@@ -59,7 +59,7 @@ const ImpactSection = () => {
     { title: 'Early Detection Rate', value: '95%', description: 'Successful diagnoses made' },
     { title: 'Lives Impacted', value: '1.5k', description: 'Patients served across camps' },
     { title: 'Digestive Healthcare Access', value: '100%', description: 'Free healthcare delivery' },
-    { title: 'Communities Reached', value: '4+', description: 'Rural areas served' }
+    { title: 'Communities Reached', value: '5+', description: 'Rural areas served' }
   ];
 
   // Intersection Observer

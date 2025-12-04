@@ -60,8 +60,7 @@ export default function ContactFormSection() {
               <div className="space-y-8">
                 <Card className="medical-card">
                   <CardContent className="p-6">
-                    <h4 className="card-h4 text-gray-900 mb-4 flex items-center">
-                      <span className="text-primary-500 mr-3">📍</span>
+                    <h4 className="card-h4 text-gray-900 mb-4">
                       Location
                     </h4>
                     <p className="text-gray-600">
@@ -73,8 +72,7 @@ export default function ContactFormSection() {
 
                 <Card className="medical-card">
                   <CardContent className="p-6">
-                    <h4 className="card-h4 text-gray-900 mb-4 flex items-center">
-                      <span className="text-primary-500 mr-3">📞</span>
+                    <h4 className="card-h4 text-gray-900 mb-4">
                       Contact Information
                     </h4>
                     <div className="space-y-2 text-gray-600">
@@ -177,6 +175,7 @@ export default function ContactFormSection() {
                       >
                         <option value="general">General Inquiry</option>
                         <option value="partnership">Partnership Opportunity</option>
+                        <option value="donation">Donation Inquiry</option>
                         <option value="mobile-endoscopy">Mobile Endoscopy Support</option>
                         <option value="health-camp">Request Health Camp</option>
                         <option value="media">Media/Press Inquiry</option>
