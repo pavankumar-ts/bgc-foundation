@@ -28,7 +28,7 @@ export default function Programs() {
         stats={[
           { value: "8+", label: "Core Programs" },
           { value: "100%", label: "Free Treatment" },
-          { value: "4+", label: "Villages Served" }
+          { value: "5+", label: "Villages Served" }
         ]}
         imageSrc='/assets/about-hero.webp'
         imageAlt="BGC Foundation healthcare programs in rural Karnataka"

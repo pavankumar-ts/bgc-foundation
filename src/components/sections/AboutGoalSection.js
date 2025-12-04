@@ -104,10 +104,7 @@ const AboutGoalSection = () => {
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
                 />
               </div>
-              {/* Floating Elements */}
-              <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-secondary-400 to-secondary-600 rounded-full opacity-10"></div>
-              <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-gradient-to-br from-primary-400 to-primary-600 rounded-full opacity-10"></div>
-            </div>
+           </div>
 
           </div>
         </div>

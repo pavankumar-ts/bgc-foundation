@@ -6,13 +6,26 @@ import Button from '../../components/ui/Button';
 import { campsData } from '../../data/campsData';
 
 export default function CampsPage() {
-  const completedCamps = campsData.filter(camp => camp.status === 'completed');
-  const upcomingCamps = campsData.filter(camp => camp.status === 'upcoming');
+  // Sort camps by date (latest first)
+  const sortCampsByDate = (camps) => {
+    return camps.sort((a, b) => {
+      // Convert date strings to Date objects for proper comparison
+      // Handles format: "May 29, 2024" or "October 17, 2024"
+      const dateA = new Date(a.date);
+      const dateB = new Date(b.date);
+
+      // Sort in descending order (latest first)
+      return dateB - dateA;
+    });
+  };
+
+  const completedCamps = sortCampsByDate(campsData.filter(camp => camp.status === 'completed'));
+  const upcomingCamps = sortCampsByDate(campsData.filter(camp => camp.status === 'upcoming'));
 
   return (
     <>
         {/* Hero Section */}
-        <section className="relative pt-32 pb-20 overflow-hidden">
+        <section className="relative pt-44 pb-20 overflow-hidden">
           <div className="absolute inset-0">
             <Image
               src="/assets/camps-hero.webp"

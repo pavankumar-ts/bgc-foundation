@@ -22,8 +22,8 @@ const Footer = () => {
     {
       title: 'Support Us',
       links: [
-        { name: 'Contact', href: '#contact' },
-        { name: 'Partner With Us', href: '#contact' }
+        { name: 'Contact', href: '/contact' },
+        { name: 'Partner With Us', href: '/contact' }
       ]
     }
   ];

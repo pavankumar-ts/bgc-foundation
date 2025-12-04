@@ -4,7 +4,7 @@ export const campsData = [
     id: 'sarjapura-health-camp-2024',
     title: 'Sarjapura Rural Health Camp',
     location: 'Sarjapura, Karnataka',
-    date: 'March 2024',
+    date: 'May 29, 2025',
     status: 'completed',
     image: '/assets/camps/sarjapura-hero.webp',
     description: 'Comprehensive digestive health screening and consultation program providing advanced medical care to rural communities in Sarjapura.',
@@ -65,7 +65,7 @@ export const campsData = [
     id: 'harohalli-health-camp-2024',
     title: 'Harohalli Rural Health Camp',
     location: 'Harohalli, Karnataka',
-    date: 'April 2024',
+    date: 'October 17, 2024',
     status: 'completed',
     image: '/assets/camps/harohalli-hero.webp',
     description: 'Mobile healthcare initiative bringing specialized gastroenterology and diagnostic services to underserved communities in Harohalli.',
@@ -128,7 +128,7 @@ export const campsData = [
     id: 'kanakapura-fibroscan-camp-2024',
     title: 'Kanakapura Advanced Diagnostic Camp',
     location: 'Kanakapura, Karnataka',
-    date: 'May 2024',
+    date: 'December 19, 2024',
     status: 'completed',
     image: '/assets/camps/kanakapura-hero.webp',
     description: 'Revolutionary health camp featuring advanced Fibroscan technology for liver disease detection, bringing cutting-edge diagnostics to rural areas.',
@@ -194,6 +194,126 @@ export const campsData = [
       description: 'Liver disease is a silent killer. Our Fibroscan technology enables early detection, and with lifestyle modifications, dietary changes, and appropriate treatment, disease progression can be halted and potentially reversed.',
       casesIdentified: 28,
       assessmentsPerformed: 52
+    }
+  },
+  {
+    id: 'ramnagara-health-camp-2024',
+    title: 'Ramnagara Community Health Camp',
+    location: 'Ramnagara, Karnataka',
+    date: 'September 25, 2025',
+    status: 'completed',
+    image: '/assets/camps/ramnagara/ramnagara1.webp',
+    description: 'Comprehensive digestive health screening and specialized care bringing advanced medical diagnostics to the rural communities of Ramnagara.',
+    participants: 195,
+    specialties: ['Gastroenterology', 'General Medicine', 'Endoscopy', 'Laboratory Services', 'Nutritional Counseling'],
+    highlights: [
+      '195 consultations provided',
+      '38 blood tests conducted',
+      '15 endoscopy procedures',
+      '₹2,78,450 total healthcare value delivered'
+    ],
+    detailedDescription: `
+      The Ramnagara health camp served 195 community members with comprehensive digestive health services, focusing on early detection of gastrointestinal disorders and preventive care education. Our specialized team provided 30 hours of consultation time, ensuring thorough assessment and personalized treatment plans for each patient.
+
+      This camp particularly emphasized nutritional counseling and lifestyle modification guidance, recognizing the strong connection between dietary habits and digestive health. Advanced endoscopic procedures were performed using our mobile unit, enabling accurate diagnosis of conditions that would otherwise require urban hospital visits.
+    `,
+    outcomes: [
+      'Successfully completed 195 comprehensive consultations',
+      'Conducted 38 essential blood tests with 285 minutes of machine time',
+      'Performed 15 endoscopy procedures with advanced diagnostic capabilities',
+      'Delivered ₹2,78,450 worth of free healthcare services',
+      'Identified and treated acute gastrointestinal infections',
+      'Provided specialized dietary counseling for digestive disorders',
+      'Established follow-up protocols for 18 chronic cases'
+    ],
+    gallery: {
+      images: [
+        '/assets/camps/ramnagara/ramnagara1.webp',
+        '/assets/camps/ramnagara/ramnagara2.webp',
+        '/assets/camps/ramnagara/ramnagara3.webp',
+        '/assets/camps/ramnagara/ramnagara4.webp',
+        '/assets/camps/ramnagara/ramnagara5.webp',
+        '/assets/camps/ramnagara/ramnagara6.webp',
+        '/assets/camps/ramnagara/ramnagara7.webp',
+        '/assets/camps/ramnagara/ramnagara8.webp',
+        '/assets/camps/ramnagara/ramnagara9.webp',
+        '/assets/camps/ramnagara/ramnagara10.webp',
+        '/assets/camps/ramnagara/ramnagara11.webp',
+        '/assets/camps/ramnagara/ramnagara12.webp'
+      ],
+      videos: []
+    },
+    impactMetrics: {
+      patientsSeen: '195',
+      proceduresCompleted: '15',
+      medicationDistributed: '₹1,65,750',
+      followUpCases: '18',
+      healthEducationReach: '195'
+    },
+    costBreakdown: {
+      consultationCost: '₹1,65,750',
+      bloodTestsCost: '₹37,700',
+      endoscopyCost: '₹75,000',
+      totalValue: '₹2,78,450'
+    }
+  },
+  {
+    id: 'anekal-health-camp-2024',
+    title: 'Anekal Rural Healthcare Initiative',
+    location: 'Anekal, Karnataka',
+    date: 'May 29, 2024',
+    status: 'completed',
+    image: '/assets/camps/anekal/anekal1.webp',
+    description: 'Specialized gastroenterology camp providing comprehensive digestive health services and advanced diagnostic procedures to Anekal\'s underserved communities.',
+    participants: 186,
+    specialties: ['Gastroenterology', 'Hepatology', 'Endoscopy', 'Laboratory Services', 'Health Education'],
+    highlights: [
+      '186 consultations provided',
+      '45 blood tests conducted',
+      '11 endoscopy procedures',
+      '₹2,95,600 total healthcare value delivered'
+    ],
+    detailedDescription: `
+      The Anekal health camp brought essential digestive healthcare services to 186 community members, with a special focus on hepatology and liver health assessment. Our team of specialists provided 30 hours of consultation time, ensuring comprehensive evaluation and treatment planning for complex gastrointestinal conditions.
+
+      The camp featured extensive health education sessions in Kannada, helping community members understand preventive measures for common digestive disorders. Advanced diagnostic capabilities, including endoscopy and comprehensive blood testing, enabled early detection and immediate treatment initiation for identified conditions.
+    `,
+    outcomes: [
+      'Delivered 186 specialist consultations with personalized care',
+      'Performed 45 blood tests with 340 minutes of laboratory time',
+      'Completed 11 endoscopic procedures for accurate diagnosis',
+      'Provided ₹2,95,600 worth of free medical services',
+      'Detected and treated chronic liver conditions',
+      'Conducted health education sessions for disease prevention',
+      'Initiated treatment for 22 patients with chronic conditions'
+    ],
+    gallery: {
+      images: [
+        '/assets/camps/anekal/anekal1.webp',
+        '/assets/camps/anekal/anekal2.webp',
+        '/assets/camps/anekal/anekal3.webp',
+        '/assets/camps/anekal/anekal4.webp',
+        '/assets/camps/anekal/anekal6.webp',
+        '/assets/camps/anekal/anekal7.webp',
+        '/assets/camps/anekal/anekal8.webp',
+        '/assets/camps/anekal/anekal9.webp',
+        '/assets/camps/anekal/anekal10.webp',
+        '/assets/camps/anekal/anekal11.webp'
+      ],
+      videos: []
+    },
+    impactMetrics: {
+      patientsSeen: '186',
+      proceduresCompleted: '11',
+      medicationDistributed: '₹1,58,100',
+      followUpCases: '22',
+      healthEducationReach: '186'
+    },
+    costBreakdown: {
+      consultationCost: '₹1,58,100',
+      bloodTestsCost: '₹42,500',
+      endoscopyCost: '₹55,000',
+      totalValue: '₹2,95,600'
     }
   }
 ];

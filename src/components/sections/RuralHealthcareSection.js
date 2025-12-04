@@ -10,22 +10,22 @@ const RuralHealthcareSection = () => {
     {
       title: 'High Mortality Rates',
       description: 'High rates of maternal & infant mortality',
-      icon: '/assets/icons/doctor.svg'
+      icon: '/assets/icons/highestmortality.svg'
     },
     {
       title: 'Malnutrition Crisis',
       description: 'Malnutrition and delayed diagnosis',
-      icon: '/assets/icons/doctor.svg'
+      icon: '/assets/icons/malnutrition.svg'
     },
     {
       title: 'Low Life Expectancy',
       description: 'Low life expectancy and vaccination rates',
-      icon: '/assets/icons/doctor.svg'
+      icon: '/assets/icons/lowlifeexpectancy.svg'
     },
     {
       title: 'Economic Burden',
       description: 'Strong economic burden on families',
-      icon: '/assets/icons/doctor.svg'
+      icon: '/assets/icons/economicburden.svg'
     }
   ];
 

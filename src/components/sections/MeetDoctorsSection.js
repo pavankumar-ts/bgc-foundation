@@ -23,14 +23,14 @@ const MeetDoctorsSection = () => {
 
   // Team Structure as per content reference
   const teamCategories = [
-    { title: 'Specialist Gastroenterologists', count: 10, icon: '/assets/icons/doctor.svg' },
-    { title: 'Junior Doctors', count: 10, icon: '/assets/icons/doctor.svg' },
-    { title: 'Qualified Nurses', count: 15, icon: '/assets/icons/doctor.svg' },
-    { title: 'Endoscopy Technicians', count: 4, icon: '/assets/icons/doctor.svg' },
-    { title: 'Lab Technicians', count: 5, icon: '/assets/icons/doctor.svg' },
-    { title: 'Nursing Assistants', count: 10, icon: '/assets/icons/doctor.svg' },
-    { title: 'Admin Staff', count: 15, icon: '/assets/icons/doctor.svg' },
-    { title: 'Pharmacists', count: 5, icon: '/assets/icons/doctor.svg' }
+    { title: 'Specialist Gastroenterologists', count: 10},
+    { title: 'Junior Doctors', count: 10},
+    { title: 'Qualified Nurses', count: 15},
+    { title: 'Endoscopy Technicians', count: 4},
+    { title: 'Lab Technicians', count: 5},
+    { title: 'Nursing Assistants', count: 10},
+    { title: 'Admin Staff', count: 15},
+    { title: 'Pharmacists', count: 5}
   ];
 
   useEffect(() => {
@@ -152,12 +152,6 @@ const MeetDoctorsSection = () => {
               >
                 <CardContent className="space-y-4">
                   <div className="flex items-center justify-center gap-3 mb-2">
-                    <Image
-                      src={category.icon}
-                      alt={category.title}
-                      width={40}
-                      height={40}
-                    />
                     <div className="text-4xl font-bold text-primary-600">
                       {category.count}
                     </div>
@@ -175,7 +169,7 @@ const MeetDoctorsSection = () => {
         <div className="mb-0">
           <div className="text-center mb-4">
             <h3 className="subsection-h3 text-gray-900 mb-6">
-              Our super Specialists
+              Our Super Specialists
             </h3>
             <p className="body-large text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Behind every successful rural health camp are real people with real stories. These are just a few of the remarkable individuals who chose rural service over personal comfort.
@@ -201,7 +195,7 @@ const MeetDoctorsSection = () => {
                   <CardContent className="space-y-4 p-6">
                     {/* Professional Photo */}
                     <div className="mb-4">
-                      <div className="w-full h-[240px] mx-auto overflow-hidden rounded-lg group-hover:shadow-md transition-shadow duration-300 border-2 border-primary-100">
+                      <div className="w-full h-[240px] mx-auto overflow-hidden rounded-lg group-hover:shadow-md transition-shadow duration-300 ">
                         <Image
                           src={member.photo}
                           alt={member.name}
