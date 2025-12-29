@@ -101,7 +101,7 @@ const HeroSection = () => {
       <div className="relative z-10 wide-container w-full">
         <div className="text-center space-y-8 max-w-4xl mx-auto pt-24">
           {/* Main Headline */}
-          <div className={`space-y-6 ${isVisible ? 'animate-fade-in-up animate-delay-200' : 'opacity-0'}`}>
+          <div className={`space-y-6 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
             <Badge variant="default" className="text-sm font-semibold bg-white/10 backdrop-blur-sm border-white/20 text-white">
               Karnataka&apos;s First Rural Digestive Healthcare Initiative
             </Badge>

@@ -50,7 +50,7 @@ const GenericHeroSection = ({
       <div className="relative z-10 wide-container w-full">
         <div className="text-center space-y-8 max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto pt-16 lg:pt-20">
           {/* Main Headline */}
-          <div className={`space-y-6 lg:space-y-8 ${isVisible ? 'animate-fade-in-up animate-delay-200' : 'opacity-0'}`}>
+          <div className={`space-y-6 lg:space-y-8 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
             <Badge variant="default" className="text-sm lg:text-base font-semibold bg-white/10 backdrop-blur-sm border-white/20 text-white">
               {badge}
             </Badge>
@@ -67,7 +67,7 @@ const GenericHeroSection = ({
 
             {/* Key Stats Row */}
             {stats && stats.length > 0 && (
-              <div className={`grid grid-cols-1 ${stats.length === 1 ? 'md:grid-cols-1' : stats.length === 2 ? 'md:grid-cols-2' : 'md:grid-cols-3'} ${stats.length > 3 ? 'lg:grid-cols-4' : ''} gap-6 lg:gap-6 max-w-4xl lg:max-w-5xl mx-auto mt-12 lg:mt-16 ${isVisible ? 'animate-fade-in-up animate-delay-400' : 'opacity-0'}`}>
+              <div className={`grid grid-cols-1 ${stats.length === 1 ? 'md:grid-cols-1' : stats.length === 2 ? 'md:grid-cols-2' : 'md:grid-cols-3'} ${stats.length > 3 ? 'lg:grid-cols-4' : ''} gap-6 lg:gap-6 max-w-4xl lg:max-w-5xl mx-auto mt-12 lg:mt-16 ${isVisible ? 'animate-fade-in-up animate-delay-100' : 'opacity-0'}`}>
                 {stats.map((stat, index) => (
                   <div key={index} className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-6 lg:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
                     <div className="text-3xl lg:text-4xl font-bold text-white mb-2">{stat.value}</div>
