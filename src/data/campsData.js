@@ -13,8 +13,7 @@ export const campsData = [
     highlights: [
       '218 consultations provided',
       '41 blood tests conducted',
-      '12 endoscopy procedures',
-      '₹3,07,007 total healthcare value delivered'
+      '12 endoscopy procedures'
     ],
     detailedDescription: `
       Our Sarjapura rural health camp delivered comprehensive digestive healthcare to 218 community members, providing specialized gastroenterology consultations, advanced diagnostic procedures, and essential laboratory services. This camp demonstrated the power of bringing urban-level medical care directly to rural doorsteps.
@@ -25,7 +24,6 @@ export const campsData = [
       'Successfully completed 218 comprehensive consultations',
       'Conducted 41 essential blood tests with 290 minutes of machine time',
       'Performed 12 life-saving endoscopy procedures',
-      'Delivered ₹3,07,007 worth of free healthcare services',
       'Early diagnosis and treatment initiation for identified conditions',
       'Provided nutritional advice and lifestyle modification guidance',
       'Established follow-up care protocols for complex cases'
@@ -50,15 +48,8 @@ export const campsData = [
     impactMetrics: {
       patientsSeen: '218',
       proceduresCompleted: '12',
-      medicationDistributed: '₹1,85,300',
       followUpCases: '15',
       healthEducationReach: '218'
-    },
-    costBreakdown: {
-      consultationCost: '₹1,85,300',
-      bloodTestsCost: '₹61,707',
-      endoscopyCost: '₹60,000',
-      totalValue: '₹3,07,007'
     }
   },
   {
@@ -74,8 +65,7 @@ export const campsData = [
     highlights: [
       '165 consultations provided',
       '17 blood tests conducted',
-      '9 endoscopy procedures',
-      '₹2,03,950 total healthcare value delivered'
+      '9 endoscopy procedures'
     ],
     detailedDescription: `
       The Harohalli health camp provided essential gastroenterology and preventive care services to 165 community members, focusing on early detection and treatment of digestive disorders. Our mobile medical unit enabled advanced diagnostic procedures in a rural setting.
@@ -86,7 +76,6 @@ export const campsData = [
       'Delivered 165 comprehensive specialist consultations',
       'Performed 17 critical blood tests with 130 minutes of machine time',
       'Completed 9 endoscopic procedures with 90 minutes of technician time',
-      'Provided ₹2,03,950 worth of free healthcare services',
       'Identified and initiated treatment for chronic conditions',
       'Delivered nutritional counseling and preventive care guidance',
       'Established referral pathways for specialized treatment needs'
@@ -113,15 +102,8 @@ export const campsData = [
     impactMetrics: {
       patientsSeen: '165',
       proceduresCompleted: '9',
-      medicationDistributed: '₹1,40,250',
       followUpCases: '12',
       healthEducationReach: '165'
-    },
-    costBreakdown: {
-      consultationCost: '₹1,40,250',
-      bloodTestsCost: '₹18,700',
-      endoscopyCost: '₹45,000',
-      totalValue: '₹2,03,950'
     }
   },
   {
@@ -137,8 +119,7 @@ export const campsData = [
     highlights: [
       '212 consultations provided',
       '52 Fibroscan assessments performed',
-      '28 chronic liver disease cases identified',
-      '₹3,95,770 total healthcare value delivered'
+      '28 chronic liver disease cases identified'
     ],
     detailedDescription: `
       The Kanakapura camp marked a revolutionary milestone in rural healthcare by introducing advanced Fibroscan technology for liver disease detection. This cutting-edge diagnostic tool enabled early identification of liver conditions, embodying our principle that "liver disease is a silent killer."
@@ -150,7 +131,6 @@ export const campsData = [
       'Performed 52 Fibroscan assessments with 260 minutes of technician time',
       'Successfully identified 28 cases of chronic liver disease',
       'Conducted 34 blood tests with 260 minutes of machine time',
-      'Delivered ₹3,95,770 worth of advanced healthcare services',
       'Provided immediate lifestyle modification guidance for liver health',
       'Initiated treatment protocols for identified liver conditions',
       'Established long-term monitoring plans for chronic cases'
@@ -178,16 +158,8 @@ export const campsData = [
     impactMetrics: {
       patientsSeen: '212',
       proceduresCompleted: '57',
-      medicationDistributed: '₹1,80,200',
       followUpCases: '28',
       healthEducationReach: '212'
-    },
-    costBreakdown: {
-      consultationCost: '₹1,80,200',
-      bloodTestsCost: '₹32,070',
-      endoscopyCost: '₹27,500',
-      fibroscanCost: '₹1,56,000',
-      totalValue: '₹3,95,770'
     },
     fibroscanInsight: {
       title: 'Revolutionary Liver Disease Detection',
@@ -204,27 +176,28 @@ export const campsData = [
     status: 'completed',
     image: '/assets/camps/ramnagara/ramnagara1.webp',
     description: 'Comprehensive digestive health screening and specialized care bringing advanced medical diagnostics to the rural communities of Ramnagara.',
-    participants: 195,
+    participants: 486,
     specialties: ['Gastroenterology', 'General Medicine', 'Endoscopy', 'Laboratory Services', 'Nutritional Counseling'],
     highlights: [
-      '195 consultations provided',
-      '38 blood tests conducted',
-      '15 endoscopy procedures',
-      '₹2,78,450 total healthcare value delivered'
+      '486 consultations provided (265 male, 221 female)',
+      '858 laboratory tests conducted',
+      '91 gastroenterology procedures performed',
+      '462 gastroenterology medicines distributed'
     ],
     detailedDescription: `
-      The Ramnagara health camp served 195 community members with comprehensive digestive health services, focusing on early detection of gastrointestinal disorders and preventive care education. Our specialized team provided 30 hours of consultation time, ensuring thorough assessment and personalized treatment plans for each patient.
+      The Ramnagara health camp served 486 community members with comprehensive digestive health services, focusing on early detection of gastrointestinal disorders and preventive care education. Our specialized team provided extensive consultation time, ensuring thorough assessment and personalized treatment plans for each patient.
 
-      This camp particularly emphasized nutritional counseling and lifestyle modification guidance, recognizing the strong connection between dietary habits and digestive health. Advanced endoscopic procedures were performed using our mobile unit, enabling accurate diagnosis of conditions that would otherwise require urban hospital visits.
+      This camp featured advanced diagnostic capabilities including Fibroscan technology, multiple endoscopy procedures, and comprehensive laboratory services. With 858 laboratory tests and 91 gastroenterology procedures, this was one of our most comprehensive rural healthcare initiatives.
     `,
     outcomes: [
-      'Successfully completed 195 comprehensive consultations',
-      'Conducted 38 essential blood tests with 285 minutes of machine time',
-      'Performed 15 endoscopy procedures with advanced diagnostic capabilities',
-      'Delivered ₹2,78,450 worth of free healthcare services',
-      'Identified and treated acute gastrointestinal infections',
+      'Successfully completed 486 comprehensive consultations (265 male, 221 female)',
+      'Conducted 858 laboratory tests including serology, biochemistry, and hematology',
+      'Performed 91 gastroenterology procedures including 38 gastroscopies with H. Pylori testing',
+      'Conducted 25 Fibroscan assessments for liver health evaluation',
+      'Distributed 462 gastroenterology medicines',
+      'Performed 9 Urea Breath Tests and 15 PEP Tests',
       'Provided specialized dietary counseling for digestive disorders',
-      'Established follow-up protocols for 18 chronic cases'
+      'Established comprehensive follow-up protocols for identified chronic cases'
     ],
     gallery: {
       images: [
@@ -244,17 +217,41 @@ export const campsData = [
       videos: []
     },
     impactMetrics: {
-      patientsSeen: '195',
-      proceduresCompleted: '15',
-      medicationDistributed: '₹1,65,750',
-      followUpCases: '18',
-      healthEducationReach: '195'
+      patientsSeen: '486',
+      proceduresCompleted: '91',
+      medicationDistributed: '462',
+      laboratoryTests: '858',
+      healthEducationReach: '486'
     },
-    costBreakdown: {
-      consultationCost: '₹1,65,750',
-      bloodTestsCost: '₹37,700',
-      endoscopyCost: '₹75,000',
-      totalValue: '₹2,78,450'
+    detailedStats: {
+      consultations: {
+        male: 265,
+        female: 221,
+        total: 486
+      },
+      gastroenterology: {
+        fibroscan: 25,
+        gastroscopyWithHPylori: 38,
+        pepTest: 15,
+        sigmoidoscopy: 4,
+        ureaBreathTest: 9,
+        total: 91
+      },
+      laboratory: {
+        grbs: 87,
+        biochemistry: 198,
+        clinicalPathology: 3,
+        haematology: 157,
+        immunology: 76,
+        microbiology: 11,
+        serology: 286,
+        histopathology: 3,
+        renalFunctionTest: 37,
+        total: 858
+      },
+      medicines: {
+        gastroenterologyMedicines: 462
+      }
     }
   },
   {
@@ -270,8 +267,7 @@ export const campsData = [
     highlights: [
       '186 consultations provided',
       '45 blood tests conducted',
-      '11 endoscopy procedures',
-      '₹2,95,600 total healthcare value delivered'
+      '11 endoscopy procedures'
     ],
     detailedDescription: `
       The Anekal health camp brought essential digestive healthcare services to 186 community members, with a special focus on hepatology and liver health assessment. Our team of specialists provided 30 hours of consultation time, ensuring comprehensive evaluation and treatment planning for complex gastrointestinal conditions.
@@ -282,7 +278,6 @@ export const campsData = [
       'Delivered 186 specialist consultations with personalized care',
       'Performed 45 blood tests with 340 minutes of laboratory time',
       'Completed 11 endoscopic procedures for accurate diagnosis',
-      'Provided ₹2,95,600 worth of free medical services',
       'Detected and treated chronic liver conditions',
       'Conducted health education sessions for disease prevention',
       'Initiated treatment for 22 patients with chronic conditions'
@@ -305,15 +300,8 @@ export const campsData = [
     impactMetrics: {
       patientsSeen: '186',
       proceduresCompleted: '11',
-      medicationDistributed: '₹1,58,100',
       followUpCases: '22',
       healthEducationReach: '186'
-    },
-    costBreakdown: {
-      consultationCost: '₹1,58,100',
-      bloodTestsCost: '₹42,500',
-      endoscopyCost: '₹55,000',
-      totalValue: '₹2,95,600'
     }
   }
 ];

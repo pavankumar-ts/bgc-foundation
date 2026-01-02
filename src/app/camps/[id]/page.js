@@ -14,6 +14,7 @@ export default function CampDetailPage({ params }) {
   const [loading, setLoading] = useState(true);
   const [selectedImage, setSelectedImage] = useState(null);
   const [showAllImages, setShowAllImages] = useState(false);
+  const [playingVideos, setPlayingVideos] = useState({});
 
   useEffect(() => {
     async function loadCamp() {
@@ -175,39 +176,6 @@ export default function CampDetailPage({ params }) {
                 </div>
               )}
 
-              {/* Cost Breakdown */}
-              {camp.costBreakdown && (
-                <div className="mb-12">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-6">Healthcare Value Delivered</h3>
-                  <Card className="p-6">
-                    <div className="space-y-4">
-                      <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                        <span className="text-gray-600">Consultation Services</span>
-                        <span className="font-semibold text-gray-900">{camp.costBreakdown.consultationCost}</span>
-                      </div>
-                      <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                        <span className="text-gray-600">Laboratory Tests</span>
-                        <span className="font-semibold text-gray-900">{camp.costBreakdown.bloodTestsCost}</span>
-                      </div>
-                      <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                        <span className="text-gray-600">Endoscopy Procedures</span>
-                        <span className="font-semibold text-gray-900">{camp.costBreakdown.endoscopyCost}</span>
-                      </div>
-                      {camp.costBreakdown.fibroscanCost && (
-                        <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                          <span className="text-gray-600">Fibroscan Assessments</span>
-                          <span className="font-semibold text-gray-900">{camp.costBreakdown.fibroscanCost}</span>
-                        </div>
-                      )}
-                      <div className="flex justify-between items-center py-2 pt-4 border-t-2 border-primary-200">
-                        <span className="text-lg font-bold text-gray-900">Total Healthcare Value</span>
-                        <span className="text-xl font-bold text-primary-600">{camp.costBreakdown.totalValue}</span>
-                      </div>
-                    </div>
-                  </Card>
-                </div>
-              )}
-
               {/* Gallery */}
               {camp.gallery && (camp.gallery.images?.length > 0 || camp.gallery.videos?.length > 0) && (
                 <div className="mb-12">
@@ -229,15 +197,20 @@ export default function CampDetailPage({ params }) {
                                 controls
                                 className="w-full h-full object-cover"
                                 preload="metadata"
+                                onPlay={() => setPlayingVideos(prev => ({ ...prev, [index]: true }))}
+                                onPause={() => setPlayingVideos(prev => ({ ...prev, [index]: false }))}
+                                onEnded={() => setPlayingVideos(prev => ({ ...prev, [index]: false }))}
                               >
                                 Your browser does not support the video tag.
                               </video>
                               {/* Play button overlay */}
-                              <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover/video:opacity-100 transition-opacity duration-300 pointer-events-none">
-                                <div className="bg-white/90 rounded-full p-4 transform scale-75 group-hover/video:scale-100 transition-transform duration-300 shadow-lg">
-                                  <FaPlay className="w-8 h-8 text-primary-600 ml-1" />
+                              {!playingVideos[index] && (
+                                <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover/video:opacity-100 transition-opacity duration-300 pointer-events-none">
+                                  <div className="bg-white/90 rounded-full p-4 transform scale-75 group-hover/video:scale-100 transition-transform duration-300 shadow-lg">
+                                    <FaPlay className="w-8 h-8 text-primary-600 ml-1" />
+                                  </div>
                                 </div>
-                              </div>
+                              )}
                             </div>
                           </Card>
                         ))}
@@ -338,14 +311,24 @@ export default function CampDetailPage({ params }) {
                     <span className="text-gray-600">Procedures</span>
                     <span className="font-semibold text-gray-900">{camp.impactMetrics.proceduresCompleted}</span>
                   </div>
-                  <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                    <span className="text-gray-600">Healthcare Value</span>
-                    <span className="font-semibold text-gray-900">{camp.costBreakdown.totalValue}</span>
-                  </div>
-                  <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                    <span className="text-gray-600">Follow-up Cases</span>
-                    <span className="font-semibold text-gray-900">{camp.impactMetrics.followUpCases}</span>
-                  </div>
+                  {camp.impactMetrics.laboratoryTests && (
+                    <div className="flex justify-between items-center py-2 border-b border-gray-100">
+                      <span className="text-gray-600">Laboratory Tests</span>
+                      <span className="font-semibold text-gray-900">{camp.impactMetrics.laboratoryTests}</span>
+                    </div>
+                  )}
+                  {camp.impactMetrics.medicationDistributed && (
+                    <div className="flex justify-between items-center py-2 border-b border-gray-100">
+                      <span className="text-gray-600">Medicines Distributed</span>
+                      <span className="font-semibold text-gray-900">{camp.impactMetrics.medicationDistributed}</span>
+                    </div>
+                  )}
+                  {camp.impactMetrics.followUpCases && (
+                    <div className="flex justify-between items-center py-2 border-b border-gray-100">
+                      <span className="text-gray-600">Follow-up Cases</span>
+                      <span className="font-semibold text-gray-900">{camp.impactMetrics.followUpCases}</span>
+                    </div>
+                  )}
                   <div className="flex justify-between items-center py-2">
                     <span className="text-gray-600">Education Reach</span>
                     <span className="font-semibold text-gray-900">{camp.impactMetrics.healthEducationReach}</span>

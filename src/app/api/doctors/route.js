@@ -33,6 +33,7 @@ export async function GET() {
     const allowedDepartments = [
       'Medical Gastroenterology',
       'Surgical Gastroenterology',
+      'Paediatric Gastroenterology',
       'Radiology',
       'Nutrition & Dietetics'
     ];
@@ -41,9 +42,14 @@ export async function GET() {
       const department = doctor.attributes?.field_department;
       const name = doctor.attributes?.title;
 
-      // Exclude Dr. Kajal Prakash
-      if (name && name.toLowerCase().includes('kajal prakash')) {
-        return false;
+      // Exclude specific doctors
+      if (name) {
+        const nameLower = name.toLowerCase();
+        if (nameLower.includes('kajal prakash') ||
+            nameLower.includes('lohith u') ||
+            nameLower.includes('satyajith godhi')) {
+          return false;
+        }
       }
 
       return department && allowedDepartments.includes(department);

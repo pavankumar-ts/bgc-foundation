@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Card, CardContent } from '../ui/Card';
 import Badge from '../ui/Badge';
 import Image from 'next/image';
+import { ORGANIZATION, LEADERSHIP, IMAGES, formatCredentials } from '@/config/siteConfig';
 
 const AboutSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -89,7 +90,7 @@ const AboutSection = () => {
             style={{ animationDelay: isVisible ? '0.3s' : '0s' }}
           >
             <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-              BGC Foundation is Karnataka&apos;s first dedicated rural digestive healthcare initiative,
+              {ORGANIZATION.name} is {ORGANIZATION.subtitle},
               bringing specialized medical care directly to underserved communities through innovative
               mobile healthcare delivery.
             </p>
@@ -138,8 +139,8 @@ const AboutSection = () => {
               <div className="flex-shrink-0">
                 <div className="relative w-64 h-80 rounded-2xl overflow-hidden shadow-lg">
                   <Image
-                    src="/assets/dr-yogananda.webp"
-                    alt="Dr. Yogananda Reddy"
+                    src={IMAGES.drYogananda}
+                    alt={LEADERSHIP.chiefGastroenterologist.name}
                     fill
                     className="object-cover object-center"
                   />
@@ -151,20 +152,20 @@ const AboutSection = () => {
                   Medical Leadership
                 </Badge>
                 <h3 className="text-3xl font-bold text-gray-900 mb-4">
-                  Dr. Yogananda Reddy
+                  {LEADERSHIP.chiefGastroenterologist.name}
                 </h3>
                 <div className="text-lg text-primary-600 font-semibold mb-6">
-                  Chief Gastroenterologist & Founder
+                  {LEADERSHIP.chiefGastroenterologist.titles[0]}
                 </div>
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  UK-trained specialist with 20+ years of international experience, pioneering
+                  UK-trained specialist with {LEADERSHIP.chiefGastroenterologist.experience.display} of international experience, pioneering
                   rural healthcare delivery in Karnataka. Bringing NHS-standard care to
                   underserved communities.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <Badge variant="outline" className="text-xs">FRCP (London)</Badge>
-                  <Badge variant="outline" className="text-xs">MRCP (UK)</Badge>
-                  <Badge variant="outline" className="text-xs">CCT Gastroenterology</Badge>
+                  {LEADERSHIP.chiefGastroenterologist.credentials.slice(1, 4).map((credential, index) => (
+                    <Badge key={index} variant="outline" className="text-xs">{credential}</Badge>
+                  ))}
                 </div>
               </div>
             </div>

@@ -1,21 +1,22 @@
 import GenericHeroSection from '../../components/sections/GenericHeroSection';
 import AboutGoalSection from '../../components/sections/AboutGoalSection';
 import AboutSection from '../../components/sections/AboutSection';
+import { ORGANIZATION, STATISTICS, CONTACT } from '@/config/siteConfig';
 
 export default function About() {
   return (
     <>
       <GenericHeroSection
-        badge="About BGC Foundation"
-        title="Transforming Rural Digestive Healthcare in Karnataka"
-        description="BGC Foundation brings specialized digestive healthcare directly to rural communities through our innovative 'Hospital on Wheels' model, ensuring world-class medical care reaches those who need it most."
+        badge={`About ${ORGANIZATION.name}`}
+        title={`Transforming Rural Digestive Healthcare in ${CONTACT.address.state}`}
+        description={`${ORGANIZATION.name} brings specialized digestive healthcare directly to rural communities through our innovative '${ORGANIZATION.model}' model, ensuring world-class medical care reaches those who need it most.`}
         stats={[
-          { value: "2024", label: "Foundation Established" },
-          { value: "5+", label: "Villages Served" },
-          { value: "1.5K+", label: "Lives Impacted" }
+          { value: ORGANIZATION.foundingYear, label: "Foundation Established" },
+          { value: STATISTICS.healthCamps.display, label: STATISTICS.healthCamps.label },
+          { value: STATISTICS.metrics.livesImpacted.display, label: STATISTICS.metrics.livesImpacted.label }
         ]}
         imageSrc='/assets/about-hero.webp'
-        imageAlt="BGC Foundation rural digestive healthcare mission in Karnataka"
+        imageAlt={`${ORGANIZATION.name} rural digestive healthcare mission in ${CONTACT.address.state}`}
         fallbackIcon="🏥💚"
       />
       <AboutGoalSection />

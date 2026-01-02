@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Card, CardContent } from '../ui/Card';
 import Badge from '../ui/Badge';
 import Image from 'next/image';
+import { LEADERSHIP, IMAGES } from '@/config/siteConfig';
 
 const LeadershipSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -77,8 +78,8 @@ const LeadershipSection = () => {
                 style={{ animationDelay: isVisible ? '0.7s' : '0s' }}
               >
                 <Image
-                  src="/assets/dr-yogananda.webp"
-                  alt="Dr. Yogananda Reddy - Chief Gastroenterologist"
+                  src={IMAGES.drYogananda}
+                  alt={`${LEADERSHIP.chiefGastroenterologist.name} - Chief Gastroenterologist`}
                   width={280}
                   height={350}
                   className="w-[400px] h-80 object-cover rounded-xl shadow-lg"
@@ -92,10 +93,10 @@ const LeadershipSection = () => {
                   style={{ animationDelay: isVisible ? '0.9s' : '0s' }}
                 >
                   <h3 className="text-3xl font-bold text-gray-900 mb-2">
-                    Dr. Yogananda Reddy
+                    {LEADERSHIP.chiefGastroenterologist.name}
                   </h3>
                   <p className="text-primary-600 font-semibold text-lg mb-6">
-                    Chief Gastroenterologist & Program Director
+                    {LEADERSHIP.chiefGastroenterologist.titles[0]}
                   </p>
                 </div>
 
@@ -104,7 +105,7 @@ const LeadershipSection = () => {
                   style={{ animationDelay: isVisible ? '1.1s' : '0s' }}
                 >
                   <p className="body-large text-gray-700 leading-relaxed">
-                    International gastroenterologist with over 20 years of clinical excellence, bringing NHS-trained expertise and world-class medical standards to rural Karnataka healthcare programs.
+                    International gastroenterologist with over {LEADERSHIP.chiefGastroenterologist.experience.years} years of clinical excellence, bringing NHS-trained expertise and world-class medical standards to rural Karnataka healthcare programs.
                   </p>
                 </div>
 
@@ -115,10 +116,9 @@ const LeadershipSection = () => {
                   <div className="space-y-4">
                     <h4 className="font-semibold text-gray-900">Professional Credentials</h4>
                     <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
-                      <Badge variant="outline" className="text-xs">MBBS, FRCP (London)</Badge>
-                      <Badge variant="outline" className="text-xs">MRCP (UK)</Badge>
-                      <Badge variant="outline" className="text-xs">CCT Gastroenterology</Badge>
-                      <Badge variant="outline" className="text-xs">NHS Excellence Award</Badge>
+                      {LEADERSHIP.chiefGastroenterologist.credentials.map((credential, index) => (
+                        <Badge key={index} variant="outline" className="text-xs">{credential}</Badge>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -129,8 +129,12 @@ const LeadershipSection = () => {
                 >
                   <div className="pt-6 border-t border-gray-200">
                     <p className="text-sm text-gray-600 leading-relaxed">
-                      <span className="font-medium">Former Chief of Gastroenterology</span> at Manchester University Hospitals, UK.<br/>
-                      <span className="font-medium">Medical Director</span> at Bangalore Gastro Centre.
+                      {LEADERSHIP.chiefGastroenterologist.formerPositions.map((position, index) => (
+                        <span key={index}>
+                          <span className="font-medium">{position.split(' at ')[0]}</span> at {position.split(' at ')[1]}
+                          {index < LEADERSHIP.chiefGastroenterologist.formerPositions.length - 1 && <><br /></>}
+                        </span>
+                      ))}
                     </p>
                   </div>
                 </div>

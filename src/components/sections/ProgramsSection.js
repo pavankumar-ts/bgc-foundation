@@ -13,7 +13,7 @@ const ProgramsSection = () => {
     {
       title: 'Gastroenterology Consultations',
       description: 'Expert diagnosis and treatment by specialist gastroenterologists',
-      img: '/assets/programs/consultations.webp',
+      img: '/assets/programs/consultations-img.webp',
     },
     {
       title: 'Endoscopy Services',

@@ -1,4 +1,5 @@
 import { Card, CardContent } from '../../components/ui/Card';
+import { ORGANIZATION, CONTACT, LEGAL } from '@/config/siteConfig';
 
 export default function TermsOfService() {
   return (
@@ -7,7 +8,7 @@ export default function TermsOfService() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">Terms of Service</h1>
-            <p className="text-gray-600">Last updated: December 2024</p>
+            <p className="text-gray-600">Last updated: {LEGAL.lastUpdated}</p>
           </div>
 
           <Card>
@@ -15,14 +16,14 @@ export default function TermsOfService() {
               <section className="mb-8">
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">Agreement to Terms</h2>
                 <p className="text-gray-700 leading-relaxed">
-                  By accessing and using the BGC Foundation website and services, you accept and agree to be bound by the terms and provision of this agreement. These Terms of Service govern your relationship with BGC Foundation.
+                  By accessing and using the {ORGANIZATION.name} website and services, you accept and agree to be bound by the terms and provision of this agreement. These Terms of Service govern your relationship with {ORGANIZATION.name}.
                 </p>
               </section>
 
               <section className="mb-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">About BGC Foundation</h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">About {ORGANIZATION.name}</h2>
                 <p className="text-gray-700 leading-relaxed">
-                  BGC Foundation is a registered non-profit organization dedicated to providing healthcare programs to rural communities in Karnataka, India. Our mission is to bridge the gap between specialized medical care and underserved populations.
+                  {ORGANIZATION.name} is a registered non-profit organization dedicated to providing healthcare programs to rural communities in Karnataka, India. Our mission is to bridge the gap between specialized medical care and underserved populations.
                 </p>
               </section>
 
@@ -74,7 +75,7 @@ export default function TermsOfService() {
               <section className="mb-8">
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">Intellectual Property</h2>
                 <p className="text-gray-700">
-                  The content, design, and materials on this website are owned by BGC Foundation and are protected by copyright and other intellectual property laws. You may not reproduce, distribute, or create derivative works without our written permission.
+                  The content, design, and materials on this website are owned by {ORGANIZATION.name} and are protected by copyright and other intellectual property laws. You may not reproduce, distribute, or create derivative works without our written permission.
                 </p>
               </section>
 
@@ -101,14 +102,14 @@ export default function TermsOfService() {
               <section className="mb-8">
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">Limitation of Liability</h2>
                 <p className="text-gray-700">
-                  BGC Foundation shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of our website or participation in our programs, except as required by applicable law.
+                  {ORGANIZATION.name} shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of our website or participation in our programs, except as required by applicable law.
                 </p>
               </section>
 
               <section className="mb-8">
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">Governing Law</h2>
                 <p className="text-gray-700">
-                  These Terms of Service are governed by the laws of India and the state of Karnataka. Any disputes will be resolved in the courts of Bangalore, Karnataka.
+                  These Terms of Service are governed by the laws of {LEGAL.jurisdiction.country} and the state of {LEGAL.jurisdiction.state}. Any disputes will be resolved in the {LEGAL.jurisdiction.courts}.
                 </p>
               </section>
 
@@ -119,10 +120,10 @@ export default function TermsOfService() {
                 </p>
                 <div className="bg-gray-50 p-4 rounded-lg mt-4">
                   <p className="text-gray-700">
-                    <strong>BGC Foundation</strong><br />
-                    Email: legal@bgcfoundation.org<br />
-                    Phone: +91-XXX-XXX-XXXX<br />
-                    Address: Bangalore Gastro Centre (BGC) Hospitals, Bengaluru, Karnataka
+                    <strong>{ORGANIZATION.name}</strong><br />
+                    Email: {CONTACT.emails.legal}<br />
+                    Phone: {CONTACT.phones.hospital}<br />
+                    Address: {ORGANIZATION.fullName}, {CONTACT.address.fullAddress}
                   </p>
                 </div>
               </section>

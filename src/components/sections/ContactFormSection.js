@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { Card, CardContent, CardHeader } from '../ui/Card';
 import Badge from '../ui/Badge';
+import { ORGANIZATION, CONTACT, getTelLink, getMailtoLink } from '@/config/siteConfig';
+import { GOOGLE_SHEETS_URL } from '@/config/constants';
 
 export default function ContactFormSection() {
   const [formData, setFormData] = useState({
@@ -14,6 +16,9 @@ export default function ContactFormSection() {
     inquiryType: 'general'
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
@@ -21,10 +26,47 @@ export default function ContactFormSection() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const response = await fetch(GOOGLE_SHEETS_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          formType: 'foundation-lead',
+          date: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          interestType: formData.inquiryType,
+          message: `${formData.organization ? `Organization: ${formData.organization}\n\n` : ''}${formData.message}`,
+          sourcePage: window.location.pathname
+        })
+      });
+
+      // Since we're using no-cors, we can't read the response
+      // Assume success if no error is thrown
+      setSubmitStatus('success');
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        organization: '',
+        message: '',
+        inquiryType: 'general'
+      });
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -37,7 +79,7 @@ export default function ContactFormSection() {
               Get In Touch
             </Badge>
             <h1 className="hero-h1 gradient-text mb-6">
-              Contact BGC Foundation
+              Contact {ORGANIZATION.name}
             </h1>
             <p className="body-large text-gray-600 leading-relaxed max-w-3xl mx-auto">
               Ready to partner with us in transforming rural healthcare? Have questions about our programs? 
@@ -54,9 +96,9 @@ export default function ContactFormSection() {
             {/* Contact Information */}
             <div>
               <h2 className="section-h2 text-gray-900 mb-8">
-                Bangalore Gastro Centre (BGC) Foundation
+                {ORGANIZATION.fullName}
               </h2>
-              
+
               <div className="space-y-8">
                 <Card className="medical-card">
                   <CardContent className="p-6">
@@ -64,8 +106,8 @@ export default function ContactFormSection() {
                       Location
                     </h4>
                     <p className="text-gray-600">
-                      Bengaluru, Karnataka<br />
-                      India
+                      {CONTACT.address.city}, {CONTACT.address.state}<br />
+                      {CONTACT.address.country}
                     </p>
                   </CardContent>
                 </Card>
@@ -76,8 +118,8 @@ export default function ContactFormSection() {
                       Contact Information
                     </h4>
                     <div className="space-y-2 text-gray-600">
-                      <p>Email: info@bgcfoundation.org</p>
-                      <p>Hospital: 080 4688 8888</p>
+                      <p>Email: <a href={getMailtoLink(CONTACT.emails.general)} className="text-primary-600 hover:underline">{CONTACT.emails.general}</a></p>
+                      <p>Hospital: <a href={getTelLink(CONTACT.phones.hospital)} className="text-primary-600 hover:underline">{CONTACT.phones.hospital}</a></p>
                     </div>
                   </CardContent>
                 </Card>
@@ -197,11 +239,28 @@ export default function ContactFormSection() {
                       />
                     </div>
 
+                    {submitStatus === 'success' && (
+                      <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
+                        <p className="text-green-800 text-sm font-medium">
+                          ✓ Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.
+                        </p>
+                      </div>
+                    )}
+
+                    {submitStatus === 'error' && (
+                      <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
+                        <p className="text-red-800 text-sm font-medium">
+                          ✗ Something went wrong. Please try again or contact us directly at {CONTACT.emails.general}
+                        </p>
+                      </div>
+                    )}
+
                     <button
                       type="submit"
-                      className="w-full bg-primary-500 hover:bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold shadow-lg shadow-primary-500/25 micro-transition button-click"
+                      disabled={isSubmitting}
+                      className="w-full bg-primary-500 hover:bg-primary-600 disabled:bg-gray-400 disabled:cursor-not-allowed text-white px-8 py-4 rounded-lg font-semibold shadow-lg shadow-primary-500/25 micro-transition button-click"
                     >
-                      Send Message
+                      {isSubmitting ? 'Sending...' : 'Send Message'}
                     </button>
                   </form>
                 </CardContent>

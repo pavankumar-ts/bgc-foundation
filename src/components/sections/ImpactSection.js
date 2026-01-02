@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { Card, CardContent, CardHeader } from '../ui/Card';
 import Badge from '../ui/Badge';
+import { STATISTICS, IMAGES, ORGANIZATION } from '@/config/siteConfig';
 
 const ImpactSection = () => {
   const [isInView, setIsInView] = useState(false);
@@ -14,52 +15,68 @@ const ImpactSection = () => {
     {
       key: 'consultations',
       title: 'Consultations',
-      value: 1500,
+      value: STATISTICS.patientsConsulted.value,
       subtitle: 'Free medical consultations',
       imageSrc: '/assets/programs/consultations-img.webp'
     },
     {
       key: 'bloodTests',
       title: 'Blood Tests',
-      value: 300,
+      value: STATISTICS.services.bloodTests.value,
       subtitle: 'Diagnostic screenings',
-      imageSrc: '/assets/home/blood-test.webp'
+      imageSrc: IMAGES.features.bloodTest
     },
     {
       key: 'endoscopies',
       title: 'Endoscopies',
-      value: '100+',
+      value: STATISTICS.services.endoscopies.display,
       subtitle: 'Advanced procedures',
-      imageSrc: '/assets/home/hero2.webp'
+      imageSrc: IMAGES.hero.hero2
     },
     {
       key: 'fibroscans',
       title: 'Fibroscans',
-      value: '100+',
+      value: STATISTICS.services.fibroscans.display,
       subtitle: 'Liver assessments',
-      imageSrc: '/assets/home/fibroscan.webp'
+      imageSrc: IMAGES.features.fibroscan
     },
     {
-      key: 'totalValue',
-      title: 'Healthcare Value',
-      value: 3500000,
-      subtitle: 'Total value delivered',
-      imageSrc: '/assets/home/value.webp'
+      key: 'villages',
+      title: 'Villages Reached',
+      value: STATISTICS.healthCamps.display,
+      subtitle: 'Rural communities served',
+      imageSrc: IMAGES.features.value
     },
     {
       key: 'specialistHours',
       title: 'Specialist Hours',
-      value: '100+',
+      value: STATISTICS.services.specialistHours.display,
       subtitle: 'Expert consultation time',
-      imageSrc: '/assets/home/specialist-hours.webp'
+      imageSrc: IMAGES.features.specialistHours
     }
   ];
 
   const keyOutcomes = [
-    { title: 'Early Detection Rate', value: '95%', description: 'Successful diagnoses made' },
-    { title: 'Lives Impacted', value: '1.5k', description: 'Patients served across camps' },
-    { title: 'Digestive Healthcare Access', value: '100%', description: 'Free healthcare delivery' },
-    { title: 'Communities Reached', value: '5+', description: 'Rural areas served' }
+    {
+      title: STATISTICS.metrics.earlyDetectionRate.label,
+      value: STATISTICS.metrics.earlyDetectionRate.display,
+      description: 'Successful diagnoses made'
+    },
+    {
+      title: STATISTICS.metrics.livesImpacted.label,
+      value: STATISTICS.metrics.livesImpacted.display,
+      description: 'Patients served across camps'
+    },
+    {
+      title: 'Digestive Healthcare Access',
+      value: '100%',
+      description: 'Free healthcare delivery'
+    },
+    {
+      title: STATISTICS.healthCamps.alternateLabels[1],
+      value: STATISTICS.healthCamps.display,
+      description: 'Rural areas served'
+    }
   ];
 
   // Intersection Observer
@@ -84,10 +101,6 @@ const ImpactSection = () => {
     return () => observer.disconnect();
   }, [hasAnimated]);
 
-  const formatCurrency = (value) => {
-    return `₹${(value / 100000).toFixed(2)}L`;
-  };
-
   const MetricCard = ({ metric, index, isLast }) => (
     <div
       className={`text-center p-6 relative opacity-0 ${isInView ? 'animate-smooth-fade-in-up' : ''}`}
@@ -108,7 +121,7 @@ const ImpactSection = () => {
       </div>
 
       <div className="text-4xl font-bold text-primary-600 mb-2">
-        {metric.key === 'totalValue' ? formatCurrency(metric.value) : metric.value?.toLocaleString()}
+        {typeof metric.value === 'number' ? metric.value.toLocaleString() : metric.value}
       </div>
       <h4 className="font-semibold text-gray-900 mb-1 text-sm">{metric.title}</h4>
       <p className="text-xs text-gray-600">{metric.subtitle}</p>
@@ -133,7 +146,7 @@ const ImpactSection = () => {
             style={{ animationDelay: isInView ? '0.2s' : '0s' }}
           >
             <h2 className="section-h2 gradient-text mb-6">
-              Transforming Rural DigestiveHealthcare, One Patient at a Time
+              {ORGANIZATION.tagline}
             </h2>
           </div>
           <div

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { Card, CardContent } from '../ui/Card';
 import Badge from '../ui/Badge';
 import Image from 'next/image';
+import { LEADERSHIP, STATISTICS, IMAGES, formatCredentials } from '@/config/siteConfig';
 
 const MeetDoctorsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -12,25 +13,25 @@ const MeetDoctorsSection = () => {
 
   // Featured Doctor - Dr. Yogananda Reddy
   const featuredDoctor = {
-    name: 'Dr. Yogananda Reddy',
-    title: 'Chief Gastroenterologist & Program Director',
-    credentials: ['MBBS, FRCP (London)', 'MRCP (UK)', 'CCT Gastroenterology', 'NHS Excellence Award'],
-    description: 'From London&apos;s NHS hospitals to Karnataka&apos;s villages - Dr. Reddy chose to leave his comfortable UK practice to serve those who need it most. With two decades of international expertise, he now leads our Hospital on Wheels mission, bringing world-class digestive healthcare directly to rural doorsteps.',
+    name: LEADERSHIP.chiefGastroenterologist.name,
+    title: LEADERSHIP.chiefGastroenterologist.titles[0],
+    credentials: LEADERSHIP.chiefGastroenterologist.credentials,
+    description: LEADERSHIP.chiefGastroenterologist.description,
     quote: "We don't just bring medicine to villages. We bring dignity—the dignity of receiving world-class care in your own backyard.",
-    photo: '/assets/dr-yogananda.webp',
-    experience: '50+ Years Combined Experience',
+    photo: IMAGES.drYogananda,
+    experience: LEADERSHIP.chiefGastroenterologist.experience.combinedDisplay,
   };
 
   // Team Structure as per content reference
   const teamCategories = [
-    { title: 'Specialist Gastroenterologists', count: 10},
-    { title: 'Junior Doctors', count: 10},
-    { title: 'Qualified Nurses', count: 15},
-    { title: 'Endoscopy Technicians', count: 4},
-    { title: 'Lab Technicians', count: 5},
-    { title: 'Nursing Assistants', count: 10},
-    { title: 'Admin Staff', count: 15},
-    { title: 'Pharmacists', count: 5}
+    { title: 'Specialist Gastroenterologists', count: STATISTICS.team.breakdown.specialistGastroenterologists},
+    { title: 'Junior Doctors', count: STATISTICS.team.breakdown.juniorDoctors},
+    { title: 'Qualified Nurses', count: STATISTICS.team.breakdown.qualifiedNurses},
+    { title: 'Endoscopy Technicians', count: STATISTICS.team.breakdown.endoscopyTechnicians},
+    { title: 'Lab Technicians', count: STATISTICS.team.breakdown.labTechnicians},
+    { title: 'Nursing Assistants', count: STATISTICS.team.breakdown.nursingAssistants},
+    { title: 'Admin Staff', count: STATISTICS.team.breakdown.adminStaff},
+    { title: 'Pharmacists', count: STATISTICS.team.breakdown.pharmacists}
   ];
 
   useEffect(() => {
@@ -136,7 +137,7 @@ const MeetDoctorsSection = () => {
         <div className="mb-20">
           <div className="text-center mb-12">
             <h3 className="subsection-h3 text-gray-900 mb-4">
-              74 Professionals, One Shared Purpose
+              {STATISTICS.team.total} Professionals, One Shared Purpose
             </h3>
             <p className="body-large text-gray-600 max-w-3xl mx-auto">
               When our mobile units roll into a village, they bring an entire hospital&apos;s worth of expertise. Every role matters, every person counts - from our gastroenterologists to our nursing assistants, we&apos;re a family united by purpose.
@@ -250,7 +251,7 @@ const MeetDoctorsSection = () => {
               <div className="text-sm text-gray-600">Villages Served</div>
             </div>
             <div className="bg-white px-6 py-3 rounded-lg shadow-sm">
-              <div className="text-2xl font-bold text-primary-600">74</div>
+              <div className="text-2xl font-bold text-primary-600">{STATISTICS.team.total}</div>
               <div className="text-sm text-gray-600">Dedicated Hearts</div>
             </div>
           </div>

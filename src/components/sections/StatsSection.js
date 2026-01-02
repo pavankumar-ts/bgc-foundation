@@ -3,15 +3,16 @@
 import { useState, useEffect } from 'react';
 import Button from '../ui/Button';
 import Link from 'next/link';
+import { STATISTICS, ORGANIZATION, CONTACT } from '@/config/siteConfig';
 
 const StatsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const stats = [
-    { number: '5+', label: 'Rural Health Camps' },
-    { number: '1500+', label: 'Patients Consulted' },
-    { number: '100+', label: 'Healthcare Professionals' },
-    { number: '₹35L+', label: 'Healthcare Value Delivered' }
+    { number: STATISTICS.healthCamps.display, label: STATISTICS.healthCamps.label },
+    { number: STATISTICS.patientsConsulted.display, label: STATISTICS.patientsConsulted.label },
+    { number: STATISTICS.professionals.display, label: STATISTICS.professionals.label },
+    { number: STATISTICS.services.specialistHours.display, label: STATISTICS.services.specialistHours.label }
   ];
 
   useEffect(() => {
@@ -58,10 +59,10 @@ const StatsSection = () => {
           {/* Content Section */}
           <div className={`lg:pl-8 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ transitionDelay: '600ms' }}>
             <h2 className="text-5xl font-semibold text-gray-900 mb-6">
-              Leading Digestive Healthcare Programs in Rural Karnataka
+              Leading Digestive Healthcare Programs in Rural {CONTACT.address.state}
             </h2>
             <p className="body-large text-gray-600 mb-6">
-              Through our mobile endoscopy unit and super specialist outreach programs, BGC Foundation brings world-class digestive health care directly to rural communities across Karnataka, bridging the Digestive Healthcare gap for underserved populations.
+              Through our mobile endoscopy unit and super specialist outreach programs, {ORGANIZATION.name} brings world-class digestive health care directly to rural communities across {CONTACT.address.state}, bridging the Digestive Healthcare gap for underserved populations.
             </p>
             <Link href="/about">
               <Button size="sm" className="py-6 px-6">

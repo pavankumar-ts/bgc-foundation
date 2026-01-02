@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Card, CardContent, CardHeader } from '../ui/Card';
 import Badge from '../ui/Badge';
+import { ORGANIZATION, CONTACT, PARTNERSHIPS } from '@/config/siteConfig';
 
 const PartnershipSection = () => {
   const [activePartnership, setActivePartnership] = useState('funding');
@@ -58,12 +59,7 @@ const PartnershipSection = () => {
     }
   ];
 
-  const currentPartnership = {
-    organization: 'Rotary Cubbon Park Trust',
-    district: 'RI District 3191, Bengaluru',
-    focus: 'Mobile Endoscopy Initiative',
-    status: 'Active collaboration for funding acquisition'
-  };
+  const currentPartnership = PARTNERSHIPS.current;
 
   const impactAreas = [
     {
@@ -101,7 +97,7 @@ const PartnershipSection = () => {
               Join Our Mission to Transform Rural Healthcare
             </h1>
             <p className="body-large text-gray-600 leading-relaxed max-w-3xl mx-auto">
-              Partner with BGC Foundation to bring life-saving digestive health programs to communities 
+              Partner with {ORGANIZATION.name} to bring life-saving digestive health programs to communities
               that would otherwise have no access to specialized healthcare. Your collaboration creates lasting impact.
             </p>
           </div>
@@ -170,8 +166,8 @@ const PartnershipSection = () => {
                       </p>
                       <div className="space-y-2">
                         <p className="text-sm text-gray-500">Contact Information:</p>
-                        <p className="text-gray-700">Phone: +91 96637 15077</p>
-                        <p className="text-gray-700">Email: partnerships@bgcfoundation.org</p>
+                        <p className="text-gray-700">Phone: {CONTACT.phones.mobile}</p>
+                        <p className="text-gray-700">Email: {CONTACT.emails.partnerships}</p>
                       </div>
                     </div>
                   </div>
@@ -190,11 +186,11 @@ const PartnershipSection = () => {
               Featured Partnership
             </Badge>
             <h2 className="section-h2 gradient-text mb-6">
-              Current Collaboration: Rotary Cubbon Park Trust
+              Current Collaboration: {currentPartnership.organization}
             </h2>
             <p className="body-large text-gray-600 max-w-3xl mx-auto">
-              We are currently working with the Trustees of Rotary Cubbon Park Trust, RI District 3191, 
-              Bengaluru, to secure funding for our Mobile Endoscopy Initiative.
+              We are currently working with the Trustees of {currentPartnership.organization}, {currentPartnership.district},
+              to secure funding for our {currentPartnership.focus}.
             </p>
           </div>
 
@@ -255,7 +251,7 @@ const PartnershipSection = () => {
       <section className="section-spacing bg-gradient-to-r from-primary-50 to-secondary-50">
         <div className="main-container text-center">
           <h2 className="section-h2 gradient-text mb-6">
-            Ready to Partner with BGC Foundation?
+            Ready to Partner with {ORGANIZATION.name}?
           </h2>
           <p className="body-large text-gray-600 mb-8 max-w-2xl mx-auto">
             Contact us to discuss partnership opportunities and learn how we can work together 

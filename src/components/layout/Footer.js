@@ -1,8 +1,51 @@
+'use client';
+
+import { useState } from 'react';
 import { Card, CardContent } from '../ui/Card';
 import Badge from '../ui/Badge';
 import Image from 'next/image';
+import { ORGANIZATION, LEGAL, IMAGES } from '@/config/siteConfig';
+import { GOOGLE_SHEETS_URL } from '@/config/constants';
 
 const Footer = () => {
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+
+  const handleNewsletterSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      await fetch(GOOGLE_SHEETS_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          formType: 'foundation-lead',
+          date: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
+          name: '',
+          email: email,
+          phone: '',
+          interestType: 'Newsletter Subscription',
+          message: 'Newsletter subscription request',
+          sourcePage: 'Footer Newsletter'
+        })
+      });
+
+      setSubmitStatus('success');
+      setEmail('');
+    } catch (error) {
+      console.error('Newsletter subscription error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const footerSections = [
     {
       title: 'About',
@@ -42,19 +85,41 @@ const Footer = () => {
                 Get monthly updates on our rural healthcare initiatives, patient stories,
                 and ways to make a difference in underserved communities.
               </p>
-              <div className="max-w-md mx-auto flex gap-3">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:ring-2 focus:ring-white focus:outline-none"
-                />
-                <button className="bg-white text-primary-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors shadow-sm">
-                  Subscribe
-                </button>
-              </div>
-              <p className="text-xs text-primary-200 mt-3">
-                We respect your privacy. Unsubscribe at any time.
-              </p>
+              <form onSubmit={handleNewsletterSubmit} className="max-w-md mx-auto">
+                <div className="flex gap-3">
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    disabled={isSubmitting}
+                    className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:ring-2 focus:ring-white focus:outline-none disabled:bg-gray-200 disabled:cursor-not-allowed"
+                  />
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="bg-white text-primary-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors shadow-sm disabled:bg-gray-300 disabled:cursor-not-allowed"
+                  >
+                    {isSubmitting ? 'Sending...' : 'Subscribe'}
+                  </button>
+                </div>
+                {submitStatus === 'success' && (
+                  <p className="text-xs text-white mt-3 font-medium">
+                    ✓ Successfully subscribed! Thank you for joining our community.
+                  </p>
+                )}
+                {submitStatus === 'error' && (
+                  <p className="text-xs text-red-200 mt-3 font-medium">
+                    ✗ Something went wrong. Please try again.
+                  </p>
+                )}
+                {!submitStatus && (
+                  <p className="text-xs text-primary-200 mt-3">
+                    We respect your privacy. Unsubscribe at any time.
+                  </p>
+                )}
+              </form>
             </CardContent>
           </Card>
         </div>
@@ -66,15 +131,14 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="lg:col-span-2 space-y-6">
             <Image
-              src="/assets/logo.svg"
-              alt="BGC Foundation Logo"
+              src={IMAGES.logo}
+              alt={`${ORGANIZATION.name} Logo`}
               width={1000}
               height={1000}
               className="h-20 object-left object-contain"
             />
             <p className="text-gray-700 leading-relaxed">
-              Pioneering rural healthcare accessibility for digestive health across Karnataka.
-              Bridging the gap between specialized medical care and rural communities.
+              {ORGANIZATION.tagline}. Bridging the gap between specialized medical care and rural communities.
             </p>
           </div>
 
@@ -103,7 +167,7 @@ const Footer = () => {
         <div className="section-container py-6">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 text-sm text-gray-600">
-              <span>© 2024 BGC Foundation. All rights reserved.</span>
+              <span>{LEGAL.copyright.text}</span>
               <div className="flex space-x-4">
                 <a href="/privacy-policy" className="hover:text-gray-900 transition-colors">Privacy Policy</a>
                 <a href="/terms-of-service" className="hover:text-gray-900 transition-colors">Terms of Service</a>

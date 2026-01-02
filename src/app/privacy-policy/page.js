@@ -1,4 +1,5 @@
 import { Card, CardContent } from '../../components/ui/Card';
+import { ORGANIZATION, CONTACT, LEGAL } from '@/config/siteConfig';
 
 export default function PrivacyPolicy() {
   return (
@@ -7,7 +8,7 @@ export default function PrivacyPolicy() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">Privacy Policy</h1>
-            <p className="text-gray-600">Last updated: December 2024</p>
+            <p className="text-gray-600">Last updated: {LEGAL.lastUpdated}</p>
           </div>
 
           <Card>
@@ -15,7 +16,7 @@ export default function PrivacyPolicy() {
               <section className="mb-8">
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">Introduction</h2>
                 <p className="text-gray-700 leading-relaxed">
-                  BGC Foundation (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or engage with our healthcare programs.
+                  {ORGANIZATION.name} (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or engage with our healthcare programs.
                 </p>
               </section>
 
@@ -95,10 +96,10 @@ export default function PrivacyPolicy() {
                 </p>
                 <div className="bg-gray-50 p-4 rounded-lg mt-4">
                   <p className="text-gray-700">
-                    <strong>BGC Foundation</strong><br />
-                    Email: privacy@bgcfoundation.org<br />
-                    Phone: +91-XXX-XXX-XXXX<br />
-                    Address: Bangalore Gastro Centre (BGC) Hospitals, Bengaluru, Karnataka
+                    <strong>{ORGANIZATION.name}</strong><br />
+                    Email: {CONTACT.emails.privacy}<br />
+                    Phone: {CONTACT.phones.hospital}<br />
+                    Address: {ORGANIZATION.fullName}, {CONTACT.address.fullAddress}
                   </p>
                 </div>
               </section>

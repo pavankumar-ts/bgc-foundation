@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
+import { ORGANIZATION, CONTACT, SOCIAL_MEDIA, SEO_KEYWORDS, LEADERSHIP } from '@/config/siteConfig';
 
 const inter = Inter({
   variable: "--font-inter",
@@ -11,50 +12,39 @@ const inter = Inter({
 
 export const metadata = {
   title: {
-    template: "%s | BGC Foundation",
-    default: "BGC Foundation - Discover Our Mission and Values in Rural-Centered Healthcare"
+    template: `%s | ${ORGANIZATION.name}`,
+    default: `${ORGANIZATION.name} - Discover Our Mission and Values in Rural-Centered Healthcare`
   },
-  description: "We are dedicated to providing exceptional healthcare through a compassionate, patient-centered approach, bringing specialized digestive health programs directly to rural communities across Karnataka through our innovative Hospital on Wheels model.",
-  keywords: [
-    "rural healthcare",
-    "digestive health",
-    "gastroenterology",
-    "Karnataka healthcare",
-    "mobile medical units",
-    "healthcare foundation",
-    "rural medical camps",
-    "BGC Foundation",
-    "Dr Yogananda Reddy",
-    "endoscopy programs"
-  ],
+  description: `We are dedicated to providing exceptional healthcare through a compassionate, patient-centered approach, ${ORGANIZATION.missionStatement}.`,
+  keywords: SEO_KEYWORDS,
   authors: [
     {
-      name: "BGC Foundation",
-      url: "https://bgcfoundation.org",
+      name: ORGANIZATION.name,
+      url: ORGANIZATION.domain,
     },
   ],
-  creator: "BGC Foundation",
-  publisher: "BGC Foundation",
+  creator: ORGANIZATION.name,
+  publisher: ORGANIZATION.name,
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://bgcfoundation.org'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || ORGANIZATION.domain),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "BGC Foundation - Rural Healthcare Initiative",
-    description: "Bringing specialized digestive healthcare to rural communities across Karnataka through mobile medical units and expert gastroenterologists.",
-    url: "https://bgcfoundation.org",
-    siteName: "BGC Foundation",
+    title: `${ORGANIZATION.name} - Rural Healthcare Initiative`,
+    description: ORGANIZATION.missionStatement,
+    url: ORGANIZATION.domain,
+    siteName: ORGANIZATION.name,
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "BGC Foundation - Rural Healthcare Initiative",
+        alt: `${ORGANIZATION.name} - Rural Healthcare Initiative`,
       },
     ],
     locale: "en_US",
@@ -62,8 +52,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "BGC Foundation - Rural Healthcare Initiative",
-    description: "Bringing specialized digestive healthcare to rural communities across Karnataka.",
+    title: `${ORGANIZATION.name} - Rural Healthcare Initiative`,
+    description: ORGANIZATION.tagline,
     images: ["/twitter-image.jpg"],
   },
   robots: {
@@ -114,9 +104,9 @@ export default function RootLayout({ children }) {
         
         {/* Additional meta tags for better SEO */}
         <meta name="geo.region" content="IN-KA" />
-        <meta name="geo.placename" content="Karnataka, India" />
-        <meta name="geo.position" content="12.9716;77.5946" />
-        <meta name="ICBM" content="12.9716, 77.5946" />
+        <meta name="geo.placename" content={`${CONTACT.address.state}, ${CONTACT.address.country}`} />
+        <meta name="geo.position" content={`${CONTACT.address.coordinates.latitude};${CONTACT.address.coordinates.longitude}`} />
+        <meta name="ICBM" content={`${CONTACT.address.coordinates.latitude}, ${CONTACT.address.coordinates.longitude}`} />
         
         {/* Schema.org structured data */}
         <script
@@ -125,29 +115,29 @@ export default function RootLayout({ children }) {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "NGO",
-              "name": "BGC Foundation",
-              "alternateName": "Bangalore Gastro Centre Foundation",
-              "url": "https://bgcfoundation.org",
-              "logo": "https://bgcfoundation.org/logo.png",
-              "description": "Karnataka's first comprehensive rural outreach program for digestive health",
+              "name": ORGANIZATION.name,
+              "alternateName": ORGANIZATION.fullName,
+              "url": ORGANIZATION.domain,
+              "logo": `${ORGANIZATION.domain}/logo.png`,
+              "description": ORGANIZATION.subtitle,
               "address": {
                 "@type": "PostalAddress",
-                "addressLocality": "Bengaluru",
-                "addressRegion": "Karnataka",
+                "addressLocality": CONTACT.address.city,
+                "addressRegion": CONTACT.address.state,
                 "addressCountry": "IN"
               },
               "founder": {
                 "@type": "Person",
-                "name": "Dr. Yogananda Reddy",
-                "jobTitle": "Chief Gastroenterologist & Director"
+                "name": LEADERSHIP.chiefGastroenterologist.name,
+                "jobTitle": LEADERSHIP.chiefGastroenterologist.titles[0]
               },
-              "areaServed": "Karnataka, India",
+              "areaServed": `${CONTACT.address.state}, ${CONTACT.address.country}`,
               "knowsAbout": ["Rural Healthcare", "Gastroenterology", "Mobile Medical Units"],
               "sameAs": [
-                "https://facebook.com/bgcfoundation",
-                "https://twitter.com/bgcfoundation",
-                "https://linkedin.com/company/bgcfoundation"
-              ]
+                SOCIAL_MEDIA.facebook,
+                SOCIAL_MEDIA.twitter,
+                SOCIAL_MEDIA.linkedin
+              ].filter(Boolean)
             }),
           }}
         />
