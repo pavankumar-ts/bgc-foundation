@@ -137,7 +137,7 @@ const AboutSection = () => {
           <div className="bg-gradient-to-r from-secondary-50 to-primary-50 rounded-2xl p-8 md:p-12 border border-secondary-200">
             <div className="flex flex-col lg:flex-row-reverse items-center">
               <div className="flex-shrink-0">
-                <div className="relative w-64 h-80 rounded-2xl overflow-hidden shadow-lg">
+                <div className="relative w-[24rem] h-96 rounded-2xl overflow-hidden shadow-lg">
                   <Image
                     src={IMAGES.drYogananda}
                     alt={LEADERSHIP.chiefGastroenterologist.name}

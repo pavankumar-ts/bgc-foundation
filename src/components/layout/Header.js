@@ -26,7 +26,7 @@ const Header = () => {
       }`}
     >
       <nav className="main-container">
-        <div className="flex h-20 items-center">
+        <div className="flex h-20 items-center justify-between">
           {/* Logo - Left Aligned */}
           <div className="flex-shrink-0">
             <Link href="/">
@@ -61,7 +61,7 @@ const Header = () => {
             })}
           </div>
 
-          
+
           {/* Right CTA Button */}
           <div className="hidden md:flex flex-shrink-0">
             <Link href="/contact">
@@ -72,7 +72,7 @@ const Header = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex-shrink-0">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500"
