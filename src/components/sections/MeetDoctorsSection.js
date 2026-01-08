@@ -86,19 +86,7 @@ const MeetDoctorsSection = () => {
           <Card className=" mx-auto">
             <CardContent className="p-8">
               <div className="grid lg:grid-cols-3 gap-8 items-center">
-                <div className="text-center">
-                  <div className="w-[400px] h-76 mx-auto rounded-lg overflow-hidden bg-gray-100 mb-4">
-                    <Image
-                      src={featuredDoctor.photo}
-                      alt={featuredDoctor.name}
-                      width={1000}
-                      height={1000}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-
-                <div className="lg:col-span-2 space-y-4">
+                <div className="lg:col-span-2 lg:order-1 space-y-4">
                   <h3 className="subsection-h3 text-gray-900">
                     {featuredDoctor.name}
                   </h3>
@@ -126,6 +114,18 @@ const MeetDoctorsSection = () => {
                         </Badge>
                       ))}
                     </div>
+                  </div>
+                </div>
+
+                <div className="text-center lg:order-2">
+                  <div className="w-[400px] h-76 mx-auto rounded-lg overflow-hidden bg-gray-100 mb-4">
+                    <Image
+                      src={featuredDoctor.photo}
+                      alt={featuredDoctor.name}
+                      width={1000}
+                      height={1000}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
               </div>

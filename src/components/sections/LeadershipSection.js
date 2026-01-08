@@ -70,7 +70,7 @@ const LeadershipSection = () => {
           style={{ animationDelay: isVisible ? '0.5s' : '0s' }}
         >
           <Card className="p-8 lg:p-12 shadow-lg border border-gray-200">
-            <div className="flex flex-col lg:flex-row items-center lg:items-start space-y-8 lg:space-y-0 lg:space-x-12">
+            <div className="flex flex-col lg:flex-row-reverse items-center lg:items-start space-y-8 lg:space-y-0 lg:space-x-reverse lg:space-x-12">
 
               {/* Profile Image */}
               <div
