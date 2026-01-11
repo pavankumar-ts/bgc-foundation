@@ -58,7 +58,7 @@ const StatsSection = () => {
 
           {/* Content Section */}
           <div className={`lg:pl-8 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ transitionDelay: '600ms' }}>
-            <h2 className="text-5xl font-semibold text-gray-900 mb-6">
+            <h2 className="text-3xl md:text-5xl font-semibold text-gray-900 mb-6">
               Leading Digestive Healthcare Programs in Rural {CONTACT.address.state}
             </h2>
             <p className="body-large text-gray-600 mb-6">

@@ -103,14 +103,14 @@ const ImpactSection = () => {
 
   const MetricCard = ({ metric, index, isLast }) => (
     <div
-      className={`text-center p-6 relative opacity-0 ${isInView ? 'animate-smooth-fade-in-up' : ''}`}
+      className={`text-center p-4 md:p-6 relative opacity-0 ${isInView ? 'animate-smooth-fade-in-up' : ''}`}
       style={{ animationDelay: isInView ? `${0.4 + index * 0.1}s` : '0s' }}
     >
-      {/* Divider Line */}
-      {!isLast && <div className="absolute right-0 top-4 bottom-4 w-px bg-gray-200"></div>}
+      {/* Divider Line - Hidden on mobile, shown on larger screens between items */}
+      {!isLast && <div className="hidden lg:block absolute right-0 top-4 bottom-4 w-px bg-gray-200"></div>}
 
       {/* Image */}
-      <div className="w-[100%] h-[200px] mx-auto mb-3 relative overflow-hidden rounded-lg group">
+      <div className="w-full h-[150px] sm:h-[180px] md:h-[200px] mx-auto mb-2 md:mb-3 relative overflow-hidden rounded-lg group">
         <Image
           src={metric.imageSrc}
           alt={metric.title}
@@ -120,10 +120,10 @@ const ImpactSection = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </div>
 
-      <div className="text-4xl font-bold text-primary-600 mb-2">
+      <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-600 mb-1 md:mb-2">
         {typeof metric.value === 'number' ? metric.value.toLocaleString() : metric.value}
       </div>
-      <h4 className="font-semibold text-gray-900 mb-1 text-sm">{metric.title}</h4>
+      <h4 className="font-semibold text-gray-900 mb-1 text-xs sm:text-sm">{metric.title}</h4>
       <p className="text-xs text-gray-600">{metric.subtitle}</p>
     </div>
   );
@@ -132,12 +132,12 @@ const ImpactSection = () => {
     <section className="section-spacing bg-white overflow-hidden" id="impact" ref={sectionRef}>
       <div className="section-container">
         {/* Section Header */}
-        <div className="text-center max-w-4xl mx-auto mb-12">
+        <div className="text-center max-w-4xl mx-auto mb-8 md:mb-12 px-4">
           <div
             className={`opacity-0 ${isInView ? 'animate-smooth-fade-in-up' : ''}`}
             style={{ animationDelay: isInView ? '0.1s' : '0s' }}
           >
-            <Badge variant="default" className="mb-6">
+            <Badge variant="default" className="mb-4 md:mb-6">
               Measurable Impact
             </Badge>
           </div>
@@ -145,7 +145,7 @@ const ImpactSection = () => {
             className={`opacity-0 ${isInView ? 'animate-smooth-fade-in-up' : ''}`}
             style={{ animationDelay: isInView ? '0.2s' : '0s' }}
           >
-            <h2 className="section-h2 gradient-text mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold gradient-text mb-4 md:mb-6">
               {ORGANIZATION.tagline}
             </h2>
           </div>
@@ -153,7 +153,7 @@ const ImpactSection = () => {
             className={`opacity-0 ${isInView ? 'animate-smooth-fade-in-up' : ''}`}
             style={{ animationDelay: isInView ? '0.3s' : '0s' }}
           >
-            <p className="body-large text-gray-600 leading-relaxed">
+            <p className="text-base md:text-lg text-gray-600 leading-relaxed">
               Our data-driven approach ensures transparency and accountability in every aspect
               of our rural digestive healthcare delivery. See the real impact we&apos;re making.
             </p>
@@ -161,8 +161,8 @@ const ImpactSection = () => {
         </div>
 
         {/* Overall Impact Metrics */}
-        <div className="mb-16">
-          <div className="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-0 bg-gray-50 rounded-2xl p-4 border border-gray-200 shadow-lg">
+        <div className="mb-12 md:mb-16">
+          <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-0 bg-gray-50 rounded-xl md:rounded-2xl p-2 md:p-4 border border-gray-200 shadow-lg">
             {totalImpactMetrics.map((metric, index) => (
               <MetricCard
                 key={metric.key}
@@ -175,13 +175,13 @@ const ImpactSection = () => {
         </div>
 
         {/* Key Outcomes */}
-        <div className="mb-16">
-          <div className="text-center mb-12">
+        <div className="mb-12 md:mb-16">
+          <div className="text-center mb-8 md:mb-12 px-4">
             <div
               className={`opacity-0 ${isInView ? 'animate-smooth-fade-in-up' : ''}`}
               style={{ animationDelay: isInView ? '1.0s' : '0s' }}
             >
-              <h3 className="subsection-h3 text-gray-900 mb-4">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 md:mb-4">
                 Our Key Outcomes
               </h3>
             </div>
@@ -189,29 +189,29 @@ const ImpactSection = () => {
               className={`opacity-0 ${isInView ? 'animate-smooth-fade-in-up' : ''}`}
               style={{ animationDelay: isInView ? '1.1s' : '0s' }}
             >
-              <p className="body-large text-gray-600 max-w-3xl mx-auto">
+              <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
                 Measurable results from our rural digestive healthcare programs demonstrate
                 the positive impact we&apos;re making in underserved communities.
               </p>
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 px-4">
             {keyOutcomes.map((outcome, index) => (
               <div
                 key={index}
                 className={`opacity-0 ${isInView ? 'animate-smooth-fade-in-up' : ''}`}
                 style={{ animationDelay: isInView ? `${1.2 + index * 0.1}s` : '0s' }}
               >
-                <Card className="medical-card text-center">
-                  <CardContent className="p-8">
-                    <div className="text-4xl font-bold text-primary-600 mb-3">
+                <Card className="medical-card text-center h-full">
+                  <CardContent className="p-6 md:p-8">
+                    <div className="text-3xl md:text-4xl font-bold text-primary-600 mb-2 md:mb-3">
                       {outcome.value}
                     </div>
-                    <h4 className="font-bold text-gray-900 mb-2">
+                    <h4 className="font-bold text-gray-900 mb-2 text-sm md:text-base">
                       {outcome.title}
                     </h4>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-xs md:text-sm text-gray-600">
                       {outcome.description}
                     </p>
                   </CardContent>

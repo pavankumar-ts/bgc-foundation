@@ -85,8 +85,8 @@ const Footer = () => {
                 Get monthly updates on our rural healthcare initiatives, patient stories,
                 and ways to make a difference in underserved communities.
               </p>
-              <form onSubmit={handleNewsletterSubmit} className="max-w-md mx-auto">
-                <div className="flex gap-3">
+              <form onSubmit={handleNewsletterSubmit} className="max-w-md mx-auto px-4 sm:px-0">
+                <div className="flex flex-col sm:flex-row gap-3">
                   <input
                     type="email"
                     placeholder="Enter your email"
@@ -94,12 +94,12 @@ const Footer = () => {
                     onChange={(e) => setEmail(e.target.value)}
                     required
                     disabled={isSubmitting}
-                    className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:ring-2 focus:ring-white focus:outline-none disabled:bg-gray-200 disabled:cursor-not-allowed"
+                    className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:ring-2 focus:ring-white focus:outline-none disabled:bg-gray-200 disabled:cursor-not-allowed w-full"
                   />
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="bg-white text-primary-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors shadow-sm disabled:bg-gray-300 disabled:cursor-not-allowed"
+                    className="bg-white text-primary-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors shadow-sm disabled:bg-gray-300 disabled:cursor-not-allowed whitespace-nowrap w-full sm:w-auto"
                   >
                     {isSubmitting ? 'Sending...' : 'Subscribe'}
                   </button>

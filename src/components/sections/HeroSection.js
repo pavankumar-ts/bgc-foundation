@@ -54,10 +54,10 @@ const HeroSection = () => {
 
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[600px] md:min-h-screen flex items-center justify-center overflow-hidden">
       {/* Full-screen background image slides */}
       <div className="absolute inset-0 overflow-hidden">
-        <div 
+        <div
           className="flex h-full transition-transform duration-1000 ease-in-out"
           style={{
             transform: `translateX(-${currentImage * 100}vw)`,
@@ -72,7 +72,7 @@ const HeroSection = () => {
               <img
                 src={image.src}
                 alt={image.alt}
-                className={`w-full h-full object-cover transition-transform duration-[8000ms] ease-linear ${
+                className={`w-full h-full object-cover object-center transition-transform duration-[8000ms] ease-linear ${
                   index === currentImage ? 'scale-110' : 'scale-100'
                 }`}
                 onError={(e) => {
@@ -83,39 +83,39 @@ const HeroSection = () => {
               />
               {/* Fallback placeholder */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary-200 to-secondary-200 items-center justify-center text-white hidden">
-                <div className="text-center space-y-4">
-                  <div className="text-6xl">🏥</div>
-                  <div className="text-lg font-semibold">Rural Health Camp</div>
-                  <div className="text-sm opacity-75">{image.alt}</div>
+                <div className="text-center space-y-4 px-4">
+                  <div className="text-4xl md:text-6xl">🏥</div>
+                  <div className="text-base md:text-lg font-semibold">Rural Health Camp</div>
+                  <div className="text-xs md:text-sm opacity-75">{image.alt}</div>
                 </div>
               </div>
             </div>
           ))}
         </div>
-        
+
         {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-black/50 md:bg-black/40"></div>
       </div>
 
       {/* Content overlay */}
-      <div className="relative z-10 wide-container w-full">
-        <div className="text-center space-y-8 max-w-4xl mx-auto pt-24">
+      <div className="relative z-10 w-full px-4 md:px-8">
+        <div className="text-center space-y-6 md:space-y-8 max-w-4xl mx-auto pt-20 md:pt-24">
           {/* Main Headline */}
-          <div className={`space-y-6 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-            <Badge variant="default" className="text-sm font-semibold bg-white/10 backdrop-blur-sm border-white/20 text-white">
+          <div className={`space-y-4 md:space-y-6 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+            <Badge variant="default" className="text-xs md:text-sm font-semibold bg-white/10 backdrop-blur-sm border-white/20 text-white">
               Karnataka&apos;s First Rural Digestive Healthcare Initiative
             </Badge>
-            
+
             <div className={`transition-all duration-500 ease-in-out ${
-              isTransitioning 
-                ? 'opacity-0 translate-y-4 scale-95' 
+              isTransitioning
+                ? 'opacity-0 translate-y-4 scale-95'
                 : 'opacity-100 translate-y-0 scale-100'
             }`}>
-              <h1 className="hero-h1 text-white drop-shadow-lg">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white drop-shadow-lg leading-tight px-2">
                 {ruralCampImages[currentImage]?.title}
               </h1>
-              
-              <p className="text-lg text-white/90 leading-relaxed max-w-2xl mx-auto drop-shadow-md mt-4">
+
+              <p className="text-sm sm:text-base md:text-lg text-white/90 leading-relaxed max-w-2xl mx-auto drop-shadow-md mt-3 md:mt-4 px-4">
                 {ruralCampImages[currentImage]?.subtitle}
               </p>
             </div>
@@ -124,7 +124,7 @@ const HeroSection = () => {
       </div>
 
       {/* Navigation dots */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-20">
+      <div className="absolute bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 md:space-x-3 z-20">
         {ruralCampImages.map((_, index) => (
           <button
             key={index}
@@ -135,11 +135,12 @@ const HeroSection = () => {
                 setIsTransitioning(false);
               }, 300);
             }}
-            className={`w-4 h-4 rounded-full transition-all duration-300 ${
-              index === currentImage 
-                ? 'bg-white scale-110 shadow-lg' 
+            className={`w-3 h-3 md:w-4 md:h-4 rounded-full transition-all duration-300 ${
+              index === currentImage
+                ? 'bg-white scale-110 shadow-lg'
                 : 'bg-white/50 hover:bg-white/70 hover:scale-105'
             }`}
+            aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>
