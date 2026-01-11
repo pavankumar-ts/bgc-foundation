@@ -176,7 +176,7 @@ const Footer = () => {
 
             <div className="flex items-center space-x-4">
               <Badge variant="primary" className="text-xs">
-                ✓ Verified NGO
+                Registration ID: BMH-4-00820-2024-25
               </Badge>
             </div>
           </div>

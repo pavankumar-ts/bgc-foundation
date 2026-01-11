@@ -26,6 +26,7 @@ const Header = () => {
     { name: 'Programs', href: '/programs' },
     { name: 'Health Camps', href: '/camps' },
     { name: 'Impact & Results', href: '/impact' },
+    { name: 'Blog', href: 'https://www.bangaloregastrocentre.com/blog?page=1&pageSize=12&sortBy=newest&year=all&month=all', external: true },
   ];
 
   return (
@@ -50,10 +51,15 @@ const Header = () => {
             <div className="hidden md:flex items-center justify-center flex-1 space-x-8">
               {navigation.map((item) => {
                 const isActive = pathname === item.href || pathname.startsWith(item.href + '/');
+                const LinkComponent = item.external ? 'a' : Link;
+                const linkProps = item.external
+                  ? { href: item.href, target: '_blank', rel: 'noopener noreferrer' }
+                  : { href: item.href };
+
                 return (
-                  <Link
+                  <LinkComponent
                     key={item.name}
-                    href={item.href}
+                    {...linkProps}
                     className={`px-3 py-2 text-sm font-medium transition-colors duration-200 relative group ${
                       isActive
                         ? 'text-primary-600'
@@ -66,7 +72,7 @@ const Header = () => {
                         ? 'scale-x-100'
                         : 'scale-x-0 group-hover:scale-x-100'
                     }`} />
-                  </Link>
+                  </LinkComponent>
                 );
               })}
             </div>
@@ -130,10 +136,15 @@ const Header = () => {
             <div className="p-6 space-y-1">
               {navigation.map((item) => {
                 const isActive = pathname === item.href || pathname.startsWith(item.href + '/');
+                const LinkComponent = item.external ? 'a' : Link;
+                const linkProps = item.external
+                  ? { href: item.href, target: '_blank', rel: 'noopener noreferrer' }
+                  : { href: item.href };
+
                 return (
-                  <Link
+                  <LinkComponent
                     key={item.name}
-                    href={item.href}
+                    {...linkProps}
                     className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors duration-200 ${
                       isActive
                         ? 'text-primary-600 bg-primary-50'
@@ -142,7 +153,7 @@ const Header = () => {
                     onClick={handleCloseMenu}
                   >
                     {item.name}
-                  </Link>
+                  </LinkComponent>
                 );
               })}
             </div>
