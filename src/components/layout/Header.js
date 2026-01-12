@@ -25,6 +25,7 @@ const Header = () => {
     { name: 'Our Team', href: '/team' },
     { name: 'Programs', href: '/programs' },
     { name: 'Health Camps', href: '/camps' },
+    { name: 'Gallery', href: '/gallery' },
     { name: 'Impact & Results', href: '/impact' },
     { name: 'Blog', href: 'https://www.bangaloregastrocentre.com/blog?page=1&pageSize=12&sortBy=newest&year=all&month=all', external: true },
   ];

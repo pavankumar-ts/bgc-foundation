@@ -43,16 +43,16 @@ export const CONTACT = {
   // Email Addresses
   emails: {
     // Used in: Contact page, Footer
-    general: 'info@bgcfoundation.org',
+    general: 'info@bgcfoundationtrust.org',
 
     // Used in: Privacy Policy page
-    privacy: 'privacy@bgcfoundation.org',
+    privacy: 'privacy@bgcfoundationtrust.org',
 
     // Used in: Terms of Service page
-    legal: 'legal@bgcfoundation.org',
+    legal: 'legal@bgcfoundationtrust.org',
 
     // Used in: Partnership section
-    partnerships: 'partnerships@bgcfoundation.org',
+    partnerships: 'partnerships@bgcfoundationtrust.org',
   },
 
   // Phone Numbers
@@ -113,7 +113,12 @@ export const STATISTICS = {
     value: 5,
     display: '5+',
     label: 'Rural Health Camps',
-    alternateLabels: ['Villages Served', 'Communities Reached'],
+  },
+
+  villagesServed: {
+    value: 50,
+    display: '50+',
+    label: 'Villages Served',
   },
 
   // Healthcare Professionals

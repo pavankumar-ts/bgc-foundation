@@ -10,9 +10,9 @@ const StatsSection = () => {
 
   const stats = [
     { number: STATISTICS.healthCamps.display, label: STATISTICS.healthCamps.label },
+    { number: STATISTICS.villagesServed.display, label: STATISTICS.villagesServed.label },
     { number: STATISTICS.patientsConsulted.display, label: STATISTICS.patientsConsulted.label },
-    { number: STATISTICS.professionals.display, label: STATISTICS.professionals.label },
-    { number: STATISTICS.services.specialistHours.display, label: STATISTICS.services.specialistHours.label }
+    { number: STATISTICS.professionals.display, label: STATISTICS.professionals.label }
   ];
 
   useEffect(() => {
@@ -58,12 +58,17 @@ const StatsSection = () => {
 
           {/* Content Section */}
           <div className={`lg:pl-8 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ transitionDelay: '600ms' }}>
-            <h2 className="text-3xl md:text-5xl font-semibold text-gray-900 mb-6">
-              Leading Digestive Healthcare Programs in Rural {CONTACT.address.state}
+            <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-6">
+              Leading Digestive Healthcare Programs in {CONTACT.address.state}
             </h2>
             <p className="body-large text-gray-600 mb-6">
-              Through our mobile endoscopy unit and super specialist outreach programs, {ORGANIZATION.name} brings world-class digestive health care directly to rural communities across {CONTACT.address.state}, bridging the Digestive Healthcare gap for underserved populations.
+              Led by experienced gastroenterologists, {ORGANIZATION.name} brings world-class digestive health care directly to rural communities across {CONTACT.address.state} through our mobile endoscopy unit and outreach programs, bridging the Digestive Healthcare gap for underserved populations.
             </p>
+            <div className="mb-6">
+              <p className="text-lg font-semibold text-gray-800">
+                Backed by <a href="https://www.bangaloregastrocentre.com/" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-700">Bangalore Gastro Centre Hospitals</a>, Pioneers in Digestive Health
+              </p>
+            </div>
             <Link href="/about">
               <Button size="sm" className="py-6 px-6">
                 LEARN MORE

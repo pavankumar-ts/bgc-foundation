@@ -37,7 +37,17 @@ export const campsData = [
         '/assets/camps/sarjapura/sarjapura5.webp',
         '/assets/camps/sarjapura/sarjapura6.webp',
         '/assets/camps/sarjapura/sarjapura7.webp',
-        '/assets/camps/sarjapura/sarjapura8.webp'
+        '/assets/camps/sarjapura/sarjapura8.webp',
+        '/assets/camps/sarjapura/sarjapura9.webp',
+        '/assets/camps/sarjapura/sarjapura10.webp',
+        '/assets/camps/sarjapura/sarjapura11.webp',
+        '/assets/camps/sarjapura/sarjapura12.webp',
+        '/assets/camps/sarjapura/sarjapura13.webp',
+        '/assets/camps/sarjapura/sarjapura14.webp',
+        '/assets/camps/sarjapura/sarjapura15.webp',
+        '/assets/camps/sarjapura/sarjapura16.webp',
+        '/assets/camps/sarjapura/sarjapura17.webp',
+        '/assets/camps/sarjapura/sarjapura18.webp'
       ],
       videos: [
         '/assets/camps/sarjapura/sarjapura-video1.webm',
@@ -91,7 +101,17 @@ export const campsData = [
         '/assets/camps/harohalli/harohalli7.webp',
         '/assets/camps/harohalli/harohalli8.webp',
         '/assets/camps/harohalli/harohalli9.webp',
-        '/assets/camps/harohalli/harohalli10.webp'
+        '/assets/camps/harohalli/harohalli10.webp',
+        '/assets/camps/harohalli/harohalli11.webp',
+        '/assets/camps/harohalli/harohalli12.webp',
+        '/assets/camps/harohalli/harohalli13.webp',
+        '/assets/camps/harohalli/harohalli14.webp',
+        '/assets/camps/harohalli/harohalli15.webp',
+        '/assets/camps/harohalli/harohalli16.webp',
+        '/assets/camps/harohalli/harohalli17.webp',
+        '/assets/camps/harohalli/harohalli18.webp',
+        '/assets/camps/harohalli/harohalli19.webp',
+        '/assets/camps/harohalli/harohalli20.webp'
       ],
       videos: [
         '/assets/camps/harohalli/harohalli-video1.webm',
@@ -144,11 +164,7 @@ export const campsData = [
         '/assets/camps/kanakapura/kanakapura5.webp',
         '/assets/camps/kanakapura/kanakapura6.webp',
         '/assets/camps/kanakapura/kanakapura7.webp',
-        '/assets/camps/kanakapura/kanakapura8.webp',
-        '/assets/camps/kanakapura/kanakapura9.webp',
-        '/assets/camps/kanakapura/kanakapura10.webp',
-        '/assets/camps/kanakapura/kanakapura11.webp',
-        '/assets/camps/kanakapura/kanakapura12.webp'
+        '/assets/camps/kanakapura/kanakapura8.webp'
       ],
       videos: [
         '/assets/camps/kanakapura/kanakapura-video1.webm',
@@ -212,7 +228,14 @@ export const campsData = [
         '/assets/camps/ramnagara/ramnagara9.webp',
         '/assets/camps/ramnagara/ramnagara10.webp',
         '/assets/camps/ramnagara/ramnagara11.webp',
-        '/assets/camps/ramnagara/ramnagara12.webp'
+        '/assets/camps/ramnagara/ramnagara12.webp',
+        '/assets/camps/ramnagara/ramnagara13.webp',
+        '/assets/camps/ramnagara/ramnagara14.webp',
+        '/assets/camps/ramnagara/ramnagara15.webp',
+        '/assets/camps/ramnagara/ramnagara16.webp',
+        '/assets/camps/ramnagara/ramnagara17.webp',
+        '/assets/camps/ramnagara/ramnagara18.webp',
+        '/assets/camps/ramnagara/ramnagara19.webp'
       ],
       videos: []
     },

@@ -73,8 +73,8 @@ const ImpactSection = () => {
       description: 'Free healthcare delivery'
     },
     {
-      title: STATISTICS.healthCamps.alternateLabels[1],
-      value: STATISTICS.healthCamps.display,
+      title: STATISTICS.villagesServed.label,
+      value: STATISTICS.villagesServed.display,
       description: 'Rural areas served'
     }
   ];
