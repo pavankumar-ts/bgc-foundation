@@ -23,7 +23,7 @@ const CardHeader = forwardRef(({ className = '', children, ...props }, ref) => (
 const CardContent = forwardRef(({ className = '', children, ...props }, ref) => (
   <div
     ref={ref}
-    className={`px-6 py-4 ${className}`}
+    className={`px-3 py-4 ${className}`}
     {...props}
   >
     {children}

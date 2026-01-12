@@ -54,7 +54,7 @@ const HeroSection = () => {
 
 
   return (
-    <section className="relative min-h-[600px] md:min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden">
       {/* Full-screen background image slides */}
       <div className="absolute inset-0 overflow-hidden">
         <div
@@ -111,7 +111,7 @@ const HeroSection = () => {
                 ? 'opacity-0 translate-y-4 scale-95'
                 : 'opacity-100 translate-y-0 scale-100'
             }`}>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white drop-shadow-lg leading-tight px-2">
+              <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white drop-shadow-lg leading-tight px-2">
                 {ruralCampImages[currentImage]?.title}
               </h1>
 

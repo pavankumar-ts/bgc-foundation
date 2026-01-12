@@ -65,13 +65,13 @@ export default function GalleryPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary-600 to-primary-700 text-white py-20 pt-36">
-        <div className="wide-container">
+      <section className="bg-gradient-to-r from-primary-600 to-primary-700 text-white py-12 md:py-16 lg:py-20 pt-24 md:pt-28 lg:pt-36">
+        <div className="wide-container px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">
               Health Camp Gallery
             </h1>
-            <p className="text-xl text-primary-50">
+            <p className="text-base md:text-lg lg:text-xl text-primary-50">
               Moments from our rural healthcare initiatives across Karnataka
             </p>
           </div>
@@ -79,13 +79,13 @@ export default function GalleryPage() {
       </section>
 
       {/* Filter Section */}
-      <section className="py-8 bg-white border-b">
-        <div className="wide-container">
+      <section className="py-4 md:py-6 lg:py-8 bg-white border-b">
+        <div className="wide-container px-4">
           <div className="flex justify-end">
             <div className="relative">
               <button
                 onClick={() => setIsFilterOpen(!isFilterOpen)}
-                className="flex items-center gap-2 px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-all shadow-md"
+                className="flex items-center gap-2 px-4 md:px-6 py-2 md:py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-all shadow-md text-sm md:text-base"
               >
                 <svg
                   className="w-5 h-5"
@@ -108,7 +108,7 @@ export default function GalleryPage() {
 
               {/* Dropdown Menu */}
               {isFilterOpen && (
-                <div className="absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 z-10">
+                <div className="absolute right-0 mt-2 w-56 md:w-64 bg-white rounded-lg shadow-xl border border-gray-200 z-10">
                   <div className="py-2">
                     {campTitles.map((title) => (
                       <button
@@ -117,7 +117,7 @@ export default function GalleryPage() {
                           setSelectedFilter(title);
                           setIsFilterOpen(false);
                         }}
-                        className={`w-full text-left px-4 py-3 transition-colors ${
+                        className={`w-full text-left px-3 md:px-4 py-2 md:py-3 transition-colors text-sm md:text-base ${
                           selectedFilter === title
                             ? 'bg-primary-50 text-primary-600 font-medium'
                             : 'text-gray-700 hover:bg-gray-50'
@@ -135,9 +135,9 @@ export default function GalleryPage() {
       </section>
 
       {/* Gallery Grid */}
-      <section className="py-16">
-        <div className="wide-container">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <section className="py-8 md:py-12 lg:py-16">
+        <div className="wide-container px-4">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-6">
             {filteredImages.map((image, index) => (
               <div
                 key={index}
@@ -151,9 +151,9 @@ export default function GalleryPage() {
                   className="object-cover group-hover:scale-110 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-                    <p className="font-semibold text-sm">{image.camp}</p>
-                    <p className="text-xs text-gray-200">{image.location}</p>
+                  <div className="absolute bottom-0 left-0 right-0 p-2 md:p-3 lg:p-4 text-white">
+                    <p className="font-semibold text-xs md:text-sm">{image.camp}</p>
+                    <p className="text-[10px] md:text-xs text-gray-200">{image.location}</p>
                   </div>
                 </div>
               </div>
@@ -161,8 +161,8 @@ export default function GalleryPage() {
           </div>
 
           {filteredImages.length === 0 && (
-            <div className="text-center py-20">
-              <p className="text-gray-500 text-lg">No images found for this filter</p>
+            <div className="text-center py-12 md:py-16 lg:py-20">
+              <p className="text-gray-500 text-base md:text-lg">No images found for this filter</p>
             </div>
           )}
         </div>
@@ -171,12 +171,12 @@ export default function GalleryPage() {
       {/* Lightbox Modal with Carousel */}
       {selectedImage && (
         <div
-          className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-2 md:p-4"
           onClick={() => setSelectedImageIndex(null)}
         >
           {/* Close Button */}
           <button
-            className="absolute top-4 right-4 text-white text-4xl hover:text-gray-300 transition-colors z-10"
+            className="absolute top-2 md:top-4 right-2 md:right-4 text-white text-3xl md:text-4xl hover:text-gray-300 transition-colors z-10"
             onClick={() => setSelectedImageIndex(null)}
           >
             &times;
@@ -184,20 +184,20 @@ export default function GalleryPage() {
 
           {/* Previous Button */}
           <button
-            className="absolute left-4 top-1/2 -translate-y-1/2 text-white bg-black/50 hover:bg-black/70 rounded-full p-3 transition-all z-10"
+            className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 text-white bg-black/50 hover:bg-black/70 rounded-full p-2 md:p-3 transition-all z-10"
             onClick={goToPrevious}
           >
-            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
 
           {/* Next Button */}
           <button
-            className="absolute right-4 top-1/2 -translate-y-1/2 text-white bg-black/50 hover:bg-black/70 rounded-full p-3 transition-all z-10"
+            className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 text-white bg-black/50 hover:bg-black/70 rounded-full p-2 md:p-3 transition-all z-10"
             onClick={goToNext}
           >
-            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </button>
@@ -212,13 +212,13 @@ export default function GalleryPage() {
             />
 
             {/* Image Info */}
-            <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-6">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">{selectedImage.camp}</h3>
-                  <p className="text-gray-300">{selectedImage.location} • {selectedImage.date}</p>
+            <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-3 md:p-4 lg:p-6">
+              <div className="flex items-center justify-between gap-2">
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-sm md:text-lg lg:text-xl font-semibold mb-1 md:mb-2 truncate">{selectedImage.camp}</h3>
+                  <p className="text-xs md:text-sm text-gray-300 truncate">{selectedImage.location} • {selectedImage.date}</p>
                 </div>
-                <div className="text-sm text-gray-400">
+                <div className="text-xs md:text-sm text-gray-400 whitespace-nowrap">
                   {selectedImageIndex + 1} / {filteredImages.length}
                 </div>
               </div>

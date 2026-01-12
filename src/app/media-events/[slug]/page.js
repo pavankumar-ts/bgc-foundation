@@ -68,34 +68,34 @@ export default async function EventPage({ params }) {
   return (
     <>
       {/* Hero Section */}
-      <div className="bg-gradient-to-br min-h-[300px] flex justify-center items-center from-primary-500 to-primary-600 pt-32 pb-12 px-8 text-center text-white sm:pt-28 sm:pb-8 sm:px-6 md:pt-24 md:pb-8">
+      <div className="bg-gradient-to-br min-h-[250px] md:min-h-[300px] flex justify-center items-center from-primary-500 to-primary-600 pt-24 md:pt-28 lg:pt-32 pb-8 md:pb-10 lg:pb-12 px-4 md:px-6 lg:px-8 text-center text-white">
         <div className="max-w-[1200px] mx-auto">
-          <h1 className="text-5xl font-bold m-0 xl:text-[2.5rem] lg:text-4xl md:text-[1.75rem] sm:text-2xl">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold m-0">
             {event.title}
           </h1>
         </div>
       </div>
 
       {/* Content Container */}
-      <div className="max-w-[1200px] mx-auto my-8 px-8 pb-12 xl:max-w-[90%] lg:max-w-[95%] lg:my-6 lg:px-6 md:my-4 md:px-4 md:pb-8 sm:my-2 sm:px-3 sm:pb-6">
+      <div className="max-w-[1200px] mx-auto my-4 md:my-6 lg:my-8 px-4 md:px-6 lg:px-8 pb-8 md:pb-10 lg:pb-12">
         {event.imageUrl && (
           <Image
             src={event.imageUrl}
             alt={event.imageAlt || event.title}
             width={1200}
             height={600}
-            className="rounded-lg w-full h-auto object-cover mb-8 md:mb-6"
+            className="rounded-lg w-full h-auto object-cover mb-6 md:mb-8"
             priority
           />
         )}
 
         <div className="max-w-[900px] mx-auto">
-          <p className="text-lg text-gray-600 mb-6 font-medium lg:text-base md:text-[0.95rem] sm:text-[0.85rem]">
+          <p className="text-sm md:text-base lg:text-lg text-gray-600 mb-4 md:mb-6 font-medium">
             {formattedDate}
           </p>
 
           <div
-            className="text-lg font-normal leading-relaxed text-gray-800 mb-8 [&_p]:mb-4 [&_h1]:text-secondary-600 [&_h1]:mt-6 [&_h1]:mb-4 [&_h2]:text-secondary-600 [&_h2]:mt-6 [&_h2]:mb-4 [&_h3]:text-secondary-600 [&_h3]:mt-6 [&_h3]:mb-4 [&_ul]:ml-8 [&_ul]:mb-4 [&_ol]:ml-8 [&_ol]:mb-4 [&_a]:text-secondary-600 [&_a]:underline [&_a:hover]:text-secondary-700 lg:text-[1.05rem] md:text-base md:leading-normal sm:text-[0.95rem] sm:leading-normal"
+            className="text-sm md:text-base lg:text-lg font-normal leading-relaxed text-gray-800 mb-6 md:mb-8 [&_p]:mb-3 [&_p]:md:mb-4 [&_h1]:text-secondary-600 [&_h1]:mt-4 [&_h1]:md:mt-6 [&_h1]:mb-3 [&_h1]:md:mb-4 [&_h1]:text-xl [&_h1]:md:text-2xl [&_h1]:lg:text-3xl [&_h2]:text-secondary-600 [&_h2]:mt-4 [&_h2]:md:mt-6 [&_h2]:mb-3 [&_h2]:md:mb-4 [&_h2]:text-lg [&_h2]:md:text-xl [&_h2]:lg:text-2xl [&_h3]:text-secondary-600 [&_h3]:mt-4 [&_h3]:md:mt-6 [&_h3]:mb-3 [&_h3]:md:mb-4 [&_h3]:text-base [&_h3]:md:text-lg [&_h3]:lg:text-xl [&_ul]:ml-6 [&_ul]:md:ml-8 [&_ul]:mb-3 [&_ul]:md:mb-4 [&_ol]:ml-6 [&_ol]:md:ml-8 [&_ol]:mb-3 [&_ol]:md:mb-4 [&_a]:text-secondary-600 [&_a]:underline [&_a:hover]:text-secondary-700"
             dangerouslySetInnerHTML={{ __html: event.description }}
           />
 
@@ -104,7 +104,7 @@ export default async function EventPage({ params }) {
               href={event.link.uri}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block mt-6 py-3 px-8 bg-secondary-600 text-white no-underline rounded-md font-semibold transition-all duration-300 hover:bg-secondary-700 hover:-translate-y-0.5 md:py-2.5 md:px-6 md:text-[0.95rem] sm:py-2 sm:px-5 sm:text-[0.9rem]"
+              className="inline-block mt-4 md:mt-6 py-2 md:py-2.5 lg:py-3 px-5 md:px-6 lg:px-8 bg-secondary-600 text-white no-underline rounded-md font-semibold transition-all duration-300 hover:bg-secondary-700 hover:-translate-y-0.5 text-sm md:text-base"
             >
               {event.link.title}
             </a>

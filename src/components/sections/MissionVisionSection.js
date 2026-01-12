@@ -50,7 +50,7 @@ const MissionVisionSection = () => {
 
           {/* Vision */}
           <div className={`opacity-0 ${isVisible ? 'animate-smooth-fade-in-up' : ''}`} style={{ animationDelay: '0.4s' }}>
-            <div className="bg-gradient-to-br from-secondary-50 to-secondary-100 rounded-xl overflow-hidden h-full border-2 border-secondary-200 hover:border-secondary-300 transition-all shadow-sm hover:shadow-md">
+            <div className="bg-gradient-to-br from-primary-50 to-primary-100 rounded-xl overflow-hidden h-full border-2 border-primary-200 hover:border-primary-300 transition-all shadow-sm hover:shadow-md">
               <div className="relative w-full h-64">
                 <Image
                   src="/assets/home/hero3.webp"
@@ -60,7 +60,7 @@ const MissionVisionSection = () => {
                 />
               </div>
               <div className="p-8 text-center">
-                <h3 className="text-2xl font-bold text-secondary-700 mb-4">Vision</h3>
+                <h3 className="text-2xl font-bold text-primary-700 mb-4">Vision</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
                   A healthier Karnataka where preventable digestive diseases are identified early—no matter where people live.
                 </p>

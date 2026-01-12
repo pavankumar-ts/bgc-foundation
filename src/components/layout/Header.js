@@ -26,6 +26,7 @@ const Header = () => {
     { name: 'Programs', href: '/programs' },
     { name: 'Health Camps', href: '/camps' },
     { name: 'Gallery', href: '/gallery' },
+    { name: 'Media & Events', href: '/media-events' },
     { name: 'Impact & Results', href: '/impact' },
     { name: 'Blog', href: 'https://www.bangaloregastrocentre.com/blog?page=1&pageSize=12&sortBy=newest&year=all&month=all', external: true },
   ];
@@ -38,18 +39,18 @@ const Header = () => {
         }`}
       >
         <nav className="main-container">
-          <div className="flex h-20 items-center justify-between">
+          <div className="flex h-16 md:h-20 items-center justify-between">
             {/* Logo - Left Aligned */}
             <div className="flex-shrink-0">
               <Link href="/">
                 <Image src="/assets/logo.svg" alt="BGC Foundation Logo"
-                className='w-auto h-[40px]'
+                className='w-auto h-14'
                 width={1000} height={1000}  />
               </Link>
             </div>
 
             {/* Center Navigation */}
-            <div className="hidden md:flex items-center justify-center flex-1 space-x-8">
+            <div className="hidden md:flex items-center justify-center flex-1 space-x-4">
               {navigation.map((item) => {
                 const isActive = pathname === item.href || pathname.startsWith(item.href + '/');
                 const LinkComponent = item.external ? 'a' : Link;
@@ -148,7 +149,7 @@ const Header = () => {
                     {...linkProps}
                     className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors duration-200 ${
                       isActive
-                        ? 'text-primary-600 bg-primary-50'
+                        ? 'text-primary-600'
                         : 'text-gray-600 hover:text-primary-600 hover:bg-gray-50'
                     }`}
                     onClick={handleCloseMenu}

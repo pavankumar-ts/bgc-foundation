@@ -64,12 +64,12 @@ export default async function MediaEvents() {
   return (
     <>
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-primary-500 to-primary-600 pt-32 pb-12 px-8 text-center text-white sm:pt-28 sm:pb-8 sm:px-6 max-sm:pt-24 max-sm:pb-6 max-sm:px-4">
+      <div className="bg-gradient-to-br from-primary-500 to-primary-600 pt-24 md:pt-28 lg:pt-32 pb-8 md:pb-10 lg:pb-12 px-4 md:px-6 lg:px-8 text-center text-white">
         <div className="max-w-[1200px] mx-auto">
-          <h1 className="text-5xl font-bold mb-4 xl:text-[2.5rem] lg:text-4xl md:text-[1.75rem] sm:text-2xl">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">
             Media & Events
           </h1>
-          <p className="text-xl font-light opacity-95 lg:text-lg md:text-base">
+          <p className="text-base md:text-lg lg:text-xl font-light opacity-95">
             Stay updated with our latest news and events
           </p>
         </div>
@@ -77,37 +77,37 @@ export default async function MediaEvents() {
 
       {/* Events Grid */}
       <div className="max-w-[1400px] mx-auto">
-        <div className="grid grid-cols-4 gap-12 p-12 xl:grid-cols-3 xl:gap-8 xl:p-8 lg:grid-cols-2 lg:gap-6 lg:p-6 sm:grid-cols-2 sm:gap-6 sm:p-6 max-sm:grid-cols-1 max-sm:gap-4 max-sm:p-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8 xl:gap-12 p-4 md:p-6 lg:p-8 xl:p-12">
           {events.length > 0 ? (
             events.map(event => (
               <div
                 key={event.id}
-                className="bg-white shadow-[0_2px_15px_rgba(0,0,0,0.1)] rounded-lg overflow-hidden flex flex-col relative p-4 pt-0 transition-all duration-300 ease-in-out hover:-translate-y-1.5 hover:shadow-[0_5px_25px_rgba(0,0,0,0.15)] sm:p-3 sm:pt-0"
+                className="bg-white shadow-[0_2px_15px_rgba(0,0,0,0.1)] rounded-lg overflow-hidden flex flex-col relative p-3 md:p-4 pt-0 transition-all duration-300 ease-in-out hover:-translate-y-1.5 hover:shadow-[0_5px_25px_rgba(0,0,0,0.15)]"
               >
                 <Image
                   src={event.imageUrl}
                   alt={event.title}
                   width={1000}
                   height={1000}
-                  className="w-full h-[180px] object-contain border-b-2 border-secondary-600 lg:h-40 md:h-[140px] max-sm:h-[200px]"
+                  className="w-full h-[200px] sm:h-[180px] md:h-[160px] lg:h-[180px] object-contain border-b-2 border-secondary-600"
                 />
-                <div className="bg-secondary-600 text-white py-2 min-w-[50%] text-center text-base font-medium self-center -mt-4 mb-4 rounded md:text-[0.9rem] md:py-1.5 max-sm:text-[0.85rem] max-sm:py-[5px]">
+                <div className="bg-secondary-600 text-white py-1.5 md:py-2 min-w-[50%] text-center text-sm md:text-base font-medium self-center -mt-3 md:-mt-4 mb-3 md:mb-4 rounded px-3">
                   {new Date(event.date).toLocaleDateString('en-IN', {
                     day: '2-digit',
                     month: '2-digit',
                     year: 'numeric'
                   })}
                 </div>
-                <h3 className="text-xl my-2.5 font-semibold text-secondary-600 leading-snug lg:text-lg md:text-base">
+                <h3 className="text-base md:text-lg lg:text-xl my-2 md:my-2.5 font-semibold text-secondary-600 leading-snug">
                   {event.title}
                 </h3>
-                <p className="text-base font-normal text-[#555] mb-2.5 flex-grow leading-relaxed lg:text-[0.95rem] md:text-[0.9rem]">
+                <p className="text-sm md:text-base font-normal text-[#555] mb-2 md:mb-2.5 flex-grow leading-relaxed">
                   {event.description}
                 </p>
-                <div className="flex gap-4 items-center flex-wrap mt-auto">
+                <div className="flex gap-3 md:gap-4 items-center flex-wrap mt-auto">
                   <Link
                     href={`/media-events/${event.url || ''}`}
-                    className="text-secondary-600 cursor-pointer font-medium no-underline transition-colors duration-300 hover:text-secondary-700 hover:underline max-sm:text-[0.9rem]"
+                    className="text-secondary-600 cursor-pointer font-medium no-underline transition-colors duration-300 hover:text-secondary-700 hover:underline text-sm md:text-base"
                   >
                     Read More
                   </Link>
@@ -116,7 +116,7 @@ export default async function MediaEvents() {
                       href={event.link.uri}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#555] cursor-pointer font-medium no-underline transition-colors duration-300 hover:text-secondary-600 hover:underline max-sm:text-[0.9rem]"
+                      className="text-[#555] cursor-pointer font-medium no-underline transition-colors duration-300 hover:text-secondary-600 hover:underline text-sm md:text-base"
                     >
                       {event.link.title}
                     </a>
@@ -125,7 +125,7 @@ export default async function MediaEvents() {
               </div>
             ))
           ) : (
-            <div className="col-span-full text-center py-12 text-xl text-[#666]">
+            <div className="col-span-full text-center py-8 md:py-12 text-base md:text-lg lg:text-xl text-[#666]">
               <p>No events found</p>
             </div>
           )}

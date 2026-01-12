@@ -63,27 +63,27 @@ const ProgramsSection = () => {
       <div className="main-container">
         {/* 8-Card Services Grid as per Design Reference */}
         <div className="">
-          <div className="text-center mb-12">
-            <h3 className="subsection-h3 text-gray-900 mb-4">
+          <div className="text-center mb-8 md:mb-12">
+            <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 md:mb-4 px-4">
               Comprehensive Digestive Health Programs
             </h3>
-            <p className="body-large text-gray-600 max-w-3xl mx-auto">
-              Our complete range of specialized programs designed to address digestive health 
+            <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4">
+              Our complete range of specialized programs designed to address digestive health
               needs in rural communities with professional expertise and care.
             </p>
           </div>
 
           {/* Clean 8-Card Grid: 4 columns desktop, 2 mobile */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {programsGrid.map((program, index) => (
-              <Card 
-                key={index} 
+              <Card
+                key={index}
                 className={`h-full card-hover bg-primary-50/20 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <CardContent className="p-6 flex flex-col h-full">
+                <CardContent className="p-3 md:p-4 lg:p-6 flex flex-col h-full">
                   {/* Consistent Image Container */}
-                  <div className="w-full h-40 mb-4 flex items-center justify-center">
+                  <div className="w-full h-32 md:h-36 lg:h-40 mb-3 md:mb-4 flex items-center justify-center">
                     <Image
                       src={program.img}
                       alt={program.title}
@@ -95,8 +95,8 @@ const ProgramsSection = () => {
 
                   {/* Content Section */}
                   <div className="flex-1 flex flex-col text-center">
-                    <h4 className="card-h4 text-gray-900 mb-3">{program.title}</h4>
-                    <p className="body-regular text-gray-600 leading-relaxed flex-1">
+                    <h4 className="text-sm md:text-base lg:text-lg font-semibold text-gray-900 mb-2 md:mb-3">{program.title}</h4>
+                    <p className="text-xs md:text-sm text-gray-600 leading-relaxed flex-1">
                       {program.description}
                     </p>
                   </div>

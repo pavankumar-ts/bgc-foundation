@@ -75,7 +75,7 @@ const ValuesSection = () => {
     <section className="section-spacing bg-white overflow-hidden" id="values" ref={sectionRef}>
       <div className="section-container">
         {/* Hero-style Header */}
-        <div className="text-center max-w-4xl mx-auto mb-20">
+        <div className="text-center max-w-4xl mx-auto mb-10">
           <div
             className={`opacity-0 ${isVisible ? 'animate-smooth-fade-in-up' : ''}`}
             style={{ animationDelay: isVisible ? '0.1s' : '0s' }}
@@ -103,7 +103,7 @@ const ValuesSection = () => {
         </div>
 
         {/* Values Cards */}
-        <div className="mb-24">
+        <div className="mb-0">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
               <div

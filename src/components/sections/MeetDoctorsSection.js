@@ -82,31 +82,30 @@ const MeetDoctorsSection = () => {
       <div className="main-container">
 
         {/* Featured Doctor - Dr. Yogananda Reddy */}
-        <div className="mb-20">
-          <Card className=" mx-auto">
-            <CardContent className="p-8">
-              <div className="grid lg:grid-cols-3 gap-8 items-center">
-                <div className="lg:col-span-2 lg:order-1 space-y-4">
-                  <h3 className="subsection-h3 text-gray-900">
+        <div className="mb-12 md:mb-20">
+          <Card className="mx-auto">
+            <CardContent className="p-4 md:p-6 lg:p-8">
+              <div className="grid lg:grid-cols-3 gap-6 md:gap-8 items-center">
+                <div className="lg:col-span-2 lg:order-1 space-y-3 md:space-y-4">
+                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900">
                     {featuredDoctor.name}
                   </h3>
 
-                    <div className="body-large text-primary-600">
-                      {featuredDoctor.title}
-
+                  <div className="text-base md:text-lg lg:text-xl text-primary-600">
+                    {featuredDoctor.title}
                   </div>
                   <Badge variant="secondary" className="text-xs">
                     {featuredDoctor.experience}
                   </Badge>
-                  <p className="body-regular text-gray-700 mb-4">
+                  <p className="text-sm md:text-base text-gray-700 mb-4">
                     {featuredDoctor.description}
                   </p>
-                  
+
                   <blockquote className="border-l-4 border-primary-500 pl-4 py-2 mb-4 bg-primary-50 rounded-r">
-                    <p className="italic text-gray-800 font-medium">{featuredDoctor.quote}</p>
+                    <p className="italic text-gray-800 font-medium text-sm md:text-base">{featuredDoctor.quote}</p>
                   </blockquote>
                   <div>
-                    <h4 className="card-h4 text-gray-900 mb-2">Professional Credentials</h4>
+                    <h4 className="text-base md:text-lg font-semibold text-gray-900 mb-2">Professional Credentials</h4>
                     <div className="flex flex-wrap gap-2">
                       {featuredDoctor.credentials.map((credential, index) => (
                         <Badge key={index} variant="outline" className="text-xs">
@@ -118,7 +117,7 @@ const MeetDoctorsSection = () => {
                 </div>
 
                 <div className="text-center lg:order-2">
-                  <div className="w-[400px] h-76 mx-auto rounded-lg overflow-hidden bg-gray-100 mb-4">
+                  <div className="w-full max-w-[400px] h-64 md:h-full mx-auto rounded-lg overflow-hidden bg-gray-100 mb-4">
                     <Image
                       src={featuredDoctor.photo}
                       alt={featuredDoctor.name}
@@ -134,30 +133,30 @@ const MeetDoctorsSection = () => {
         </div>
 
         {/* Team Structure Grid */}
-        <div className="mb-20">
-          <div className="text-center mb-12">
-            <h3 className="subsection-h3 text-gray-900 mb-4">
+        <div className="mb-12 md:mb-20">
+          <div className="text-center mb-8 md:mb-12">
+            <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 md:mb-4">
               {STATISTICS.team.total} Professionals, One Shared Purpose
             </h3>
-            <p className="body-large text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4">
               When our mobile units roll into a village, they bring an entire hospital&apos;s worth of expertise. Every role matters, every person counts - from our gastroenterologists to our nursing assistants, we&apos;re a family united by purpose.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {teamCategories.map((category, index) => (
               <Card
                 key={index}
                 className={`bg-primary-50/20 text-center p-2 flex justify-center items-center h-full transform transition-all duration-500 hover:scale-105 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <CardContent className="space-y-4">
+                <CardContent className="space-y-2 md:space-y-4">
                   <div className="flex items-center justify-center gap-3 mb-2">
-                    <div className="text-4xl font-bold text-primary-600">
+                    <div className="text-3xl md:text-4xl font-bold text-primary-600">
                       {category.count}
                     </div>
                   </div>
-                  <h4 className="card-h4 text-gray-900">
+                  <h4 className="text-sm md:text-base lg:text-lg font-semibold text-gray-900">
                     {category.title}
                   </h4>
                 </CardContent>
@@ -168,11 +167,11 @@ const MeetDoctorsSection = () => {
 
         {/* Team Member Carousel */}
         <div className="mb-0">
-          <div className="text-center mb-4">
-            <h3 className="subsection-h3 text-gray-900 mb-6">
+          <div className="text-center mb-6 md:mb-8">
+            <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">
               Our Super Specialists
             </h3>
-            <p className="body-large text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
               Behind every successful rural health camp are real people with real stories. These are just a few of the remarkable individuals who chose rural service over personal comfort.
             </p>
           </div>
@@ -186,17 +185,17 @@ const MeetDoctorsSection = () => {
               <p className="text-gray-500">No team members available at the moment.</p>
             </div>
           ) : (
-            <div className="grid grid-cols-3 gap-8 max-width mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 max-width mx-auto">
               {doctors.map((member, index) => (
                 <Card
                   key={index}
                   className={`group text-center cursor-pointer ${isVisible ? 'animate-fade-in-up' : 'opacity-0'} transition-transform duration-300 ease-out hover:scale-105`}
                   style={{ transitionDelay: `${index * 100}ms` }}
                 >
-                  <CardContent className="space-y-4 p-6">
+                  <CardContent className="space-y-3 md:space-y-4 p-4 md:p-6">
                     {/* Professional Photo */}
-                    <div className="mb-4">
-                      <div className="w-full h-[240px] mx-auto overflow-hidden rounded-lg group-hover:shadow-md transition-shadow duration-300 ">
+                    <div className="mb-3 md:mb-4">
+                      <div className="w-full h-[200px] sm:h-[220px] md:h-[240px] mx-auto overflow-hidden rounded-lg group-hover:shadow-md transition-shadow duration-300">
                         <Image
                           src={member.photo}
                           alt={member.name}
@@ -208,10 +207,10 @@ const MeetDoctorsSection = () => {
                     </div>
 
                     <div className="space-y-2">
-                      <h5 className="font-semibold text-gray-900 text-base leading-tight">
+                      <h5 className="font-semibold text-gray-900 text-sm md:text-base leading-tight">
                         {member.name}
                       </h5>
-                      <p className="text-primary-600 font-medium text-sm leading-tight">
+                      <p className="text-primary-600 font-medium text-xs md:text-sm leading-tight">
                         {member.specialization}
                       </p>
                       {member.story && (
@@ -234,25 +233,25 @@ const MeetDoctorsSection = () => {
         </div>
         
         {/* Mission Connection CTA */}
-        <div className="mt-16 text-center bg-gradient-to-r from-primary-50 to-primary-100 rounded-xl p-8">
-          <h3 className="subsection-h3 text-gray-900 mb-4">
+        <div className="mt-8 md:mt-12 lg:mt-16 text-center bg-gradient-to-r from-primary-50 to-primary-100 rounded-xl p-6 md:p-8">
+          <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 md:mb-4">
             Every Team Member Has a Story
           </h3>
-          <p className="body-large text-gray-700 max-w-2xl mx-auto mb-6">
+          <p className="text-base md:text-lg lg:text-xl text-gray-700 max-w-2xl mx-auto mb-4 md:mb-6 px-4">
             They could work anywhere. They chose here. Because when you see the gratitude in a farmer&apos;s eyes after receiving life-saving care in his own village, you understand what true purpose feels like.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <div className="bg-white px-6 py-3 rounded-lg shadow-sm">
-              <div className="text-2xl font-bold text-primary-600">5K+</div>
-              <div className="text-sm text-gray-600">Lives Touched Annually</div>
+            <div className="bg-white px-4 md:px-6 py-2 md:py-3 rounded-lg shadow-sm">
+              <div className="text-xl md:text-2xl font-bold text-primary-600">5K+</div>
+              <div className="text-xs md:text-sm text-gray-600">Lives Touched Annually</div>
             </div>
-            <div className="bg-white px-6 py-3 rounded-lg shadow-sm">
-              <div className="text-2xl font-bold text-primary-600">5+</div>
-              <div className="text-sm text-gray-600">Villages Served</div>
+            <div className="bg-white px-4 md:px-6 py-2 md:py-3 rounded-lg shadow-sm">
+              <div className="text-xl md:text-2xl font-bold text-primary-600">5+</div>
+              <div className="text-xs md:text-sm text-gray-600">Villages Served</div>
             </div>
-            <div className="bg-white px-6 py-3 rounded-lg shadow-sm">
-              <div className="text-2xl font-bold text-primary-600">{STATISTICS.team.total}</div>
-              <div className="text-sm text-gray-600">Dedicated Hearts</div>
+            <div className="bg-white px-4 md:px-6 py-2 md:py-3 rounded-lg shadow-sm">
+              <div className="text-xl md:text-2xl font-bold text-primary-600">{STATISTICS.team.total}</div>
+              <div className="text-xs md:text-sm text-gray-600">Dedicated Hearts</div>
             </div>
           </div>
         </div>
