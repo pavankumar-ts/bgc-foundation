@@ -17,7 +17,7 @@ const AboutGoalSection = () => {
         {/* Section Header */}
         <div className="text-center mb-12">
           <Badge variant="primary" className="mb-4">
-            Our Mission
+            Our Approach
           </Badge>
           <h2 className="section-h2 text-gray-900 mb-6">
             If Patients Can&apos;t Come to Us, We Go to Them

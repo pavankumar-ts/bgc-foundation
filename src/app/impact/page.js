@@ -11,7 +11,7 @@ export default function Impact() {
         description={`Since ${ORGANIZATION.foundingYear}, ${ORGANIZATION.name} has delivered life-changing healthcare to remote communities across Karnataka. From early cancer detection to preventive care, our impact reaches far beyond medical treatment.`}
         stats={[
           { value: STATISTICS.patientsConsulted.display, label: STATISTICS.patientsConsulted.label },
-          { value: STATISTICS.healthCamps.display, label: STATISTICS.healthCamps.alternateLabels[0] },
+          { value: STATISTICS.healthCamps.display, label: STATISTICS.healthCamps.label },
           { value: STATISTICS.services.specialistHours.display, label: STATISTICS.services.specialistHours.label }
         ]}
           imageSrc='/assets/impact-hero.webp'

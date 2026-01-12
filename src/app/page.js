@@ -7,6 +7,7 @@ import LeadershipSection from '@/components/sections/LeadershipSection';
 import YouTubeSection from '../components/sections/YouTubeSection';
 import TimelineSection from '../components/sections/TimelineSection';
 import ImpactSection from '../components/sections/ImpactSection';
+import PartnersSection from '../components/sections/PartnersSection';
 import PartnerCTASection from '../components/sections/PartnerCTASection';
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
       <YouTubeSection />
       <TimelineSection />
       <ImpactSection />
+      <PartnersSection />
       <PartnerCTASection />
     </>
   );

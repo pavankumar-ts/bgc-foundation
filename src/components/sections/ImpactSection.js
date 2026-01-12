@@ -43,7 +43,7 @@ const ImpactSection = () => {
     {
       key: 'villages',
       title: 'Villages Reached',
-      value: STATISTICS.healthCamps.display,
+      value: STATISTICS.villagesServed.display,
       subtitle: 'Rural communities served',
       imageSrc: IMAGES.features.value
     },

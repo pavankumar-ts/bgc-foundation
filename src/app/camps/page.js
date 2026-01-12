@@ -4,6 +4,7 @@ import { Card } from '../../components/ui/Card';
 import Badge from '../../components/ui/Badge';
 import Button from '../../components/ui/Button';
 import { campsData } from '../../data/campsData';
+import PartnerCTASection from '@/components/sections/PartnerCTASection';
 
 export default function CampsPage() {
   // Sort camps by date (latest first)
@@ -154,6 +155,7 @@ export default function CampsPage() {
             </div>
           </section>
         )}
+        <PartnerCTASection />
     </>
   );
 }

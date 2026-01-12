@@ -9,7 +9,7 @@ const PartnerCTASection = () => {
       <div className="section-container py-12 pt-0">
         <Card className="bg-gradient-to-r from-primary-600 to-secondary-600 border-none">
           <CardContent className="text-center py-8 px-6">
-            <h3 className="subsection-h3 text-white mb-4">
+            <h3 className="subsection-h3 max-w-2xl mx-auto text-white mb-4">
               Partner With Us to Bring Life-Saving Digestive Care to Rural Karnataka
             </h3>
             <p className="text-primary-100 mb-6 max-w-2xl mx-auto">

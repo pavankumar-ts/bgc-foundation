@@ -116,8 +116,8 @@ export const STATISTICS = {
   },
 
   villagesServed: {
-    value: 50,
-    display: '50+',
+    value: 75,
+    display: '75+',
     label: 'Villages Served',
   },
 

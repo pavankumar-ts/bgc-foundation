@@ -1,3 +1,4 @@
+import PartnerCTASection from '@/components/sections/PartnerCTASection';
 import GenericHeroSection from '../../components/sections/GenericHeroSection';
 import ProgramsSection from '../../components/sections/ProgramsSection';
 import RuralHealthcareSection from '../../components/sections/RuralHealthcareSection';
@@ -36,6 +37,7 @@ export default function Programs() {
       />
       <ProgramsSection />
       <RuralHealthcareSection />
+      <PartnerCTASection />
     </>
   );
 }

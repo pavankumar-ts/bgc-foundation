@@ -1,6 +1,7 @@
+import PartnerCTASection from '@/components/sections/PartnerCTASection';
 import GenericHeroSection from '../../components/sections/GenericHeroSection';
-import AboutGoalSection from '../../components/sections/AboutGoalSection';
-import AboutSection from '../../components/sections/AboutSection';
+import MissionVisionSection from '../../components/sections/MissionVisionSection';
+import ValuesSection from '../../components/sections/ValuesSection';
 import { ORGANIZATION, STATISTICS, CONTACT } from '@/config/siteConfig';
 
 export default function About() {
@@ -8,8 +9,8 @@ export default function About() {
     <>
       <GenericHeroSection
         badge={`About ${ORGANIZATION.name}`}
-        title={`Transforming Rural Digestive Healthcare in ${CONTACT.address.state}`}
-        description={`${ORGANIZATION.name} brings specialized digestive healthcare directly to rural communities through our innovative '${ORGANIZATION.model}' model, ensuring world-class medical care reaches those who need it most.`}
+        title={`Karnataka's First-of-its-Kind Rural Outreach Programme`}
+        description={`Bringing specialized digestive healthcare directly to rural communities through early detection, preventive education, and access to expert gastroenterology care.`}
         stats={[
           { value: ORGANIZATION.foundingYear, label: "Foundation Established" },
           { value: STATISTICS.healthCamps.display, label: STATISTICS.healthCamps.label },
@@ -19,8 +20,9 @@ export default function About() {
         imageAlt={`${ORGANIZATION.name} rural digestive healthcare mission in ${CONTACT.address.state}`}
         fallbackIcon="🏥💚"
       />
-      <AboutGoalSection />
-      <AboutSection />
+      <MissionVisionSection />
+      <ValuesSection />
+      <PartnerCTASection />
     </>
   );
 }
