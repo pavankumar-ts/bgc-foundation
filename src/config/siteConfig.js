@@ -158,8 +158,8 @@ export const STATISTICS = {
     },
 
     specialistHours: {
-      value: 100,
-      display: '100+',
+      value: 400,
+      display: '400+',
       label: 'Specialist Hours',
     },
   },

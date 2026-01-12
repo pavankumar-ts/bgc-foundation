@@ -47,6 +47,7 @@ module.exports = {
         'slide-out-right': 'slideOutRight 0.3s ease-out',
         'fade-in': 'fadeIn 0.2s ease-out',
         'fade-out': 'fadeOut 0.3s ease-out',
+        'loading': 'loading 1.5s infinite',
       },
       keyframes: {
         fadeInUp: {
@@ -99,6 +100,14 @@ module.exports = {
           },
           '100%': {
             opacity: '0',
+          },
+        },
+        loading: {
+          '0%': {
+            backgroundPosition: '200% 0',
+          },
+          '100%': {
+            backgroundPosition: '-200% 0',
           },
         },
       },
