@@ -77,7 +77,7 @@ export default async function MediaEvents() {
 
       {/* Events Grid */}
       <div className="max-w-[1400px] mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8 xl:gap-12 p-4 md:p-6 lg:p-8 xl:p-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-5 lg:gap-6 xl:gap-8 p-4 md:p-6 lg:p-8 xl:p-12">
           {events.length > 0 ? (
             events.map(event => (
               <div
@@ -89,15 +89,8 @@ export default async function MediaEvents() {
                   alt={event.title}
                   width={1000}
                   height={1000}
-                  className="w-full h-[200px] sm:h-[180px] md:h-[160px] lg:h-[180px] object-contain border-b-2 border-secondary-600"
+                  className="w-full h-[200px] sm:h-[180px] md:h-[160px] lg:h-[180px] object-contain mb-3 md:mb-4"
                 />
-                <div className="bg-secondary-600 text-white py-1.5 md:py-2 min-w-[50%] text-center text-sm md:text-base font-medium self-center -mt-3 md:-mt-4 mb-3 md:mb-4 rounded px-3">
-                  {new Date(event.date).toLocaleDateString('en-IN', {
-                    day: '2-digit',
-                    month: '2-digit',
-                    year: 'numeric'
-                  })}
-                </div>
                 <h3 className="text-base md:text-lg lg:text-xl my-2 md:my-2.5 font-semibold text-secondary-600 leading-snug">
                   {event.title}
                 </h3>

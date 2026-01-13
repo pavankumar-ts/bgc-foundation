@@ -90,10 +90,6 @@ export default async function EventPage({ params }) {
         )}
 
         <div className="max-w-[900px] mx-auto">
-          <p className="text-sm md:text-base lg:text-lg text-gray-600 mb-4 md:mb-6 font-medium">
-            {formattedDate}
-          </p>
-
           <div
             className="text-sm md:text-base lg:text-lg font-normal leading-relaxed text-gray-800 mb-6 md:mb-8 [&_p]:mb-3 [&_p]:md:mb-4 [&_h1]:text-secondary-600 [&_h1]:mt-4 [&_h1]:md:mt-6 [&_h1]:mb-3 [&_h1]:md:mb-4 [&_h1]:text-xl [&_h1]:md:text-2xl [&_h1]:lg:text-3xl [&_h2]:text-secondary-600 [&_h2]:mt-4 [&_h2]:md:mt-6 [&_h2]:mb-3 [&_h2]:md:mb-4 [&_h2]:text-lg [&_h2]:md:text-xl [&_h2]:lg:text-2xl [&_h3]:text-secondary-600 [&_h3]:mt-4 [&_h3]:md:mt-6 [&_h3]:mb-3 [&_h3]:md:mb-4 [&_h3]:text-base [&_h3]:md:text-lg [&_h3]:lg:text-xl [&_ul]:ml-6 [&_ul]:md:ml-8 [&_ul]:mb-3 [&_ul]:md:mb-4 [&_ol]:ml-6 [&_ol]:md:ml-8 [&_ol]:mb-3 [&_ol]:md:mb-4 [&_a]:text-secondary-600 [&_a]:underline [&_a:hover]:text-secondary-700"
             dangerouslySetInnerHTML={{ __html: event.description }}
