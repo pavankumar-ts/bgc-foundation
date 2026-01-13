@@ -175,7 +175,7 @@ const ImpactSection = () => {
         </div>
 
         {/* Key Outcomes */}
-        <div className="mb-12 md:mb-16">
+        {/* <div className="mb-12 md:mb-16">
           <div className="text-center mb-8 md:mb-12 px-4">
             <div
               className={`opacity-0 ${isInView ? 'animate-smooth-fade-in-up' : ''}`}
@@ -219,7 +219,7 @@ const ImpactSection = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

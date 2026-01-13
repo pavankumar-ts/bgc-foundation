@@ -80,6 +80,72 @@ const MeetDoctorsSection = () => {
   return (
     <section className="section-spacing bg-white" id="team">
       <div className="main-container">
+         {/* Team Member Carousel */}
+        <div className="mb-20 ">
+          <div className="text-center mb-6 md:mb-8">
+            <h3 className="text-2xl  md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">
+              Our Super Specialists
+            </h3>
+            <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
+              Behind every successful rural health camp are real people with real stories. These are just a few of the remarkable individuals who chose rural service over personal comfort.
+            </p>
+          </div>
+
+          {loading ? (
+            <div className="text-center py-12">
+              <p className="text-gray-500">Loading team members...</p>
+            </div>
+          ) : doctors.length === 0 ? (
+            <div className="text-center py-12">
+              <p className="text-gray-500">No team members available at the moment.</p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 max-width mx-auto">
+              {doctors.map((member, index) => (
+                <Card
+                  key={index}
+                  className={`group text-center cursor-pointer ${isVisible ? 'animate-fade-in-up' : 'opacity-0'} transition-transform duration-300 ease-out hover:scale-105`}
+                  style={{ transitionDelay: `${index * 100}ms` }}
+                >
+                  <CardContent className="space-y-3 md:space-y-4 p-4 md:p-6">
+                    {/* Professional Photo */}
+                    <div className="mb-3 md:mb-4">
+                      <div className="w-full h-[200px] sm:h-[220px] md:h-[240px] mx-auto overflow-hidden rounded-lg group-hover:shadow-md transition-shadow duration-300">
+                        <Image
+                          src={member.photo}
+                          alt={member.name}
+                          width={1280}
+                          height={1280}
+                          className="w-full h-full object-cover object-top"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <h5 className="font-semibold text-gray-900 text-sm md:text-base leading-tight">
+                        {member.name}
+                      </h5>
+                      <p className="text-primary-600 font-medium text-xs md:text-sm leading-tight">
+                        {member.specialization}
+                      </p>
+                      {member.story && (
+                        <p className="text-gray-500 text-xs italic mb-2">
+                          {member.story}
+                        </p>
+                      )}
+                      {member.experience && (
+                        <Badge variant="outline" className="text-xs px-2 py-1">
+                          {member.experience}
+                        </Badge>
+                      )}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          )}
+
+        </div>
 
         {/* Featured Doctor - Dr. Yogananda Reddy */}
         <div className="mb-12 md:mb-20">
@@ -165,72 +231,6 @@ const MeetDoctorsSection = () => {
           </div>
         </div>
 
-        {/* Team Member Carousel */}
-        <div className="mb-0">
-          <div className="text-center mb-6 md:mb-8">
-            <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">
-              Our Super Specialists
-            </h3>
-            <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
-              Behind every successful rural health camp are real people with real stories. These are just a few of the remarkable individuals who chose rural service over personal comfort.
-            </p>
-          </div>
-
-          {loading ? (
-            <div className="text-center py-12">
-              <p className="text-gray-500">Loading team members...</p>
-            </div>
-          ) : doctors.length === 0 ? (
-            <div className="text-center py-12">
-              <p className="text-gray-500">No team members available at the moment.</p>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 max-width mx-auto">
-              {doctors.map((member, index) => (
-                <Card
-                  key={index}
-                  className={`group text-center cursor-pointer ${isVisible ? 'animate-fade-in-up' : 'opacity-0'} transition-transform duration-300 ease-out hover:scale-105`}
-                  style={{ transitionDelay: `${index * 100}ms` }}
-                >
-                  <CardContent className="space-y-3 md:space-y-4 p-4 md:p-6">
-                    {/* Professional Photo */}
-                    <div className="mb-3 md:mb-4">
-                      <div className="w-full h-[200px] sm:h-[220px] md:h-[240px] mx-auto overflow-hidden rounded-lg group-hover:shadow-md transition-shadow duration-300">
-                        <Image
-                          src={member.photo}
-                          alt={member.name}
-                          width={1280}
-                          height={1280}
-                          className="w-full h-full object-cover object-top"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <h5 className="font-semibold text-gray-900 text-sm md:text-base leading-tight">
-                        {member.name}
-                      </h5>
-                      <p className="text-primary-600 font-medium text-xs md:text-sm leading-tight">
-                        {member.specialization}
-                      </p>
-                      {member.story && (
-                        <p className="text-gray-500 text-xs italic mb-2">
-                          {member.story}
-                        </p>
-                      )}
-                      {member.experience && (
-                        <Badge variant="outline" className="text-xs px-2 py-1">
-                          {member.experience}
-                        </Badge>
-                      )}
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          )}
-
-        </div>
         
         {/* Mission Connection CTA */}
         <div className="mt-8 md:mt-12 lg:mt-16 text-center bg-gradient-to-r from-primary-50 to-primary-100 rounded-xl p-6 md:p-8">

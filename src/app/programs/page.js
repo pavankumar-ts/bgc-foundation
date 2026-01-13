@@ -1,5 +1,4 @@
 import PartnerCTASection from '@/components/sections/PartnerCTASection';
-import GenericHeroSection from '../../components/sections/GenericHeroSection';
 import ProgramsSection from '../../components/sections/ProgramsSection';
 import RuralHealthcareSection from '../../components/sections/RuralHealthcareSection';
 
@@ -22,19 +21,6 @@ export const metadata = {
 export default function Programs() {
   return (
     <>
-      <GenericHeroSection
-        badge="Comprehensive Healthcare Programs"
-        title="8 Essential Programs Delivering Life-Saving Care"
-        description="From advanced endoscopy to preventive screening, our mobile units deliver complete digestive healthcare solutions directly to rural communities across Karnataka."
-        stats={[
-          { value: "8+", label: "Core Programs" },
-          { value: "100%", label: "Free Treatment" },
-          { value: "5+", label: "Villages Served" }
-        ]}
-        imageSrc='/assets/about-hero.webp'
-        imageAlt="BGC Foundation healthcare programs in rural Karnataka"
-        fallbackIcon="🏥🚐"
-      />
       <ProgramsSection />
       <RuralHealthcareSection />
       <PartnerCTASection />

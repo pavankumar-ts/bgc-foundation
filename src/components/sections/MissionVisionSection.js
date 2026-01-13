@@ -12,8 +12,8 @@ const MissionVisionSection = () => {
   }, []);
 
   return (
-    <section className="section-spacing bg-white" id="mission-vision">
-      <div className="section-container">
+    <section className="section-spacing bg-white" >
+      <div className="section-container" id='vision-mission'>
         <div className="text-center mb-12">
           <div className={`opacity-0 ${isVisible ? 'animate-smooth-fade-in-up' : ''}`} style={{ animationDelay: '0.1s' }}>
             <Badge variant="primary" className="mb-4">

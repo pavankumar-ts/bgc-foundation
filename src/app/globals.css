@@ -80,6 +80,7 @@
   /* Smooth scrolling for anchor links */
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5rem; /* Account for fixed header height */
   }
 
   /* High contrast mode support */
@@ -546,7 +547,7 @@
 }
 
 .shimmer {
-  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background: linear-gradient(90px, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
   background-size: 200px 100%;
   animation: gradientShimmer 1.5s infinite;
 }

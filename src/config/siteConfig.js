@@ -223,7 +223,7 @@ export const LEADERSHIP = {
     experience: {
       years: 20,
       display: '20+ years',
-      combinedDisplay: '50+ Years Combined Experience',
+      combinedDisplay: '50+',
     },
 
     description: "From London's NHS hospitals to Karnataka's villages - Dr. Reddy chose to leave his comfortable UK practice to serve those who need it most. With two decades of international expertise, he now leads our Hospital on Wheels mission",

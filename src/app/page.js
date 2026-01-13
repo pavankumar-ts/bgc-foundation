@@ -14,15 +14,15 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <StatsSection />
-      <RuralOutreachVideoSection />
-      <AboutGoalSection />
-      <ExpertEndorsementSection />
-      <LeadershipSection />
-      <YouTubeSection />
-      <TimelineSection />
+      {/* <StatsSection /> */}
+      {/* <RuralOutreachVideoSection /> */}
+      {/* <AboutGoalSection /> */}
       <ImpactSection />
-      <PartnersSection />
+      <ExpertEndorsementSection />
+      <YouTubeSection />
+      <LeadershipSection />
+      <TimelineSection />
+      {/* <PartnersSection /> */}
       <PartnerCTASection />
     </>
   );

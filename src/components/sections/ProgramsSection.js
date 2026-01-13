@@ -63,13 +63,12 @@ const ProgramsSection = () => {
       <div className="main-container">
         {/* 8-Card Services Grid as per Design Reference */}
         <div className="">
-          <div className="text-center mb-8 md:mb-12">
-            <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 md:mb-4 px-4">
-              Comprehensive Digestive Health Programs
-            </h3>
-            <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-              Our complete range of specialized programs designed to address digestive health
-              needs in rural communities with professional expertise and care.
+          <div className="text-center mb-12 pt-14 md:mb-16 px-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary-900 mb-4 md:mb-6 leading-tight">
+              Our Healthcare Programs
+            </h2>
+            <p className="text-base md:text-lg text-neutral-600 max-w-2xl mx-auto leading-relaxed">
+              Comprehensive digestive healthcare solutions delivered directly to rural communities
             </p>
           </div>
 

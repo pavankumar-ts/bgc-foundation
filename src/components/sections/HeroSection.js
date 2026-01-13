@@ -1,150 +1,142 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Button from '../ui/Button';
+import Image from 'next/image';
 import Badge from '../ui/Badge';
+import { STATISTICS, ORGANIZATION } from '@/config/siteConfig';
 
 const HeroSection = () => {
-  const [currentImage, setCurrentImage] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-
-  const ruralCampImages = [
-    {
-      src: '/assets/home/hero1.webp',
-      alt: 'Mobile health camp in rural Karnataka village',
-      title: 'Bringing Digestive Healthcare to Rural Communities',
-      subtitle: 'We reach the most remote villages in Karnataka to provide essential digestive healthcare services directly to those who need them most.'
-    },
-    {
-      src: '/assets/home/hero2.webp',
-      alt: 'Medical screening at village camp',
-      title: 'Advanced Digestive Screening & Diagnosis',
-      subtitle: 'Our state-of-the-art mobile units are equipped with modern diagnostic tools to detect and prevent digestive health issues early.'
-    },
-    {
-      src: '/assets/home/hero3.webp',
-      alt: 'Healthcare professionals at rural outreach',
-      title: 'Expert Healthcare Professionals',
-      subtitle: 'Our dedicated team of gastroenterologists and healthcare specialists are committed to delivering world-class medical care.'
-    },
-    {
-      src: '/assets/home/hero4.webp',
-      alt: 'Community health education session',
-      title: 'Community Digestive Health Education and Nutrition Awareness',
-      subtitle: 'We believe in empowering communities through education, teaching preventive care and healthy lifestyle practices.'
-    }
-  ];
-
 
   useEffect(() => {
     setIsVisible(true);
-    
-    const interval = setInterval(() => {
-      setIsTransitioning(true);
-      
-      setTimeout(() => {
-        setCurrentImage((prev) => (prev + 1) % ruralCampImages.length);
-        setIsTransitioning(false);
-      }, 300);
-    }, 5000);
+  }, []);
 
-    return () => clearInterval(interval);
-  }, [ruralCampImages.length]);
-
+  const partners = [
+    {
+      name: 'Rotary Cubbon Park Trust',
+      logo: '/assets/partners/rotary.png',
+    },
+    {
+      name: 'Infosys Foundation',
+      logo: '/assets/partners/infosys-foundation.png',
+    },
+    {
+      name: 'Dept of Health & Family Welfare, Govt of Karnataka',
+      logo: '/assets/partners/karnataka-govt.png',
+    },
+    {
+      name: 'Bangalore Gastro Centre Hospitals Pvt Ltd',
+      logo: '/assets/partners/bangalore gastro centre hospital.png',
+    },
+  ];
 
   return (
-    <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden">
-      {/* Full-screen background image slides */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div
-          className="flex h-full transition-transform duration-1000 ease-in-out"
-          style={{
-            transform: `translateX(-${currentImage * 100}vw)`,
-            width: `${ruralCampImages.length * 100}vw`
-          }}
-        >
-          {ruralCampImages.map((image, index) => (
-            <div
-              key={index}
-              className="relative h-full w-screen flex-shrink-0"
-            >
-              <img
-                src={image.src}
-                alt={image.alt}
-                className={`w-full h-full object-cover object-center transition-transform duration-[8000ms] ease-linear ${
-                  index === currentImage ? 'scale-110' : 'scale-100'
-                }`}
-                onError={(e) => {
-                  // Fallback for missing images
-                  e.target.style.display = 'none';
-                  e.target.nextSibling.style.display = 'flex';
-                }}
-              />
-              {/* Fallback placeholder */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary-200 to-secondary-200 items-center justify-center text-white hidden">
-                <div className="text-center space-y-4 px-4">
-                  <div className="text-4xl md:text-6xl">🏥</div>
-                  <div className="text-base md:text-lg font-semibold">Rural Health Camp</div>
-                  <div className="text-xs md:text-sm opacity-75">{image.alt}</div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/50 md:bg-black/40"></div>
+    <section className="relative bg-gradient-to-br from-primary-50 via-white to-secondary-50 overflow-hidden pt-10">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0" style={{
+          backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(0,0,0,0.15) 1px, transparent 0)',
+          backgroundSize: '40px 40px'
+        }}></div>
       </div>
 
-      {/* Content overlay */}
-      <div className="relative z-10 w-full px-4 md:px-8">
-        <div className="text-center space-y-6 md:space-y-8 max-w-4xl mx-auto pt-20 md:pt-24">
-          {/* Main Headline */}
-          <div className={`space-y-4 md:space-y-6 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-            <Badge variant="default" className="text-xs md:text-sm font-semibold bg-white/10 backdrop-blur-sm border-white/20 text-white">
-              Karnataka&apos;s First Rural Digestive Healthcare Initiative
+      <div className="relative section-container py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24">
+        {/* Main Content Grid */}
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 items-center mb-8 sm:mb-12 md:mb-16">
+
+          {/* Left Column - Text Content */}
+          <div className={`space-y-4 sm:space-y-6 md:space-y-8 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+            <Badge variant="default" className="text-xs sm:text-sm font-semibold bg-primary-100 text-primary-700 border-primary-200">
+              {ORGANIZATION.subtitle}
             </Badge>
 
-            <div className={`transition-all duration-500 ease-in-out ${
-              isTransitioning
-                ? 'opacity-0 translate-y-4 scale-95'
-                : 'opacity-100 translate-y-0 scale-100'
-            }`}>
-              <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white drop-shadow-lg leading-tight px-2">
-                {ruralCampImages[currentImage]?.title}
+            <div className="space-y-3 sm:space-y-4">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-tight">
+                Bringing Digestive Healthcare to{' '}
+                <span className="text-primary-600">Rural Communities</span>
               </h1>
 
-              <p className="text-sm sm:text-base md:text-lg text-white/90 leading-relaxed max-w-2xl mx-auto drop-shadow-md mt-3 md:mt-4 px-4">
-                {ruralCampImages[currentImage]?.subtitle}
+              <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed">
+                If patients can&apos;t come to us, we go to them. World-class gastroenterology care delivered directly to rural Karnataka villages, <b>completely free</b>.
               </p>
+
+              <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
+                Backed by{' '}
+                <a
+                  href="https://www.bangaloregastrocentre.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary-600 hover:text-primary-700 font-semibold underline decoration-2 underline-offset-2 transition-colors"
+                >
+                  Bangalore Gastro Centre Hospitals
+                </a>
+                , Pioneers in Digestive Health
+              </p>
+            </div>
+
+            {/* Quick Stats */}
+            <div className="grid grid-cols-3 gap-3 sm:gap-4 pt-4 sm:pt-6 border-t border-gray-200">
+              <div>
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-primary-600">{STATISTICS.patientsConsulted.display}</div>
+                <div className="text-xs sm:text-sm md:text-base text-gray-600">{STATISTICS.patientsConsulted.label}</div>
+              </div>
+              <div>
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-primary-600">{STATISTICS.villagesServed.display}</div>
+                <div className="text-xs sm:text-sm md:text-base text-gray-600">{STATISTICS.villagesServed.label}</div>
+              </div>
+              <div>
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-primary-600">{STATISTICS.healthCamps.display}</div>
+                <div className="text-xs sm:text-sm md:text-base text-gray-600">{STATISTICS.healthCamps.label}</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column - Video and Partners */}
+          <div className={`space-y-6 sm:space-y-8 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
+            {/* Video */}
+            <div className="relative overflow-hidden rounded-xl sm:rounded-2xl shadow-2xl bg-gray-900 border-2 sm:border-4 border-white">
+              <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full"
+                  src="https://www.youtube.com/embed/h2hSQc48GQ8?si=ErRa19iHmBChLEXW"
+                  title="BGC Foundation - Mobile Gastroenterology Unit on Wheels"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
+
+            {/* Partners Section */}
+            <div className="text-left">
+              <p className="text-xs sm:text-sm font-semibold text-gray-600 uppercase tracking-wide mb-3 sm:mb-4">
+                Trusted Partners in Rural Healthcare
+              </p>
+
+              {/* Partners Grid */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+                {partners.map((partner, index) => (
+                  <div
+                    key={index}
+                    className="bg-white rounded-lg p-2 sm:p-3 flex items-center justify-center hover:shadow-lg transition-all duration-300 border border-gray-200 group hover:scale-105"
+                  >
+                    <div className="relative w-full h-12 sm:h-14 md:h-16">
+                      <Image
+                        src={partner.logo}
+                        alt={partner.name}
+                        fill
+                        className="object-contain transition-transform duration-300 group-hover:scale-110"
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Navigation dots */}
-      <div className="absolute bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 md:space-x-3 z-20">
-        {ruralCampImages.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => {
-              setIsTransitioning(true);
-              setTimeout(() => {
-                setCurrentImage(index);
-                setIsTransitioning(false);
-              }, 300);
-            }}
-            className={`w-3 h-3 md:w-4 md:h-4 rounded-full transition-all duration-300 ${
-              index === currentImage
-                ? 'bg-white scale-110 shadow-lg'
-                : 'bg-white/50 hover:bg-white/70 hover:scale-105'
-            }`}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
-      </div>
-
     </section>
   );
 };
