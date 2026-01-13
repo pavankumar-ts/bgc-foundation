@@ -182,7 +182,7 @@ const ExpertEndorsementSection = () => {
                   style={{ animationDelay: isVisible ? '0.9s' : '0s' }}
                 >
                   <p className="text-lg font-medium text-primary-600">
-                    Health Minister, Karnataka
+                    Hon'ble Minister of Health & Family Welfare, Govt of Karnataka
                   </p>
                 </div>
 
@@ -192,7 +192,7 @@ const ExpertEndorsementSection = () => {
                 >
                   <div className="flex flex-wrap gap-2 text-sm text-gray-600">
                     <span className="bg-gray-100 px-3 py-1 rounded-full hover:bg-gray-200 transition-colors duration-300">
-                      Minister of Health & Family Welfare
+                      Karnataka Legislative Assembly
                     </span>
                     <span className="bg-gray-100 px-3 py-1 rounded-full hover:bg-gray-200 transition-colors duration-300">
                       Government of Karnataka
@@ -207,10 +207,10 @@ const ExpertEndorsementSection = () => {
               >
                 <div className="border-l-4 border-l-primary-500 pl-6 space-y-3 hover:border-l-primary-600 transition-colors duration-300">
                   <h4 className="text-xl font-semibold text-gray-900">
-                    Advancing Healthcare for All
+                    Championing Rural Healthcare Access
                   </h4>
                   <p className="body-large text-gray-600 leading-relaxed">
-                    Minister Dinesh Gundu Rao supports initiatives that bridge the healthcare gap between urban and rural Karnataka.
+                    Hon'ble Minister Dinesh Gundu Rao actively supports innovative healthcare initiatives that bring specialized medical services directly to rural communities across Karnataka.
                   </p>
                 </div>
               </div>
