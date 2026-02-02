@@ -157,7 +157,7 @@ const ExpertEndorsementSection = () => {
               <div className="relative group">
                 <div className="relative aspect-[4/3] bg-white rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-700 ease-out">
                   <img
-                    src="/assets/Dinesh Gundu Rao.jpeg"
+                    src="/assets/dinesh_gundu_rao.jpeg"
                     alt="Dinesh Gundu Rao"
                     className="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-700 ease-out"
                   />
@@ -212,6 +212,78 @@ const ExpertEndorsementSection = () => {
                   <p className="body-large text-gray-600 leading-relaxed">
                     Hon'ble Minister Dinesh Gundu Rao actively supports innovative healthcare initiatives that bring specialized medical services directly to rural communities across Karnataka.
                   </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Dr. Nageshwar Reddy */}
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <div
+                  className={`opacity-0 ${isVisible ? 'animate-smooth-fade-in-up' : ''}`}
+                  style={{ animationDelay: isVisible ? '1.2s' : '0s' }}
+                >
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight">
+                    Dr. Nageshwar Reddy
+                  </h3>
+                </div>
+
+                <div
+                  className={`opacity-0 ${isVisible ? 'animate-smooth-fade-in-up' : ''}`}
+                  style={{ animationDelay: isVisible ? '1.3s' : '0s' }}
+                >
+                  <p className="text-lg font-medium text-primary-600">
+                    Chairman, AIG Hospitals, Hyderabad
+                  </p>
+                </div>
+
+                <div
+                  className={`opacity-0 ${isVisible ? 'animate-smooth-fade-in-up' : ''}`}
+                  style={{ animationDelay: isVisible ? '1.4s' : '0s' }}
+                >
+                  <div className="flex flex-wrap gap-2 text-sm text-gray-600">
+                    <span className="bg-gray-100 px-3 py-1 rounded-full hover:bg-gray-200 transition-colors duration-300">
+                      Padma Vibhushan Awardee
+                    </span>
+                    <span className="bg-gray-100 px-3 py-1 rounded-full hover:bg-gray-200 transition-colors duration-300">
+                      Padma Bhushan Awardee
+                    </span>
+                    <span className="bg-gray-100 px-3 py-1 rounded-full hover:bg-gray-200 transition-colors duration-300">
+                      Padma Shri Awardee
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                className={`opacity-0 ${isVisible ? 'animate-smooth-fade-in-up' : ''}`}
+                style={{ animationDelay: isVisible ? '1.5s' : '0s' }}
+              >
+                <div className="border-l-4 border-l-primary-500 pl-6 space-y-3 hover:border-l-primary-600 transition-colors duration-300">
+                  <h4 className="text-xl font-semibold text-gray-900">
+                    Dr. Yogananda Reddy Meets Dr. Nageshwar Reddy
+                  </h4>
+                  <p className="body-large text-gray-600 leading-relaxed">
+                    Dr. Yogananda Reddy meets with Dr. Nageshwar Reddy to discuss advancing digestive health programs in rural India, sharing insights on bringing specialized gastroenterology care to underserved communities.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              className={`opacity-0 ${isVisible ? 'animate-smooth-scale-in' : ''}`}
+              style={{ animationDelay: isVisible ? '1.6s' : '0s' }}
+            >
+              <div className="relative group">
+                <div className="relative aspect-[4/3] bg-white rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-700 ease-out">
+                  <img
+                    src="/assets/dr_nageshwar_reddy.jpeg"
+                    alt="Dr. Yogananda Reddy meets Dr. Nageshwar Reddy"
+                    className="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-700 ease-out"
+                  />
+                  <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/10 via-transparent to-black/5 opacity-40"></div>
                 </div>
               </div>
             </div>
