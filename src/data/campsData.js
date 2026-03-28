@@ -1,6 +1,118 @@
 // BGC Foundation Health Camps Data
 export const campsData = [
   {
+    id: 'hoskote-health-camp-2025',
+    title: 'Hoskote Rural Health Camp',
+    location: 'Hoskote Taluk, Karnataka',
+    date: 'March 2026',
+    status: 'completed',
+    image: '/assets/camps/hoskote/hoskote1.webp',
+    description: 'Multi-hobli rural outreach initiative featuring extensive hepatitis screening, Fibroscan assessments, and gastroenterology procedures across five hoblis in Hoskote Taluk.',
+    participants: 200,
+    specialties: ['Gastroenterology', 'Hepatology', 'Endoscopy', 'Fibroscan Technology', 'Laboratory Services'],
+    highlights: [
+      '200 consultations provided',
+      '180 lab tests conducted (hepatitis screening)',
+      '27 gastroenterology endoscopy procedures',
+      '70 Fibroscan assessments performed',
+      '249 gastroenterology medicines distributed'
+    ],
+    populationCovered: [
+      'Nandagudi Hobli',
+      'Jadigenahalli Hobli',
+      'Sulibele Hobli',
+      'Anugondanahalli Hobli',
+      'Kasaba Hobli'
+    ],
+    detailedDescription: `
+      The Hoskote Taluk rural outreach camp brought comprehensive digestive healthcare to communities across five hoblis - Nandagudi, Jadigenahalli, Sulibele, Anugondanahalli, and Kasaba. This extensive program provided specialized gastroenterology consultations, advanced diagnostic procedures, and essential hepatitis screening to 200 patients.
+
+      Featuring cutting-edge Fibroscan technology for liver disease detection and comprehensive endoscopy capabilities, this camp exemplified BGC Foundation's commitment to bringing urban-level healthcare to rural doorsteps. The distribution of 249 gastroenterology medicines ensured patients received immediate treatment initiation.
+    `,
+    outcomes: [
+      'Successfully completed 200 comprehensive consultations',
+      'Conducted 180 laboratory tests with focus on hepatitis screening',
+      'Performed 27 gastroenterology endoscopy procedures',
+      'Completed 70 Fibroscan assessments for liver health evaluation',
+      'Distributed 249 gastroenterology medicines for immediate treatment',
+      'Served communities across 5 hoblis in Hoskote Taluk'
+    ],
+    gallery: {
+      images: [
+        '/assets/camps/hoskote/hoskote1.webp',
+        '/assets/camps/hoskote/hoskote2.webp',
+        '/assets/camps/hoskote/hoskote3.webp',
+        '/assets/camps/hoskote/hoskote4.webp',
+        '/assets/camps/hoskote/hoskote5.webp',
+        '/assets/camps/hoskote/hoskote11.webp',
+        '/assets/camps/hoskote/hoskote12.webp',
+        '/assets/camps/hoskote/hoskote13.webp',
+        '/assets/camps/hoskote/hoskote14.webp',
+        '/assets/camps/hoskote/hoskote15.webp',
+        '/assets/camps/hoskote/hoskote16.webp',
+        '/assets/camps/hoskote/hoskote17.webp',
+        '/assets/camps/hoskote/hoskote18.webp',
+        '/assets/camps/hoskote/hoskote19.webp',
+        '/assets/camps/hoskote/hoskote20.webp',
+        '/assets/camps/hoskote/hoskote21.webp',
+        '/assets/camps/hoskote/hoskote22.webp',
+        '/assets/camps/hoskote/hoskote23.webp',
+        '/assets/camps/hoskote/hoskote24.webp',
+        '/assets/camps/hoskote/hoskote25.webp',
+        '/assets/camps/hoskote/hoskote26.webp',
+        '/assets/camps/hoskote/hoskote27.webp',
+        '/assets/camps/hoskote/hoskote28.webp',
+        '/assets/camps/hoskote/hoskote29.webp',
+        '/assets/camps/hoskote/hoskote30.webp',
+        '/assets/camps/hoskote/hoskote31.webp',
+        '/assets/camps/hoskote/hoskote32.webp',
+        '/assets/camps/hoskote/hoskote33.webp',
+        '/assets/camps/hoskote/hoskote34.webp',
+        '/assets/camps/hoskote/hoskote35.webp',
+        '/assets/camps/hoskote/hoskote36.webp',
+        '/assets/camps/hoskote/hoskote37.webp',
+        '/assets/camps/hoskote/hoskote38.webp',
+        '/assets/camps/hoskote/hoskote39.webp',
+        '/assets/camps/hoskote/hoskote40.webp',
+        '/assets/camps/hoskote/hoskote41.webp',
+        '/assets/camps/hoskote/hoskote42.webp',
+        '/assets/camps/hoskote/hoskote43.webp',
+        '/assets/camps/hoskote/hoskote44.webp',
+        '/assets/camps/hoskote/hoskote45.webp',
+        '/assets/camps/hoskote/hoskote46.webp',
+        '/assets/camps/hoskote/hoskote47.webp',
+        '/assets/camps/hoskote/hoskote48.webp',
+        '/assets/camps/hoskote/hoskote49.webp',
+        '/assets/camps/hoskote/hoskote50.webp',
+        '/assets/camps/hoskote/hoskote51.webp'
+      ],
+      videos: []
+    },
+    impactMetrics: {
+      patientsSeen: '200',
+      proceduresCompleted: '97',
+      medicationDistributed: '249',
+      laboratoryTests: '180'
+    },
+    detailedStats: {
+      consultations: {
+        total: 200
+      },
+      gastroenterology: {
+        fibroscan: 70,
+        endoscopy: 27,
+        total: 97
+      },
+      laboratory: {
+        hepatitisScreening: 180,
+        total: 180
+      },
+      medicines: {
+        gastroenterologyMedicines: 249
+      }
+    }
+  },
+  {
     id: 'sarjapura-health-camp-2024',
     title: 'Sarjapura Rural Health Camp',
     location: 'Sarjapura, Karnataka',
