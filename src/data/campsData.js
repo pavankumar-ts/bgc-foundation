@@ -121,9 +121,10 @@ export const campsData = [
     image: '/assets/camps/sarjapura-hero.webp',
     description: 'Comprehensive digestive health screening and consultation program providing advanced medical care to rural communities in Sarjapura.',
     participants: 218,
-    specialties: ['Gastroenterology', 'General Medicine', 'Endoscopy', 'Laboratory Services'],
+    specialties: ['Gastroenterology', 'General Medicine', 'Endoscopy', 'Fibroscan Technology', 'Laboratory Services'],
     highlights: [
       '218 consultations provided',
+      '40 Fibroscan assessments performed',
       '41 blood tests conducted',
       '12 endoscopy procedures'
     ],
@@ -134,6 +135,7 @@ export const campsData = [
     `,
     outcomes: [
       'Successfully completed 218 comprehensive consultations',
+      'Performed 40 Fibroscan assessments for liver health evaluation',
       'Conducted 41 essential blood tests with 290 minutes of machine time',
       'Performed 12 life-saving endoscopy procedures',
       'Early diagnosis and treatment initiation for identified conditions',
@@ -169,7 +171,7 @@ export const campsData = [
     },
     impactMetrics: {
       patientsSeen: '218',
-      proceduresCompleted: '12',
+      proceduresCompleted: '52',
       followUpCases: '15',
       healthEducationReach: '218'
     }
@@ -183,9 +185,10 @@ export const campsData = [
     image: '/assets/camps/harohalli-hero.webp',
     description: 'Mobile healthcare initiative bringing specialized gastroenterology and diagnostic services to underserved communities in Harohalli.',
     participants: 165,
-    specialties: ['Gastroenterology', 'Endoscopy', 'Laboratory Services', 'Preventive Care'],
+    specialties: ['Gastroenterology', 'Endoscopy', 'Fibroscan Technology', 'Laboratory Services', 'Preventive Care'],
     highlights: [
       '165 consultations provided',
+      '35 Fibroscan assessments performed',
       '17 blood tests conducted',
       '9 endoscopy procedures'
     ],
@@ -196,6 +199,7 @@ export const campsData = [
     `,
     outcomes: [
       'Delivered 165 comprehensive specialist consultations',
+      'Performed 35 Fibroscan assessments for liver health evaluation',
       'Performed 17 critical blood tests with 130 minutes of machine time',
       'Completed 9 endoscopic procedures with 90 minutes of technician time',
       'Identified and initiated treatment for chronic conditions',
@@ -233,7 +237,7 @@ export const campsData = [
     },
     impactMetrics: {
       patientsSeen: '165',
-      proceduresCompleted: '9',
+      proceduresCompleted: '44',
       followUpCases: '12',
       healthEducationReach: '165'
     }
@@ -398,9 +402,10 @@ export const campsData = [
     image: '/assets/camps/anekal/anekal1.webp',
     description: 'Specialized gastroenterology camp providing comprehensive digestive health services and advanced diagnostic procedures to Anekal\'s underserved communities.',
     participants: 186,
-    specialties: ['Gastroenterology', 'Hepatology', 'Endoscopy', 'Laboratory Services', 'Health Education'],
+    specialties: ['Gastroenterology', 'Hepatology', 'Endoscopy', 'Fibroscan Technology', 'Laboratory Services', 'Health Education'],
     highlights: [
       '186 consultations provided',
+      '30 Fibroscan assessments performed',
       '45 blood tests conducted',
       '11 endoscopy procedures'
     ],
@@ -411,6 +416,7 @@ export const campsData = [
     `,
     outcomes: [
       'Delivered 186 specialist consultations with personalized care',
+      'Performed 30 Fibroscan assessments for liver health evaluation',
       'Performed 45 blood tests with 340 minutes of laboratory time',
       'Completed 11 endoscopic procedures for accurate diagnosis',
       'Detected and treated chronic liver conditions',
@@ -434,7 +440,7 @@ export const campsData = [
     },
     impactMetrics: {
       patientsSeen: '186',
-      proceduresCompleted: '11',
+      proceduresCompleted: '41',
       followUpCases: '22',
       healthEducationReach: '186'
     }
