@@ -103,8 +103,8 @@ export const STATISTICS = {
 
   // Patients
   patientsConsulted: {
-    value: 1500,
-    display: '1500+',
+    value: 3000,
+    display: '3000+',
     label: 'Patients Consulted',
   },
 
@@ -116,8 +116,8 @@ export const STATISTICS = {
   },
 
   villagesServed: {
-    value: 75,
-    display: '75+',
+    value: 100,
+    display: '100+',
     label: 'Villages Served',
   },
 
@@ -140,26 +140,26 @@ export const STATISTICS = {
   services: {
     // Used in: ImpactSection
     bloodTests: {
-      value: 300,
-      display: '300',
+      value: 1000,
+      display: '1000',
       label: 'Blood Tests',
     },
 
     endoscopies: {
-      value: 100,
-      display: '100+',
+      value: 300,
+      display: '300+',
       label: 'Endoscopies',
     },
 
     fibroscans: {
-      value: 100,
-      display: '100+',
+      value: 500,
+      display: '500+',
       label: 'Fibroscans',
     },
 
     specialistHours: {
-      value: 400,
-      display: '400+',
+      value: 600,
+      display: '600+',
       label: 'Specialist Hours',
     },
   },
