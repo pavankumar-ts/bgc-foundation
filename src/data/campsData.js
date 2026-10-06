@@ -1,6 +1,85 @@
 // BGC Foundation Health Camps Data
 export const campsData = [
   {
+    id: 'malur-health-camp-2026',
+    title: 'Malur Rural Health Camp',
+    location: 'Malur Taluk, Karnataka',
+    date: 'September 27, 2026',
+    status: 'completed',
+    image: '/assets/camps/malur/malur1.webp',
+    description: 'Rural digestive health program at the Malur Taluk headquarters, organised with Rotary and serving people from 300+ surrounding villages.',
+    participants: 230,
+    specialties: ['Gastroenterology', 'Hepatology', 'Endoscopy', 'Fibroscan Technology', 'Laboratory Services', 'Dietary Counselling'],
+    highlights: [
+      '230 consultations provided',
+      '24 endoscopy procedures performed',
+      '100 Fibroscan assessments performed',
+      '180 blood samples collected',
+      '150 dietary counselling sessions'
+    ],
+    populationCovered: [
+      '300+ villages across Malur Taluk'
+    ],
+    partners: ['Rotary Malur', 'Rotary Cubbon Park', 'Rotary Bengaluru Sarjapur Road'],
+    detailedDescription: `
+      Held at the Government Model Higher Primary Girls School near the BEO Office in Malur, this camp brought BGC Foundation's "Hospital on Wheels" to the Malur Taluk headquarters, serving people from more than 300 surrounding villages. The program was organised in partnership with Rotary Malur, Rotary Cubbon Park and Rotary Bengaluru Sarjapur Road.
+
+      A team of specialist gastroenterologists provided 230 consultations, with 24 endoscopy procedures performed on site. With 100 Fibroscan assessments, this was our largest liver screening effort at a single camp, supported by 180 blood samples for laboratory testing and 150 dietary counselling sessions in Kannada.
+    `,
+    outcomes: [
+      'Successfully completed 230 specialist consultations',
+      'Performed 24 endoscopy procedures on site',
+      'Completed 100 Fibroscan assessments for liver health evaluation',
+      'Collected 180 blood samples for laboratory investigations',
+      'Delivered 150 dietary counselling sessions in Kannada',
+      'Served communities from 300+ villages across Malur Taluk'
+    ],
+    gallery: {
+      images: [
+        '/assets/camps/malur/malur1.webp',
+        '/assets/camps/malur/malur2.webp',
+        '/assets/camps/malur/malur3.webp',
+        '/assets/camps/malur/malur4.webp',
+        '/assets/camps/malur/malur5.webp',
+        '/assets/camps/malur/malur6.webp',
+        '/assets/camps/malur/malur7.webp',
+        '/assets/camps/malur/malur8.webp',
+        '/assets/camps/malur/malur9.webp',
+        '/assets/camps/malur/malur10.webp',
+        '/assets/camps/malur/malur11.webp',
+        '/assets/camps/malur/malur12.webp',
+        '/assets/camps/malur/malur13.webp',
+        '/assets/camps/malur/malur14.webp',
+        '/assets/camps/malur/malur15.webp',
+        '/assets/camps/malur/malur-poster.webp'
+      ],
+      videos: [
+        'https://www.youtube.com/embed/H0GKjOm6CNU'
+      ]
+    },
+    impactMetrics: {
+      patientsSeen: '230',
+      proceduresCompleted: '124',
+      laboratoryTests: '180',
+      dietaryCounselling: '150'
+    },
+    detailedStats: {
+      consultations: {
+        total: 230
+      },
+      gastroenterology: {
+        fibroscan: 100,
+        endoscopy: 24,
+        total: 124
+      },
+      laboratory: {
+        bloodSampling: 180,
+        total: 180
+      },
+      dietaryCounselling: 150
+    }
+  },
+  {
     id: 'hoskote-health-camp-2025',
     title: 'Hoskote Rural Health Camp',
     location: 'Hoskote Taluk, Karnataka',

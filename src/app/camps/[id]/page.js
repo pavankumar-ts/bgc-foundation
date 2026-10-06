@@ -192,6 +192,17 @@ export default function CampDetailPage({ params }) {
                         {camp.gallery.videos.map((video, index) => (
                           <Card key={index} className="overflow-hidden group hover:shadow-lg transition-shadow duration-300">
                             <div className="relative aspect-video bg-gray-100 group/video">
+                              {video.includes('youtube.com/embed/') ? (
+                                <iframe
+                                  src={video}
+                                  title={`${camp.title} video ${index + 1}`}
+                                  className="w-full h-full"
+                                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                  referrerPolicy="strict-origin-when-cross-origin"
+                                  allowFullScreen
+                                />
+                              ) : (
+                              <>
                               <video
                                 src={video}
                                 controls
@@ -210,6 +221,8 @@ export default function CampDetailPage({ params }) {
                                     <FaPlay className="w-8 h-8 text-primary-600 ml-1" />
                                   </div>
                                 </div>
+                              )}
+                              </>
                               )}
                             </div>
                           </Card>
@@ -329,10 +342,18 @@ export default function CampDetailPage({ params }) {
                       <span className="text-sm md:text-base font-semibold text-gray-900">{camp.impactMetrics.followUpCases}</span>
                     </div>
                   )}
-                  <div className="flex justify-between items-center py-2">
-                    <span className="text-sm md:text-base text-gray-600">Education Reach</span>
-                    <span className="text-sm md:text-base font-semibold text-gray-900">{camp.impactMetrics.healthEducationReach}</span>
-                  </div>
+                  {camp.impactMetrics.dietaryCounselling && (
+                    <div className="flex justify-between items-center py-2 border-b border-gray-100">
+                      <span className="text-sm md:text-base text-gray-600">Dietary Counselling</span>
+                      <span className="text-sm md:text-base font-semibold text-gray-900">{camp.impactMetrics.dietaryCounselling}</span>
+                    </div>
+                  )}
+                  {camp.impactMetrics.healthEducationReach && (
+                    <div className="flex justify-between items-center py-2">
+                      <span className="text-sm md:text-base text-gray-600">Education Reach</span>
+                      <span className="text-sm md:text-base font-semibold text-gray-900">{camp.impactMetrics.healthEducationReach}</span>
+                    </div>
+                  )}
                 </div>
               </Card>
             </div>
